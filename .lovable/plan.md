@@ -1,55 +1,56 @@
-# Landingpage entschlacken
+# Neues Header-/Navbar-Design + Stockfotos auf der Landingpage
 
-Die aktuelle Seite wirkt überladen: Hero hat 8 Bento-Kacheln gleichzeitig (Headline, Counter, Ticker, Terminal, CPU-Box, Jahre-Kachel, Marquee, Status-Bar), danach folgen direkt nochmal 6 Feature-Kacheln, dann KPI-Grid mit nochmal denselben Zahlen. Viele Sektionen kämpfen um Aufmerksamkeit. Tech-Vibe bleibt — aber ruhiger, fokussierter, mit klarer Lesereihenfolge.
+## 1. Navbar — komplett neuer Look
 
-## Leitprinzipien
-- **Eine Hauptbotschaft pro Sektion** — Hero macht Hero, KPIs machen KPIs.
-- **Weniger ist mehr** — pro Sektion max. 1 starkes visuelles Element statt 5 kleine.
-- **Mehr Whitespace** — größere Abstände, weniger Cards nebeneinander.
-- **Wiederholungen raus** — Counter (Projekte/Jahre/Effizienz) nur EINMAL auf der Seite, nicht 2× wie aktuell.
+Weg von der zentrierten Pille, hin zu einer **klaren, breiten Top-Bar mit "Split Layout"**:
 
-## Konkrete Änderungen
+- **Logo links** (freistehend, ohne Pille)
+- **Mitte:** dünne horizontale Linie / Trenner, Navigation als minimale Text-Links mit Hover-Underline statt Pille
+- **Rechts:** Telefon-Nummer als sekundärer Hinweis + primärer "Projekt starten"-Button (rechteckig, mit Pfeil-Icon)
+- **Scroll-Verhalten:** Bei Scroll schrumpft die Bar (Padding ↓) und bekommt ein dezentes `backdrop-blur` mit feiner Bottom-Border — statt einer Pille
+- **Top-Announcement-Bar** (1 dünne Zeile ganz oben, dunkel): "Neue Slots für Q1 2026 verfügbar →" — gibt sofort Tech/Premium-Vibe
+- **Mobile:** weiterhin Hamburger + Sidebar, aber Sidebar bekommt jetzt eine kleine Kontakt-Sektion (Telefon, E-Mail, Adresse) unten
 
-### 1. Hero (`HeroBento.tsx`) — radikal reduzieren
-Statt 8 Kacheln nur noch:
-- **Großes Statement** (Headline + Subline + 2 CTAs) — zentriert oder links, viel Luft
-- **Ein** dezentes visuelles Element rechts (z. B. das Code-Terminal ODER ein animierter Mesh-Gradient-Blob, nicht beides)
-- Status-Bar oben dezent behalten (1 Zeile)
-- Marquee-Ticker entfernen (oder ans Seitenende verschieben als Trust-Bar)
-- Live-Telemetrie, CPU-Box, Counter-Kacheln → raus aus Hero
+## 2. Stockfotos in der Landingpage
 
-### 2. Features (`BentoFeatures.tsx`) — Grid beruhigen
-- 6 Disziplinen bleiben, aber als **gleichmäßiges 3×2-Grid** statt asymmetrischem Bento
-- Visualisierungen pro Card reduzieren (kein Bar-Chart + Netzwerk + Heatmap + Sparkline gleichzeitig) — pro Card 1 schlichtes Icon-Detail
-- Mehr Padding, größere Typo, weniger Mono-Tags
+Bilder werden mit `imagegen` generiert (Stockfoto-Stil, passend zur Electric-Violet-Brand) und in `src/assets/landing/` abgelegt. Keine externen Stock-URLs (Datenschutz/Lizenz-sauber).
 
-### 3. Process Flow (`ProcessFlow.tsx`) — Terminal-Stil entschärfen
-- Behält dunkle Sektion, aber CLI-Optik reduzieren
-- 3–4 Schritte horizontal/vertikal mit klarer Nummerierung statt Terminal-Output
+**Geplante Bildplatzierungen:**
 
-### 4. Impact Grid (`ImpactGrid.tsx`) — entweder hier ODER im Hero
-- Da Hero entschlackt wird, bleiben die KPIs hier — als ruhige 4er-Zeile
-- Keine doppelte Zählung mehr
+### a) Hero — neuer "Visual Beweis"-Streifen
+Direkt unter den CTAs ein **breites Hero-Bild** (16:9, leicht abgerundet, mit dezentem Glow-Border):
+- Motiv: modernes Team in einem hellen, minimalistischen Office in Stuttgart — Laptops, Whiteboards, violette Akzente in der Lichtstimmung
+- Ersetzt den weißen Raum zwischen Hero-Text und Marquee
 
-### 5. Voices (`VoicesSection.tsx`) — minimal kürzen
-- 3 Testimonials bleiben, aber ohne Mono-Klammern und mit ruhigerer Card-Optik
+### b) Features (`BentoFeatures.tsx`) — Bild-Karte als Akzent
+Statt 6 reine Text-Karten: **eine 7. Karte** (oder die größte) ist eine **Bild-Karte** mit kurzer Bildunterschrift:
+- Motiv: Nahaufnahme Code/Screen mit violetten Highlights — "Made in Filderstadt"
+- Bricht den Raster-Rhythmus auf, wirkt premium
 
-### 6. FAQ + FinalCTA
-- FAQ-Terminal-Optik leicht entschärfen (weniger Mono, mehr Lesbarkeit)
-- FinalCTA bleibt im Wesentlichen
+### c) Process Flow — Hintergrund-Bild als Atmosphäre
+Aktuell rein dunkle Sektion. Neu: **dunkles, leicht abgeblendetes Foto im Hintergrund** (Office-bei-Nacht oder Server-Room mit violettem Light-Leak), darüber die 4 Phasen-Karten mit Glas-Effekt. Macht die dunkle Sektion lebendiger.
 
-## Reihenfolge danach
-1. Hero (ruhig, fokussiert)
-2. Trust-Marquee (1 dünne Zeile)
-3. Features (3×2 Grid)
-4. Process (4 Schritte)
-5. Impact (4 KPIs)
-6. Voices (3 Stimmen)
-7. FAQ
-8. Final CTA
-9. Footer
+### d) Voices/Testimonials — kleine Portrait-Bilder
+Pro Testimonial-Karte ein **anonymes, stilisiertes Portrait** oben links (40x40 rund, leicht verschwommen oder als Silhouette, Stockfoto-Stil) — verleiht den Stimmen Gesichter ohne echte Identifikation.
 
-## Technisches
-- Keine neuen Dependencies, keine Logik-Änderungen.
-- Nur Edits in `src/components/landing-v2/*` und ggf. minimale CSS-Aufräumarbeiten.
-- Animationen bleiben (IntersectionObserver), nur weniger gleichzeitig.
+### e) Neue Sektion: "About Snapshot" (zwischen Impact und Voices)
+Klassisches **2-Spalten-Layout**: links Text ("Wer wir sind, seit 2006 in Filderstadt"), rechts ein **Bild der Firma/des Standorts** (modernes Bürogebäude oder Team-Atmosphäre). Bringt menschliches Element rein, das aktuell komplett fehlt.
+
+## 3. Technisches
+
+- **Bildgenerierung:** 5 Bilder via `imagegen` (Hero, Feature-Karte, Process-Background, 3× Portraits als ein Strip, About-Foto). Stil: heller, moderner Stockfoto-Look, dezente violette Lichtakzente.
+- **Bildschutz:** wie überall — `onContextMenu` & `draggable={false}` (gemäß Memory).
+- **Performance:** `loading="lazy"` für alle Bilder außer Hero-Bild (`eager` + `fetchPriority="high"`).
+- **Dateien:**
+  - Edit: `src/components/landing/Navbar.tsx` (komplett neu)
+  - Edit: `src/components/landing-v2/HeroBento.tsx` (Bild ergänzen)
+  - Edit: `src/components/landing-v2/BentoFeatures.tsx` (Bild-Karte)
+  - Edit: `src/components/landing-v2/ProcessFlow.tsx` (Background-Bild)
+  - Edit: `src/components/landing-v2/VoicesSection.tsx` (Portraits)
+  - Neu: `src/components/landing-v2/AboutSnapshot.tsx`
+  - Edit: `src/pages/Index.tsx` (AboutSnapshot einbinden)
+  - Neu: `src/assets/landing/*.jpg`
+
+## Offene Frage zur Bildrichtung
+
+Ich schlage einen **hellen, modernen Tech-Office-Stil** vor (viel Tageslicht, minimalistische Räume, gelegentliche violette Akzente — wie Pinterest/Linear/Vercel-Marketing). Falls du lieber etwas anderes willst (z. B. abstrakter/grafischer, oder klassischer Business-Look mit Anzügen-und-Handshakes, oder eher industriell/maschinenbau-nah passend zu eurer Zielgruppe), gib mir bitte eine Richtung — sonst gehe ich mit "heller Tech-Office".
