@@ -30,27 +30,20 @@ const ProcessFlow = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className={`relative rounded-3xl border border-background/15 bg-background/[0.04] backdrop-blur p-7 hover:bg-background/[0.08] transition-colors scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
+              className={`relative rounded-3xl border border-background/15 bg-background/[0.04] backdrop-blur p-8 hover:bg-background/[0.08] transition-colors scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
             >
-              <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-xs text-background/50">{s.dur}</span>
-                <span className="font-display text-5xl font-bold text-primary-glow">{s.n}</span>
-              </div>
-              <h3 className="font-display text-2xl font-bold">{s.title}</h3>
-              <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-background/10 px-3 py-1.5 font-mono text-[11px] text-primary-glow">
-                <span className="text-background/40">$</span> {s.cmd}
-              </div>
-              <p className="mt-5 text-sm text-background/70 leading-relaxed">{s.desc}</p>
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-background/20" />
-              )}
+              <div className="font-display text-6xl font-bold text-primary-glow/90 leading-none">{s.n}</div>
+              <h3 className="mt-6 font-display text-2xl font-bold">{s.title}</h3>
+              <p className="mt-3 text-sm text-background/70 leading-relaxed">{s.desc}</p>
+              <div className="mt-6 pt-5 border-t border-background/10 font-mono text-[11px] uppercase tracking-widest text-background/50">{s.dur}</div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
