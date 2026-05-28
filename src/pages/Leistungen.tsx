@@ -5,79 +5,79 @@ import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Lightbulb, Monitor, Code2, Cog, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Lightbulb, ClipboardCheck, Users, Cable, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const services = [
   {
     icon: Lightbulb,
-    id: 'consulting',
-    title: 'Strategische Prozessberatung',
-    headline: 'Consulting',
+    id: 'beratung',
+    title: 'Technische Unternehmensberatung',
+    headline: 'Beratung',
     description:
-      'Wir analysieren Ihre bestehenden Abläufe bis ins Detail, identifizieren Engpässe und entwickeln maßgeschneiderte Strategien für nachhaltige Effizienzsteigerung — datenbasiert, transparent und zukunftsorientiert.',
+      'Wir analysieren technische Vorhaben unabhängig und herstellerneutral — von der Machbarkeitsstudie über die Variantenbewertung bis zum belastbaren Lastenheft.',
     longDescription:
-      'Unsere Berater bringen jahrelange Erfahrung in der Optimierung von Geschäftsprozessen mit. Wir arbeiten eng mit Ihrem Team zusammen, um tiefgreifende Einblicke in Ihre aktuellen Abläufe zu gewinnen und Verbesserungspotenziale aufzudecken.',
+      'Unsere Berater bringen jahrzehntelange Erfahrung aus Industrie, Telekommunikation und öffentlicher Hand mit. Wir liefern Entscheidungsgrundlagen, die wirtschaftlich und technisch tragen.',
     features: [
-      'Umfassende Prozessanalyse & Mapping',
-      'Identifikation von Engpässen und Ineffizienzen',
-      'Datenbasierte Potenzialermittlung',
-      'Strategische Roadmap-Entwicklung',
-      'Change-Management Begleitung',
-      'ROI-Prognosen und Erfolgsmessung',
+      'Machbarkeitsstudien & Variantenvergleiche',
+      'Technische Konzepte & Lastenhefte',
+      'Wirtschaftlichkeitsbewertung & Business Case',
+      'Risiko- und Schnittstellenanalyse',
+      'Strategische Technologie-Roadmap',
+      'Unabhängige Gutachten & Second Opinions',
     ],
   },
   {
-    icon: Monitor,
-    id: 'digitalisierung',
-    title: 'Von Legacy zu Modern',
-    headline: 'Digitalisierung',
+    icon: ClipboardCheck,
+    id: 'projektmanagement',
+    title: 'Projektmanagement & Controlling',
+    headline: 'Projektsteuerung',
     description:
-      'Transformation Ihrer analogen und veralteten Systeme in eine zukunftsfähige digitale Infrastruktur. Keine halben Sachen — vollständige Modernisierung mit klarem Plan.',
+      'Technische und wirtschaftliche Projektleitung über alle Gewerke hinweg — planbar in Termin, Budget und Qualität.',
     longDescription:
-      'Die digitale Transformation ist mehr als nur neue Software. Wir begleiten Sie bei der kompletten Modernisierung Ihrer IT-Landschaft — von der Strategie über die Migration bis zum laufenden Betrieb.',
+      'Wir übernehmen die Steuerung komplexer Technik-Projekte von der Initiierung bis zur Abnahme. Mit klarem Reporting, sauberer Dokumentation und belastbarer Kosten- und Terminkontrolle.',
     features: [
-      'Legacy-System-Migration',
-      'Cloud-Transformation & Infrastruktur',
-      'Digitale Workflow-Implementierung',
-      'Datenbank-Modernisierung',
-      'API-First Architektur',
-      'Schulung und Onboarding',
+      'Projektleitung & Projektsteuerung (PMI / IPMA)',
+      'Termin-, Kosten- und Qualitätscontrolling',
+      'Ausschreibung & Vergabe (auch VOB/VOL)',
+      'Bauüberwachung & Abnahme',
+      'Stakeholder- & Lenkungskreis-Reporting',
+      'Claim- und Nachtragsmanagement',
     ],
   },
   {
-    icon: Code2,
-    id: 'software',
-    title: 'Maßgeschneiderte Lösungen',
-    headline: 'Software-Entwicklung',
+    icon: Users,
+    id: 'personalberatung',
+    title: 'Personalberatung',
+    headline: 'Personal',
     description:
-      'Individuelle Softwarelösungen, die exakt auf Ihre Geschäftsprozesse zugeschnitten sind — von Konzept bis Deployment, mit erstklassiger UX und modernster Technologie.',
+      'Fach- und Führungskräfte für Technik, Projektmanagement und Vertrieb — passgenau besetzt, diskret begleitet.',
     longDescription:
-      'Ob Web-Applikation, interne Tools oder komplexe Plattformen — wir entwickeln Software, die perfekt zu Ihren Anforderungen passt und mit Ihrem Unternehmen wächst.',
+      'Wir kennen die Branche und die Profile. Unsere Personalberatung verbindet technisches Verständnis mit langjährigem Netzwerk in Telekommunikation, Elektrotechnik und Anlagenbau.',
     features: [
-      'Full-Stack Web-Applikationen',
-      'API-Design & Entwicklung',
-      'Dashboards & Analytics-Plattformen',
-      'Responsive Design & Mobile-First',
-      'CI/CD & DevOps-Integration',
-      'Langfristige Wartung & Support',
+      'Direktansprache von Fach- und Führungskräften',
+      'Besetzung von Projekt- und Bauleitungen',
+      'Recruiting für Vertrieb & Technik',
+      'Sonstige Akquisitionsdienstleistungen',
+      'Diskretion & Branchen-Netzwerk',
+      'Garantie- und Nachbesetzungsklauseln',
     ],
   },
   {
-    icon: Cog,
-    id: 'optimierung',
-    title: 'Systematische Verbesserung',
-    headline: 'Prozessoptimierung',
+    icon: Cable,
+    id: 'anlagenplanung',
+    title: 'Elektro- & Fernmeldetechnik',
+    headline: 'Anlagenplanung',
     description:
-      'Datengestützte Analyse und Optimierung Ihrer Workflows für messbare Ergebnisse und weniger Verschwendung — kontinuierlich und nachhaltig.',
+      'Planung und Vertrieb elektrotechnischer und fernmeldetechnischer Anlagen aller Art — von der Vorplanung bis zur Inbetriebnahme.',
     longDescription:
-      'Wir verbinden Lean-Methoden mit moderner Technologie, um Ihre Prozesse systematisch zu verbessern. Durch kontinuierliches Monitoring und KPI-Tracking stellen wir sicher, dass Verbesserungen nachhaltig wirken.',
+      'Wir planen Anlagen nach geltenden Normen und gängiger HOAI-Logik. Vom Konzept über Leistungsverzeichnis und Vergabe bis zur Bauüberwachung und Übergabe an den Betreiber.',
     features: [
-      'Workflow-Automation',
-      'KPI-Definition & Tracking',
-      'Lean Management Methoden',
-      'Kontinuierliche Verbesserungsprozesse',
-      'Performance-Monitoring',
-      'Ressourcenoptimierung',
+      'Vorplanung & Entwurfsplanung',
+      'Ausführungs- & Detailplanung',
+      'Fernmelde-, Daten- und Sicherheitstechnik',
+      'Elektrotechnische Anlagen (Stark- & Schwachstrom)',
+      'Bauüberwachung & Inbetriebnahme',
+      'Vertrieb & Lieferung passender Komponenten',
     ],
   },
 ];
@@ -97,11 +97,10 @@ const Leistungen = () => {
 
   return (
     <>
-
       <PageHero
         title="Unsere"
         highlight="Leistungen"
-        subtitle="Vier Säulen für maximale Effizienz — von strategischer Beratung bis zur technischen Umsetzung."
+        subtitle="Vier Säulen: Technische Beratung, Projektmanagement, Personalberatung und Anlagenplanung — aus einer Hand."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Leistungen' },

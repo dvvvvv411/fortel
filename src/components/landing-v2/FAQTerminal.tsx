@@ -3,12 +3,12 @@ import { Plus } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const faqs = [
-  { q: 'Wie lange dauert ein typisches Projekt?', a: 'Kleinere Tools: 6 – 10 Wochen. Größere Plattformen: 3 – 6 Monate. Wir liefern alle zwei Wochen einen funktionierenden Stand — nicht erst am Ende.' },
-  { q: 'Arbeiten Sie auch mit Bestandssoftware?', a: 'Ja. Integration mit ERP (SAP, Sage, DATEV), CRM (Salesforce, HubSpot) und Legacy-Systemen ist Standardgeschäft für uns. APIs, Webhooks oder direkter DB-Sync — wir wählen den saubersten Weg.' },
-  { q: 'Was kostet das?', a: 'Festpreis pro Phase, transparent kalkuliert. Discovery ab €4.900. Build-Sprints typisch zwischen €18.000 und €45.000 pro Monat — abhängig von Teamgröße und Scope.' },
-  { q: 'Wem gehört der Code am Ende?', a: 'Ihnen. Vollständig. Inklusive Repository-Zugang ab Tag 1, Dokumentation und Übergabe. Keine Vendor-Lock-Ins, keine versteckten Lizenzgebühren.' },
-  { q: 'Was passiert nach dem Launch?', a: 'Optional: Wartungsvertrag mit SLA, Weiterentwicklung im Sprint-Modus, oder vollständige Übergabe an Ihr Team. Ihre Entscheidung.' },
-  { q: 'Wo sitzen Sie und wer arbeitet am Projekt?', a: 'Filderstadt bei Stuttgart. Festes Inhouse-Team, kein Outsourcing. Sie haben direkten Draht zu Entwicklern, Architekten und Geschäftsführung.' },
+  { q: 'Welche Leistungen erbringt for.tel Solutions konkret?', a: 'Technische Unternehmensberatung, technische und wirtschaftliche Projektberatung, Projektcontrolling, Projektmanagement, Personalberatung sowie die Planung und der Vertrieb elektrotechnischer und fernmeldetechnischer Anlagen aller Art.' },
+  { q: 'Wie lange dauert ein typisches Projekt?', a: 'Beratungsmandate und Studien: 4 – 10 Wochen. Projektsteuerung über Bauphasen hinweg: 6 – 24 Monate. Anlagenplanungen je nach Leistungsphase nach HOAI-Logik.' },
+  { q: 'Sind Sie herstellerneutral?', a: 'Ja. Wir erhalten keine Provisionen von Herstellern oder Lieferanten. Unsere Empfehlungen basieren ausschließlich auf den Anforderungen unserer Auftraggeber.' },
+  { q: 'Wie kalkulieren Sie Ihr Honorar?', a: 'Beratung typischerweise auf Tagessatz- oder Festpreisbasis. Planungsleistungen orientieren sich an der HOAI. Personalberatung erfolgsabhängig oder im Retainer.' },
+  { q: 'Übernehmen Sie auch Ausschreibungen und Bauüberwachung?', a: 'Ja. Wir erstellen Leistungsverzeichnisse, begleiten Vergabeverfahren (auch öffentlich nach VOB/VOL) und übernehmen die Bauüberwachung bis zur Abnahme.' },
+  { q: 'Wo sitzen Sie und wer arbeitet am Projekt?', a: 'Filderstadt bei Stuttgart. Festes Team aus Beratern, Projektleitern und Planern. Sie haben direkten Draht zur Geschäftsführung.' },
 ];
 
 const FAQTerminal = () => {

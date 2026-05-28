@@ -22,7 +22,7 @@ const Karriere = () => {
       <PageHero
         title="Karriere bei"
         highlight="for.tel Solutions"
-        subtitle="Werde Teil unseres Teams und gestalte die digitale Zukunft von Unternehmen. Wir suchen Talente, die mit uns wachsen wollen."
+        subtitle="Werde Teil unseres Teams in Beratung, Projektmanagement oder Anlagenplanung. Wir suchen Talente, die technische Projekte voranbringen wollen."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Karriere' },

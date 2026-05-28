@@ -19,62 +19,62 @@ import sebastianRichter from '@/assets/team/sebastian-richter.jpg';
 const teamMembers = [
   {
     name: 'Ulrich Papst',
-    role: 'Geschäftsführer / CEO',
-    description: 'Visionär mit über 20 Jahren Erfahrung in der digitalen Transformation und strategischen Unternehmensführung.',
+    role: 'Geschäftsführer',
+    description: 'Über 30 Jahre Erfahrung in technischer Beratung, Projektleitung und Anlagenplanung.',
     image: thomasWeber,
   },
   {
     name: 'Thomas Papst',
-    role: 'Geschäftsführer / CEO',
-    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und treibt Innovation und Wachstum voran.',
+    role: 'Geschäftsführer',
+    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und verantwortet Beratung und Vertrieb.',
     image: danielKrause,
   },
   {
     name: 'Laura Schneider',
-    role: 'Head of Software Engineering',
-    description: 'Leitet unser Entwicklungsteam mit Leidenschaft für Clean Code und skalierbare Architekturen.',
+    role: 'Leitung Projektmanagement',
+    description: 'Steuert komplexe Technik-Projekte über alle Gewerke hinweg — von Vergabe bis Abnahme.',
     image: lauraSchneider,
   },
   {
     name: 'Michael Fischer',
-    role: 'Projektleiter',
-    description: 'Steuert komplexe Kundenprojekte von der Konzeption bis zum erfolgreichen Go-Live.',
+    role: 'Senior Projektleiter',
+    description: 'Verantwortet Großprojekte in Telekommunikation und Energieversorgung.',
     image: michaelFischer,
   },
   {
     name: 'Julia Wagner',
-    role: 'Business Consultant',
-    description: 'Verbindet betriebswirtschaftliches Know-how mit technologischem Verständnis für optimale Beratungsergebnisse.',
+    role: 'Senior Consultant',
+    description: 'Verbindet wirtschaftliches Know-how mit technischem Verständnis für belastbare Entscheidungen.',
     image: juliaWagner,
   },
   {
     name: 'Anna Hoffmann',
-    role: 'UX/UI Designerin',
-    description: 'Gestaltet intuitive Benutzeroberflächen, die Nutzerbedürfnisse in den Mittelpunkt stellen.',
+    role: 'Planerin Fernmeldetechnik',
+    description: 'Plant Daten-, Telefon- und Sicherheitstechnik bis zur Ausführungsplanung.',
     image: annaHoffmann,
   },
   {
     name: 'Markus Bauer',
-    role: 'Data Analyst',
-    description: 'Verwandelt komplexe Datensätze in klare Insights und messbare Handlungsempfehlungen.',
+    role: 'Projektcontroller',
+    description: 'Verantwortet Termin-, Kosten- und Qualitätscontrolling in laufenden Mandaten.',
     image: markusBauer,
   },
   {
     name: 'Sarah Meier',
-    role: 'HR Managerin',
-    description: 'Sorgt für ein starkes Team und eine Unternehmenskultur, in der Talente wachsen können.',
+    role: 'Leitung Personalberatung',
+    description: 'Besetzt Fach- und Führungspositionen in Technik und Vertrieb — diskret und passgenau.',
     image: sarahMeier,
   },
   {
     name: 'Jonas Hartmann',
     role: 'Recruiter',
-    description: 'Findet die besten Köpfe der Branche und begleitet sie auf ihrem Weg zu for.tel Solutions.',
+    description: 'Identifiziert Kandidaten in Telekommunikation, Elektrotechnik und Anlagenbau.',
     image: jonasHartmann,
   },
   {
     name: 'Sebastian Richter',
-    role: 'DevOps Engineer',
-    description: 'Automatisiert Deployments und sorgt für reibungslose CI/CD-Pipelines und stabile Systeme.',
+    role: 'Planer Elektrotechnik',
+    description: 'Plant Stark- und Schwachstromanlagen nach DIN VDE und einschlägigen Normen.',
     image: sebastianRichter,
   },
 ];
@@ -97,12 +97,13 @@ const Team = () => {
       <PageHero
         title="Unser"
         highlight="Team"
-        subtitle="Die Menschen hinter for.tel Solutions — Expert:innen mit Leidenschaft für digitale Exzellenz."
+        subtitle="Die Menschen hinter for.tel Solutions — Berater, Projektleiter und Planer mit Branchenerfahrung."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Team' },
         ]}
       />
+
 
       <section ref={ref} className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">

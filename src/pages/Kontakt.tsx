@@ -64,7 +64,7 @@ const Kontakt = () => {
       <PageHero
         title="Kontaktieren"
         highlight="Sie uns"
-        subtitle="Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen voranbringen können. Wir freuen uns auf Ihre Nachricht."
+        subtitle="Beratung, Projektsteuerung, Personal oder Anlagenplanung — sprechen Sie uns an. Wir melden uns innerhalb von 24 Stunden zurück."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Kontakt' },

@@ -4,10 +4,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import aboutImage from '@/assets/landing/about-building.jpg';
 
 const points = [
-  'Inhouse-Team in Filderstadt — kein Outsourcing',
-  '20 Jahre Erfahrung, 150+ Projekte ausgeliefert',
-  'Direkter Draht zu Entwicklern & Geschäftsführung',
-  'Festpreise pro Phase, transparent kalkuliert',
+  'Unabhängiges Beratungshaus in Filderstadt — herstellerneutral',
+  '18+ Jahre Erfahrung, 150+ Technik-Projekte begleitet',
+  'Direkter Draht zu Beratern, Projektleitung & Geschäftsführung',
+  'Klare Honorarmodelle, transparent kalkuliert',
 ];
 
 const AboutSnapshot = () => {
@@ -21,8 +21,9 @@ const AboutSnapshot = () => {
             Inhabergeführt. Seit 2006. Standort Deutschland.
           </h2>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-            for.tel Solutions ist eine inhabergeführte Software- & Beratungs­agentur aus der Region Stuttgart.
-            Wir arbeiten mit Mittelstand und Konzern — bodenständig, langfristig, ohne Buzzwords.
+            for.tel Solutions ist ein inhabergeführtes Beratungshaus aus der Region Stuttgart.
+            Wir beraten technisch und wirtschaftlich, übernehmen Projektsteuerung, vermitteln Fachpersonal
+            und planen elektro- und fernmeldetechnische Anlagen — bodenständig und herstellerneutral.
           </p>
 
           <ul className="mt-8 space-y-3">

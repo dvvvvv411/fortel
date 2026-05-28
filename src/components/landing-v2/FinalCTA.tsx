@@ -14,11 +14,12 @@ const FinalCTA = () => {
           <div className="lg:col-span-8">
             <p className="text-xs uppercase tracking-[0.25em] text-primary-glow mb-5 font-semibold">Erstgespräch</p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
-              Sprechen Sie mit uns über Ihr nächstes Projekt.
+              Sprechen Sie mit uns über Ihr nächstes Technik-Projekt.
             </h2>
             <p className="mt-5 max-w-xl text-base sm:text-lg text-background/75 leading-relaxed">
               30 Minuten, unverbindlich. Wir hören zu, stellen die richtigen Fragen und
-              sagen Ihnen ehrlich, ob und wie wir der passende Partner sind.
+              sagen Ihnen ehrlich, ob und wie wir als Berater, Projektsteuerer oder Planer
+              der passende Partner sind.
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-3">
