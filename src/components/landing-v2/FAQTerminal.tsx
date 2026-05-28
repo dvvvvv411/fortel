@@ -18,34 +18,34 @@ const FAQTerminal = () => {
   return (
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className={`mb-14 text-center scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// faq</div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Häufig gestellte <span className="gradient-text-violet">Fragen</span>.
+        <div className={`mb-12 text-center scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Häufige Fragen</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
+            Antworten auf das, was Kunden vor dem ersten Gespräch fragen.
           </h2>
         </div>
 
 
-        <div className={`bento-card p-2 sm:p-4 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+        <div className={`rounded-lg border border-border bg-card p-2 sm:p-4 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
               <button
                 key={i}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full text-left p-5 sm:p-6 rounded-2xl hover:bg-muted/40 transition-colors border-b border-border last:border-0"
+                className="w-full text-left p-5 sm:p-6 rounded-md hover:bg-muted/40 transition-colors border-b border-border last:border-0"
               >
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex items-start gap-4">
-                    <span className="font-mono text-xs text-primary mt-1.5">Q{String(i + 1).padStart(2, '0')}</span>
-                    <h3 className="font-display text-lg sm:text-xl font-semibold leading-snug">{f.q}</h3>
+                    <span className="text-xs text-primary mt-1.5 font-semibold">{String(i + 1).padStart(2, '0')}</span>
+                    <h3 className="font-display text-base sm:text-lg font-semibold leading-snug">{f.q}</h3>
                   </div>
-                  <span className={`shrink-0 w-9 h-9 rounded-full border border-border flex items-center justify-center transition-transform ${isOpen ? 'rotate-45 bg-primary text-primary-foreground border-primary' : ''}`}>
-                    <Plus size={16} />
+                  <span className={`shrink-0 w-8 h-8 rounded-md border border-border flex items-center justify-center transition-transform ${isOpen ? 'rotate-45 bg-primary text-primary-foreground border-primary' : ''}`}>
+                    <Plus size={15} />
                   </span>
                 </div>
                 <div className={`grid transition-all duration-300 ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
-                  <div className="overflow-hidden pl-10">
+                  <div className="overflow-hidden pl-8">
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{f.a}</p>
                   </div>
                 </div>
