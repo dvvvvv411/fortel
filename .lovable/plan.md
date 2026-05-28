@@ -1,56 +1,65 @@
-# Neues Header-/Navbar-Design + Stockfotos auf der Landingpage
+# Seriöser Corporate-Auftritt für die Landingpage
 
-## 1. Navbar — komplett neuer Look
+Ziel: Weg vom verspielten "Startup/Gen-Z"-Look, hin zum Auftritt eines etablierten Mittelstands-Dienstleisters (Referenzen: Bechtle, MHP, adesso, Capgemini, msg) — ohne die Marke (Electric Violet) zu verlieren.
 
-Weg von der zentrierten Pille, hin zu einer **klaren, breiten Top-Bar mit "Split Layout"**:
+## 1. Tonalität & Sprache
 
-- **Logo links** (freistehend, ohne Pille)
-- **Mitte:** dünne horizontale Linie / Trenner, Navigation als minimale Text-Links mit Hover-Underline statt Pille
-- **Rechts:** Telefon-Nummer als sekundärer Hinweis + primärer "Projekt starten"-Button (rechteckig, mit Pfeil-Icon)
-- **Scroll-Verhalten:** Bei Scroll schrumpft die Bar (Padding ↓) und bekommt ein dezentes `backdrop-blur` mit feiner Bottom-Border — statt einer Pille
-- **Top-Announcement-Bar** (1 dünne Zeile ganz oben, dunkel): "Neue Slots für Q1 2026 verfügbar →" — gibt sofort Tech/Premium-Vibe
-- **Mobile:** weiterhin Hamburger + Sidebar, aber Sidebar bekommt jetzt eine kleine Kontakt-Sektion (Telefon, E-Mail, Adresse) unten
+- Headline neu, sachlicher: statt "Software, die Prozesse denkt." → z. B. **"Software-Entwicklung und IT-Beratung für den deutschen Mittelstand."**
+- Subline mit klarer Leistungsaussage statt Wortspiel ("ohne Buzzword-Bingo" raus).
+- Mono-Tags wie `// über uns`, `v2026.1`, `est. 2006 · filderstadt` mit `Sparkles`-Icon entfernen — wirken nach Indie-Dev-Portfolio.
+- Sektion-Eyebrows in normaler Schrift, Uppercase-Tracking, ohne `//`.
 
-## 2. Stockfotos in der Landingpage
+## 2. Visuelles Sounding
 
-Bilder werden mit `imagegen` generiert (Stockfoto-Stil, passend zur Electric-Violet-Brand) und in `src/assets/landing/` abgelegt. Keine externen Stock-URLs (Datenschutz/Lizenz-sauber).
+- **Marquee/Ticker im Hero raus** — typisches Startup-Element.
+- **Animierte Orbs / Blur-Glow im Hero stark reduzieren** (max. 1 dezenter Verlauf, kein Pulsieren).
+- **Grid-Pattern dezenter** (Opacity runter).
+- **Pulsierende Live-Dots** ("live · 150+ projekte", Q1-Slots-Ping) entfernen.
+- Border-Radius global etwas reduzieren (2rem → 1rem / 0.75rem) für seriöseren, weniger "soft" Eindruck.
+- Gradient-Text auf Headline nur sehr dezent oder durch normale Akzentfarbe ersetzen.
 
-**Geplante Bildplatzierungen:**
+## 3. Vertrauenselemente ergänzen (das Wichtigste)
 
-### a) Hero — neuer "Visual Beweis"-Streifen
-Direkt unter den CTAs ein **breites Hero-Bild** (16:9, leicht abgerundet, mit dezentem Glow-Border):
-- Motiv: modernes Team in einem hellen, minimalistischen Office in Stuttgart — Laptops, Whiteboards, violette Akzente in der Lichtstimmung
-- Ersetzt den weißen Raum zwischen Hero-Text und Marquee
+- **Logo-Wall / Kundenleiste** direkt unter dem Hero: 6–8 Graustufen-Kundenlogos (oder Branchen-Badges falls NDA), Headline "Vertrauen von Mittelstand & Konzern".
+- **Kennzahlen-Bar** sachlich: "20 Jahre · 150+ Projekte · 100% inhouse · Standort Deutschland".
+- **Zertifikate/Standards-Strip**: ISO 27001-ready, DSGVO, Made in Germany, Hosting in DE — als kleine Badges.
+- Testimonials mit **Klartext-Namen, Position, Firma** (falls vorhanden) statt nur Initialen-Kreisen.
 
-### b) Features (`BentoFeatures.tsx`) — Bild-Karte als Akzent
-Statt 6 reine Text-Karten: **eine 7. Karte** (oder die größte) ist eine **Bild-Karte** mit kurzer Bildunterschrift:
-- Motiv: Nahaufnahme Code/Screen mit violetten Highlights — "Made in Filderstadt"
-- Bricht den Raster-Rhythmus auf, wirkt premium
+## 4. Navbar
 
-### c) Process Flow — Hintergrund-Bild als Atmosphäre
-Aktuell rein dunkle Sektion. Neu: **dunkles, leicht abgeblendetes Foto im Hintergrund** (Office-bei-Nacht oder Server-Room mit violettem Light-Leak), darüber die 4 Phasen-Karten mit Glas-Effekt. Macht die dunkle Sektion lebendiger.
+- Announcement-Bar "Neue Slots für Q1 2026" entfernen (wirkt nach Freelancer/Booking-Tool).
+- Stattdessen Top-Bar mit: Telefon · E-Mail · Standort links, Sprachschalter/„Kundenportal"-Hinweis rechts (rein optisch, nicht funktional).
+- Haupt-CTA Button-Style etwas reduzierter (kleinerer Radius, weniger Shadow-Glow).
 
-### d) Voices/Testimonials — kleine Portrait-Bilder
-Pro Testimonial-Karte ein **anonymes, stilisiertes Portrait** oben links (40x40 rund, leicht verschwommen oder als Silhouette, Stockfoto-Stil) — verleiht den Stimmen Gesichter ohne echte Identifikation.
+## 5. Komponenten konkret
 
-### e) Neue Sektion: "About Snapshot" (zwischen Impact und Voices)
-Klassisches **2-Spalten-Layout**: links Text ("Wer wir sind, seit 2006 in Filderstadt"), rechts ein **Bild der Firma/des Standorts** (modernes Bürogebäude oder Team-Atmosphäre). Bringt menschliches Element rein, das aktuell komplett fehlt.
+- `HeroBento.tsx`: Status-Pille entschärft, neue Headline, Orbs/Marquee raus, Live-Chip raus, Stat-Chip seriöser ("Seit 2006 · Filderstadt").
+- `Navbar.tsx`: Announcement-Bar → klassische Kontakt-Top-Bar.
+- **Neu** `TrustLogos.tsx`: Kundenlogo-Wall (Platzhalter-SVG-Logos in Graustufe).
+- **Neu** `CertificationsBar.tsx`: Standards/Badges-Strip.
+- `BentoFeatures.tsx`: Mono-Eyebrows raus, Bildkarte „Made in Filderstadt" Wording prüfen.
+- `ProcessFlow.tsx`: Glas-Karten beibehalten, aber Eyebrow & Mono-Texte säubern.
+- `VoicesSection.tsx`: Optional Klarnamen + Firma einsetzen (Frage unten).
+- `AboutSnapshot.tsx`: Eyebrow `// über uns` → "Über uns"; Headline-Wording ggf. weniger flapsig ("Ein Team, kein Hype." → "Inhabergeführt. Standort Deutschland.").
+- `FAQTerminal.tsx`: Terminal-Reste prüfen, falls noch vorhanden weiter entschärfen.
+- `index.css`: Border-Radius-Tokens und Glow-Shadow leicht reduzieren.
 
-## 3. Technisches
+## 6. Reihenfolge der Sektionen (neu)
 
-- **Bildgenerierung:** 5 Bilder via `imagegen` (Hero, Feature-Karte, Process-Background, 3× Portraits als ein Strip, About-Foto). Stil: heller, moderner Stockfoto-Look, dezente violette Lichtakzente.
-- **Bildschutz:** wie überall — `onContextMenu` & `draggable={false}` (gemäß Memory).
-- **Performance:** `loading="lazy"` für alle Bilder außer Hero-Bild (`eager` + `fetchPriority="high"`).
-- **Dateien:**
-  - Edit: `src/components/landing/Navbar.tsx` (komplett neu)
-  - Edit: `src/components/landing-v2/HeroBento.tsx` (Bild ergänzen)
-  - Edit: `src/components/landing-v2/BentoFeatures.tsx` (Bild-Karte)
-  - Edit: `src/components/landing-v2/ProcessFlow.tsx` (Background-Bild)
-  - Edit: `src/components/landing-v2/VoicesSection.tsx` (Portraits)
-  - Neu: `src/components/landing-v2/AboutSnapshot.tsx`
-  - Edit: `src/pages/Index.tsx` (AboutSnapshot einbinden)
-  - Neu: `src/assets/landing/*.jpg`
+1. Hero (clean)
+2. **TrustLogos** (Kundenwall)
+3. BentoFeatures (Leistungen)
+4. ProcessFlow
+5. ImpactGrid (Zahlen, sachlich)
+6. **CertificationsBar**
+7. AboutSnapshot
+8. VoicesSection
+9. FAQ
+10. FinalCTA
+11. Footer
 
-## Offene Frage zur Bildrichtung
+## Offene Fragen
 
-Ich schlage einen **hellen, modernen Tech-Office-Stil** vor (viel Tageslicht, minimalistische Räume, gelegentliche violette Akzente — wie Pinterest/Linear/Vercel-Marketing). Falls du lieber etwas anderes willst (z. B. abstrakter/grafischer, oder klassischer Business-Look mit Anzügen-und-Handshakes, oder eher industriell/maschinenbau-nah passend zu eurer Zielgruppe), gib mir bitte eine Richtung — sonst gehe ich mit "heller Tech-Office".
+1. **Kundenlogos**: Darf ich Platzhalter-Logos (anonyme Branchenkürzel wie „Automotive AG", „MedTech GmbH") nehmen, oder hast du echte Logos/Kundennamen, die ich verwenden darf?
+2. **Testimonials**: Sollen Klarnamen + Firmen eingesetzt werden? Falls ja, bitte Liste — sonst bleibe ich bei anonymisierten Stimmen mit Rolle/Branche.
+3. **Headline-Richtung**: Eher (a) „Software-Entwicklung und IT-Beratung für den Mittelstand." (sachlich), oder (b) „Digitale Lösungen für nachhaltigen Geschäftserfolg." (klassisch Konzern), oder (c) eigener Vorschlag?
