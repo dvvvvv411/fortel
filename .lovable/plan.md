@@ -1,65 +1,29 @@
-# Seriöser Corporate-Auftritt für die Landingpage
+# Hero neu: Split-Layout mit UI-Mockup
 
-Ziel: Weg vom verspielten "Startup/Gen-Z"-Look, hin zum Auftritt eines etablierten Mittelstands-Dienstleisters (Referenzen: Bechtle, MHP, adesso, Capgemini, msg) — ohne die Marke (Electric Violet) zu verlieren.
+Setze die gewählte Richtung in `src/components/landing-v2/HeroBento.tsx` um.
 
-## 1. Tonalität & Sprache
+## Änderungen
 
-- Headline neu, sachlicher: statt "Software, die Prozesse denkt." → z. B. **"Software-Entwicklung und IT-Beratung für den deutschen Mittelstand."**
-- Subline mit klarer Leistungsaussage statt Wortspiel ("ohne Buzzword-Bingo" raus).
-- Mono-Tags wie `// über uns`, `v2026.1`, `est. 2006 · filderstadt` mit `Sparkles`-Icon entfernen — wirken nach Indie-Dev-Portfolio.
-- Sektion-Eyebrows in normaler Schrift, Uppercase-Tracking, ohne `//`.
+**`src/components/landing-v2/HeroBento.tsx`** komplett neu:
+- 12-Spalten-Grid: links (col-span-7) Text + CTAs + Stats, rechts (col-span-5) Mockup-Karte
+- Stock-Foto (`hero-office.jpg`) entfällt → wird abstrakte "Code/UI"-Karte
+- Pille oben: `bg-primary/10 text-primary` mit Punkt, Text „Inhabergeführt · seit 2006 · Filderstadt"
+- Headline zweizeilig: „Software-Entwicklung" / „für den Mittelstand." (zweite Zeile mit Verlauf `from-primary to-primary-glow`)
+- Subline mit hervorgehobenem Schluss „Verlässlich. Wartbar. Dokumentiert." (Underline in `decoration-primary/40`)
+- Buttons: Primary „Projekt anfragen" → `/kontakt`, Outline „Unsere Leistungen" → `/leistungen`
+- Stats-Reihe unten mit Trenner-Linien: **18+ Jahre**, **Stuttgart**, **150+ Projekte**
+- Rechts: weiße Mockup-Karte (Window-Dots + Skeleton-Zeilen + 3-Spalten-Tile-Grid) mit violettem Soft-Glow, dazu rotierte Status-Plakette „Systeme optimiert"
 
-## 2. Visuelles Sounding
+## Tokens / Stil
 
-- **Marquee/Ticker im Hero raus** — typisches Startup-Element.
-- **Animierte Orbs / Blur-Glow im Hero stark reduzieren** (max. 1 dezenter Verlauf, kein Pulsieren).
-- **Grid-Pattern dezenter** (Opacity runter).
-- **Pulsierende Live-Dots** ("live · 150+ projekte", Q1-Slots-Ping) entfernen.
-- Border-Radius global etwas reduzieren (2rem → 1rem / 0.75rem) für seriöseren, weniger "soft" Eindruck.
-- Gradient-Text auf Headline nur sehr dezent oder durch normale Akzentfarbe ersetzen.
+- Nur Design-Tokens: `bg-muted`, `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-primary`, `text-primary`, `primary-glow`
+- Font: bestehendes `font-display` (Space Grotesk) für die Headline — Sora wird nicht zusätzlich geladen
+- Animation: bestehende `hero-animate hero-animate-{1..5}` Klassen, kein Framer Motion
+- Pulse-Dot entfällt (entspricht Memory: "no pulsing live dots")
 
-## 3. Vertrauenselemente ergänzen (das Wichtigste)
+## Kein Cleanup nötig
 
-- **Logo-Wall / Kundenleiste** direkt unter dem Hero: 6–8 Graustufen-Kundenlogos (oder Branchen-Badges falls NDA), Headline "Vertrauen von Mittelstand & Konzern".
-- **Kennzahlen-Bar** sachlich: "20 Jahre · 150+ Projekte · 100% inhouse · Standort Deutschland".
-- **Zertifikate/Standards-Strip**: ISO 27001-ready, DSGVO, Made in Germany, Hosting in DE — als kleine Badges.
-- Testimonials mit **Klartext-Namen, Position, Firma** (falls vorhanden) statt nur Initialen-Kreisen.
+- `hero-office.jpg` bleibt im Repo (kann später woanders verwendet werden)
+- Alle anderen Sektionen unverändert
 
-## 4. Navbar
-
-- Announcement-Bar "Neue Slots für Q1 2026" entfernen (wirkt nach Freelancer/Booking-Tool).
-- Stattdessen Top-Bar mit: Telefon · E-Mail · Standort links, Sprachschalter/„Kundenportal"-Hinweis rechts (rein optisch, nicht funktional).
-- Haupt-CTA Button-Style etwas reduzierter (kleinerer Radius, weniger Shadow-Glow).
-
-## 5. Komponenten konkret
-
-- `HeroBento.tsx`: Status-Pille entschärft, neue Headline, Orbs/Marquee raus, Live-Chip raus, Stat-Chip seriöser ("Seit 2006 · Filderstadt").
-- `Navbar.tsx`: Announcement-Bar → klassische Kontakt-Top-Bar.
-- **Neu** `TrustLogos.tsx`: Kundenlogo-Wall (Platzhalter-SVG-Logos in Graustufe).
-- **Neu** `CertificationsBar.tsx`: Standards/Badges-Strip.
-- `BentoFeatures.tsx`: Mono-Eyebrows raus, Bildkarte „Made in Filderstadt" Wording prüfen.
-- `ProcessFlow.tsx`: Glas-Karten beibehalten, aber Eyebrow & Mono-Texte säubern.
-- `VoicesSection.tsx`: Optional Klarnamen + Firma einsetzen (Frage unten).
-- `AboutSnapshot.tsx`: Eyebrow `// über uns` → "Über uns"; Headline-Wording ggf. weniger flapsig ("Ein Team, kein Hype." → "Inhabergeführt. Standort Deutschland.").
-- `FAQTerminal.tsx`: Terminal-Reste prüfen, falls noch vorhanden weiter entschärfen.
-- `index.css`: Border-Radius-Tokens und Glow-Shadow leicht reduzieren.
-
-## 6. Reihenfolge der Sektionen (neu)
-
-1. Hero (clean)
-2. **TrustLogos** (Kundenwall)
-3. BentoFeatures (Leistungen)
-4. ProcessFlow
-5. ImpactGrid (Zahlen, sachlich)
-6. **CertificationsBar**
-7. AboutSnapshot
-8. VoicesSection
-9. FAQ
-10. FinalCTA
-11. Footer
-
-## Offene Fragen
-
-1. **Kundenlogos**: Darf ich Platzhalter-Logos (anonyme Branchenkürzel wie „Automotive AG", „MedTech GmbH") nehmen, oder hast du echte Logos/Kundennamen, die ich verwenden darf?
-2. **Testimonials**: Sollen Klarnamen + Firmen eingesetzt werden? Falls ja, bitte Liste — sonst bleibe ich bei anonymisierten Stimmen mit Rolle/Branche.
-3. **Headline-Richtung**: Eher (a) „Software-Entwicklung und IT-Beratung für den Mittelstand." (sachlich), oder (b) „Digitale Lösungen für nachhaltigen Geschäftserfolg." (klassisch Konzern), oder (c) eigener Vorschlag?
+Bereit zur Umsetzung — bitte in den Build-Modus wechseln.
