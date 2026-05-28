@@ -5,6 +5,7 @@ const voices = [
   {
     quote: 'In drei Monaten haben wir ein Tool live gehabt, an dem andere ein Jahr planen. Kein Bullshit, einfach Lieferung.',
     name: 'CTO',
+    initials: 'CT',
     role: 'B2B SaaS · 200 Mitarbeitende',
     metric: '−68%',
     metricLabel: 'Bearbeitungszeit',
@@ -12,6 +13,7 @@ const voices = [
   {
     quote: 'Wir hatten Excel-Hölle. Heute läuft alles über eine Plattform — und das Team will sie tatsächlich benutzen.',
     name: 'Geschäftsführerin',
+    initials: 'GF',
     role: 'Logistik · 80 Mitarbeitende',
     metric: '+€340k',
     metricLabel: 'p.a. Einsparung',
@@ -19,6 +21,7 @@ const voices = [
   {
     quote: 'Beratung, die zuhört, baut, misst — und dann wieder zuhört. So muss das funktionieren.',
     name: 'IT-Leiter',
+    initials: 'IT',
     role: 'Maschinenbau · 450 Mitarbeitende',
     metric: '99.98%',
     metricLabel: 'Uptime nach Launch',
@@ -44,7 +47,12 @@ const VoicesSection = () => {
               key={i}
               className={`bento-card p-8 flex flex-col scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
             >
-              <Quote size={24} className="text-primary mb-6" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-display font-bold text-sm shadow-md shadow-primary/30">
+                  {v.initials}
+                </div>
+                <Quote size={20} className="text-primary ml-auto" />
+              </div>
               <p className="text-lg leading-relaxed font-medium">&bdquo;{v.quote}&ldquo;</p>
               <div className="mt-8 pt-6 border-t border-border flex items-end justify-between">
                 <div>

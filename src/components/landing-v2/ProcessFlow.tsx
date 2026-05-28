@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import processBg from '@/assets/landing/process-bg.jpg';
 
 const steps = [
   { n: '01', title: 'Discovery', cmd: 'fortel init', desc: 'Workshop, Ist-Analyse, KPIs. Wir verstehen Ihr Geschäft — nicht nur Ihr Pflichtenheft.', dur: '1 – 2 Wochen' },
@@ -11,8 +12,20 @@ const ProcessFlow = () => {
   const { ref, isVisible } = useScrollAnimation(0.05);
   return (
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6 bg-foreground text-background overflow-hidden">
+      <img
+        src={processBg}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1080}
+        loading="lazy"
+        draggable={false}
+        onContextMenu={(e) => e.preventDefault()}
+        className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/90 via-foreground/85 to-foreground pointer-events-none" />
       {/* grid */}
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
           backgroundImage: 'linear-gradient(hsl(var(--background)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
