@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Building2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Cable, Users, CalendarDays, Lightbulb } from 'lucide-react';
 
 const HeroBento = () => {
   return (
