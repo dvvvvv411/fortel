@@ -12,9 +12,9 @@ const ImpactGrid = () => {
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// proof, not promises</div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Zahlen, die wir <span className="gradient-text-violet">unterschreiben</span>.
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Kennzahlen</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
+            Belastbare Zahlen aus 20 Jahren Projektpraxis.
           </h2>
         </div>
 
@@ -25,17 +25,14 @@ const ImpactGrid = () => {
             { v: c3, suffix: '%', label: 'Ø Effizienzplus', sub: 'gemessen, nicht geschätzt', icon: TrendingDown, prefix: '+' },
             { v: c4, suffix: '', label: 'Jahre Erfahrung', sub: 'seit 2006, ein Team', icon: Clock },
           ].map((s, i) => (
-            <div key={i} className={`bento-card p-6 flex flex-col justify-between scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}>
-              <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                <span>kpi · {String(i + 1).padStart(2, '0')}</span>
-                <s.icon size={14} className="text-primary" />
-              </div>
+            <div key={i} className={`p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex flex-col justify-between scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}>
+              <s.icon size={18} className="text-primary" />
               <div>
-                <div className="font-display text-6xl sm:text-7xl font-bold tabular-nums leading-none">
+                <div className="font-display text-5xl sm:text-6xl font-bold tabular-nums leading-none text-foreground">
                   {s.prefix}{s.v}<span className="text-primary">{s.suffix}</span>
                 </div>
                 <p className="mt-3 text-sm font-semibold">{s.label}</p>
-                <p className="text-xs text-muted-foreground">{s.sub}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{s.sub}</p>
               </div>
             </div>
           ))}

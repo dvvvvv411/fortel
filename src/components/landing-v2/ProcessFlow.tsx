@@ -2,10 +2,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import processBg from '@/assets/landing/process-bg.jpg';
 
 const steps = [
-  { n: '01', title: 'Discovery', cmd: 'fortel init', desc: 'Workshop, Ist-Analyse, KPIs. Wir verstehen Ihr Geschäft — nicht nur Ihr Pflichtenheft.', dur: '1 – 2 Wochen' },
-  { n: '02', title: 'Architecture', cmd: 'fortel design', desc: 'Tech-Stack, Datenmodell, Schnittstellen. Klickbarer Prototyp statt Word-Dokument.', dur: '2 – 3 Wochen' },
-  { n: '03', title: 'Build', cmd: 'fortel ship --iterate', desc: 'Zwei-Wochen-Sprints, jeden Freitag eine Demo. Sie sehen Fortschritt, kein Statusreport.', dur: '8 – 16 Wochen' },
-  { n: '04', title: 'Launch & Care', cmd: 'fortel deploy --prod', desc: 'Go-Live, Schulung, Monitoring. Wir bleiben dran — Wartung & Weiterentwicklung inklusive.', dur: 'fortlaufend' },
+  { n: '01', title: 'Analyse', desc: 'Workshop, Ist-Aufnahme, Zieldefinition. Wir verstehen Geschäftsprozess und Anforderungen vor der ersten Zeile Code.', dur: '1 – 2 Wochen' },
+  { n: '02', title: 'Konzept', desc: 'Architektur, Datenmodell und Schnittstellen. Klickbarer Prototyp und transparente Aufwandsschätzung.', dur: '2 – 3 Wochen' },
+  { n: '03', title: 'Umsetzung', desc: 'Zwei-Wochen-Sprints mit regelmäßigen Demos. Sie sehen messbaren Fortschritt statt reiner Statusberichte.', dur: '8 – 16 Wochen' },
+  { n: '04', title: 'Betrieb', desc: 'Go-Live, Einführung, Monitoring. Wartung, Support und Weiterentwicklung im vereinbarten SLA.', dur: 'fortlaufend' },
 ];
 
 const ProcessFlow = () => {
@@ -34,25 +34,27 @@ const ProcessFlow = () => {
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-y-1/2 rounded-full bg-primary/30 blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className={`max-w-3xl mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary-glow mb-4">// how we work</div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Vier Phasen.<br/>
-            Kein Wasserfall.<br/>
-            <span className="text-background/50">Nur Lieferungen.</span>
+        <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary-glow mb-4 font-semibold">Vorgehen</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
+            Vier Phasen — strukturiert, transparent, planbar.
           </h2>
+          <p className="mt-5 text-base text-background/70 leading-relaxed max-w-2xl">
+            Jede Phase mit klarem Ergebnis, definiertem Aufwand und Festpreis.
+            Keine Überraschungen, keine versteckten Kosten.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className={`relative rounded-3xl border border-background/15 bg-background/[0.04] backdrop-blur p-8 hover:bg-background/[0.08] transition-colors scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
+              className={`relative rounded-lg border border-background/15 bg-background/[0.04] backdrop-blur p-7 hover:bg-background/[0.08] transition-colors scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
             >
-              <div className="font-display text-6xl font-bold text-primary-glow/90 leading-none">{s.n}</div>
-              <h3 className="mt-6 font-display text-2xl font-bold">{s.title}</h3>
+              <div className="font-display text-5xl font-bold text-primary-glow/90 leading-none">{s.n}</div>
+              <h3 className="mt-5 font-display text-xl font-bold">{s.title}</h3>
               <p className="mt-3 text-sm text-background/70 leading-relaxed">{s.desc}</p>
-              <div className="mt-6 pt-5 border-t border-background/10 font-mono text-[11px] uppercase tracking-widest text-background/50">{s.dur}</div>
+              <div className="mt-5 pt-4 border-t border-background/10 text-[11px] uppercase tracking-widest text-background/60 font-semibold">{s.dur}</div>
             </div>
           ))}
         </div>

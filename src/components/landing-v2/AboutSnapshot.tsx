@@ -16,12 +16,11 @@ const AboutSnapshot = () => {
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className={`scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// über uns</div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Seit 2006 in Filderstadt.<br/>
-            <span className="gradient-text-violet">Ein Team, kein Hype.</span>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Über uns</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
+            Inhabergeführt. Seit 2006. Standort Deutschland.
           </h2>
-          <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
             for.tel Solutions ist eine inhabergeführte Software- & Beratungs­agentur aus der Region Stuttgart.
             Wir arbeiten mit Mittelstand und Konzern — bodenständig, langfristig, ohne Buzzwords.
           </p>

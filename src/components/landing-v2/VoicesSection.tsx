@@ -33,34 +33,32 @@ const VoicesSection = () => {
   return (
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className={`max-w-3xl mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// stimmen</div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Was Kunden <span className="gradient-text-violet">wirklich</span> sagen.
+        <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Kundenstimmen</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
+            Was unsere Kunden über die Zusammenarbeit sagen.
           </h2>
-
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl">
+            Anonymisierte Stimmen aus laufenden und abgeschlossenen Projekten.
+            Referenzkontakte gerne auf Anfrage.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {voices.map((v, i) => (
             <div
               key={i}
-              className={`bento-card p-8 flex flex-col scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
+              className={`p-8 flex flex-col rounded-lg border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-primary-foreground font-display font-bold text-sm shadow-md shadow-primary/30">
-                  {v.initials}
-                </div>
-                <Quote size={20} className="text-primary ml-auto" />
-              </div>
-              <p className="text-lg leading-relaxed font-medium">&bdquo;{v.quote}&ldquo;</p>
-              <div className="mt-8 pt-6 border-t border-border flex items-end justify-between">
+              <Quote size={22} className="text-primary mb-5" />
+              <p className="text-base leading-relaxed">&bdquo;{v.quote}&ldquo;</p>
+              <div className="mt-7 pt-5 border-t border-border flex items-end justify-between gap-4">
                 <div>
                   <p className="font-semibold text-sm">{v.name}</p>
-                  <p className="text-xs text-muted-foreground font-mono">{v.role}</p>
+                  <p className="text-xs text-muted-foreground">{v.role}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-display text-2xl font-bold gradient-text-violet">{v.metric}</p>
+                  <p className="font-display text-xl font-bold text-primary">{v.metric}</p>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{v.metricLabel}</p>
                 </div>
               </div>

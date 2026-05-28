@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import HeroBento from '@/components/landing-v2/HeroBento';
+import TrustLogos from '@/components/landing-v2/TrustLogos';
 import BentoFeatures from '@/components/landing-v2/BentoFeatures';
 import ProcessFlow from '@/components/landing-v2/ProcessFlow';
 import ImpactGrid from '@/components/landing-v2/ImpactGrid';
+import CertificationsBar from '@/components/landing-v2/CertificationsBar';
 import AboutSnapshot from '@/components/landing-v2/AboutSnapshot';
 import VoicesSection from '@/components/landing-v2/VoicesSection';
 import FAQTerminal from '@/components/landing-v2/FAQTerminal';
@@ -11,15 +13,17 @@ import Footer from '@/components/landing/Footer';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'for.tel Solutions – Software & Beratung für 2026';
+    document.title = 'for.tel Solutions – Software-Entwicklung & IT-Beratung';
   }, []);
 
   return (
     <>
       <HeroBento />
+      <TrustLogos />
       <BentoFeatures />
       <ProcessFlow />
       <ImpactGrid />
+      <CertificationsBar />
       <AboutSnapshot />
       <VoicesSection />
       <FAQTerminal />
