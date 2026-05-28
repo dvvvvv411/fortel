@@ -1,49 +1,27 @@
 import { useEffect } from 'react';
-import HeroSection from '@/components/landing/HeroSection';
-import TrustBar from '@/components/landing/TrustBar';
-import ProblemSolution from '@/components/landing/ProblemSolution';
-import ServicesGrid from '@/components/landing/ServicesGrid';
-import SoftwareShowcase from '@/components/landing/SoftwareShowcase';
-import Methodology from '@/components/landing/Methodology';
-import Stats from '@/components/landing/Stats';
-import Testimonials from '@/components/landing/Testimonials';
-import FAQ from '@/components/landing/FAQ';
-import CTASection from '@/components/landing/CTASection';
+import HeroBento from '@/components/landing-v2/HeroBento';
+import BentoFeatures from '@/components/landing-v2/BentoFeatures';
+import ProcessFlow from '@/components/landing-v2/ProcessFlow';
+import ImpactGrid from '@/components/landing-v2/ImpactGrid';
+import VoicesSection from '@/components/landing-v2/VoicesSection';
+import FAQTerminal from '@/components/landing-v2/FAQTerminal';
+import FinalCTA from '@/components/landing-v2/FinalCTA';
 import Footer from '@/components/landing/Footer';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'for.tel Solutions – Beratung, Digitalisierung & Software';
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('scroll-visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.scroll-hidden').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    document.title = 'for.tel Solutions – Software & Beratung für 2026';
   }, []);
 
   return (
     <>
-      <HeroSection />
-      <TrustBar />
-      <ProblemSolution />
-      <ServicesGrid />
-      <SoftwareShowcase />
-      <Methodology />
-      <Stats />
-      <Testimonials />
-      <FAQ />
-      <CTASection />
+      <HeroBento />
+      <BentoFeatures />
+      <ProcessFlow />
+      <ImpactGrid />
+      <VoicesSection />
+      <FAQTerminal />
+      <FinalCTA />
       <Footer />
     </>
   );
