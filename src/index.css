@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=Urbanist:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -55,7 +55,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Epilogue', system-ui, -apple-system, sans-serif;
   }
   html {
     scroll-behavior: smooth;
@@ -207,7 +207,7 @@
 
 /* === V2 Landing Utilities === */
 .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-.font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+.font-display { font-family: 'Urbanist', 'Epilogue', sans-serif; }
 
 .grid-pattern {
   background-image:
