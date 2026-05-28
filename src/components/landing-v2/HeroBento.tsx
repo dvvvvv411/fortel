@@ -5,11 +5,14 @@ const HeroBento = () => {
   return (
     <section className="relative w-full flex items-center justify-center bg-muted/40 pt-24 sm:pt-28 pb-24 px-4 sm:px-6 overflow-hidden">
       {/* ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-primary/[0.06] blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-primary/[0.07] blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="relative max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         {/* ─────────── LEFT: copy ─────────── */}
-        <div className="lg:col-span-6 space-y-7">
+        <div className="lg:col-span-6 relative space-y-7">
+          {/* matching aura to balance the right card */}
+          <div className="absolute -inset-6 bg-primary/[0.06] rounded-[2rem] blur-3xl pointer-events-none -z-10" />
+
           <div className="hero-animate hero-animate-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
             <ShieldCheck size={14} />
             Inhabergeführt · seit 2006 · Filderstadt
@@ -18,10 +21,7 @@ const HeroBento = () => {
           <h1 className="hero-animate hero-animate-2 font-display text-[2.5rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold text-foreground tracking-tight leading-[1.05]">
             Software-Entwicklung
             <br />
-            für den{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-glow">
-              Mittelstand.
-            </span>
+            für den <span className="text-primary">Mittelstand.</span>
           </h1>
 
           <p className="hero-animate hero-animate-3 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
@@ -45,14 +45,14 @@ const HeroBento = () => {
             </Link>
           </div>
 
-          <div className="hero-animate hero-animate-5 flex items-center gap-8 pt-5 border-t border-border">
-            <div>
-              <p className="text-xl sm:text-2xl font-bold text-foreground">18+</p>
+          {/* stats card — mirrors the right card style */}
+          <div className="hero-animate hero-animate-5 grid grid-cols-2 gap-3 pt-2">
+            <div className="rounded-xl border border-border bg-background px-4 py-3.5">
+              <p className="text-2xl font-bold text-foreground tabular-nums">18+</p>
               <p className="text-[11px] text-muted-foreground uppercase tracking-wider mt-0.5">Jahre Erfahrung</p>
             </div>
-            <div className="w-px h-9 bg-border" />
-            <div>
-              <p className="text-xl sm:text-2xl font-bold text-foreground">150+</p>
+            <div className="rounded-xl border border-border bg-background px-4 py-3.5">
+              <p className="text-2xl font-bold text-foreground tabular-nums">150+</p>
               <p className="text-[11px] text-muted-foreground uppercase tracking-wider mt-0.5">Projekte</p>
             </div>
           </div>
@@ -60,7 +60,7 @@ const HeroBento = () => {
 
         {/* ─────────── RIGHT: friendly project card ─────────── */}
         <div className="lg:col-span-6 relative">
-          <div className="absolute -inset-6 bg-primary/10 rounded-[2rem] blur-3xl pointer-events-none" />
+          <div className="absolute -inset-6 bg-primary/10 rounded-[2rem] blur-3xl pointer-events-none -z-10" />
 
           <div className="relative bg-background rounded-2xl border border-border shadow-2xl overflow-hidden">
             {/* window chrome + single tab */}
@@ -82,7 +82,7 @@ const HeroBento = () => {
                   <p className="text-[11px] text-muted-foreground uppercase tracking-wider mb-1">Aktuelles Projekt</p>
                   <h3 className="font-display text-xl font-bold text-foreground">Auftragsabwicklung 2.0</h3>
                 </div>
-                <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-semibold border border-primary/20">
+                <span className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-semibold border border-primary/20">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   in Umsetzung
                 </span>
@@ -95,10 +95,7 @@ const HeroBento = () => {
                   <span className="font-semibold text-foreground tabular-nums">68 %</span>
                 </div>
                 <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-primary to-primary-glow"
-                    style={{ width: '68%' }}
-                  />
+                  <div className="h-full rounded-full bg-primary" style={{ width: '68%' }} />
                 </div>
               </div>
 
@@ -149,7 +146,7 @@ const HeroBento = () => {
             </div>
           </div>
 
-          {/* compliance floating card – bottom right, dezenter */}
+          {/* compliance floating card – bottom right */}
           <div className="hidden sm:flex absolute -bottom-4 -right-3 z-20 items-center gap-2.5 bg-background border border-border rounded-lg shadow-lg px-3 py-2">
             <Lock size={14} className="text-primary" />
             <div className="text-left">
