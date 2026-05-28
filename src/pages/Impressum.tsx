@@ -19,41 +19,41 @@ const Impressum = () => {
           <h2 className="text-2xl font-extrabold tracking-tight mb-6">Angaben gemäß § 5 TMG</h2>
 
           <p>
-            Efficient Flow Solutions GmbH<br />
-            Marc-Chagall-Str. 142<br />
-            40477 Düsseldorf
+            for.tel Solutions GmbH<br />
+            Hornbergstr. 35<br />
+            70794 Filderstadt
           </p>
 
           <h3 className="text-lg font-bold mt-8 mb-3">Vertreten durch</h3>
-          <p>Geschäftsführer: Tobias Papst</p>
+          <p>Geschäftsführer: Manfred Beutel</p>
 
           <h3 className="text-lg font-bold mt-8 mb-3">Registereintrag</h3>
           <p>
-            Registergericht: Amtsgericht Düsseldorf<br />
-            Registernummer: HRB 101174
+            Registergericht: Amtsgericht Stuttgart<br />
+            Registernummer: HRB 720843
           </p>
 
           <h3 className="text-lg font-bold mt-8 mb-3">Umsatzsteuer-ID</h3>
           <p>
             Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br />
-            DE321399565
+            DE300637047
           </p>
 
           <h3 className="text-lg font-bold mt-8 mb-3">Kontakt</h3>
           <p>
             E-Mail:{' '}
-            <a href="mailto:info@efficient-flow.com" className="text-primary hover:underline">
-              info@efficient-flow.com
+            <a href="mailto:info@for-tel.de" className="text-primary hover:underline">
+              info@for-tel.de
             </a>
             <br />
             Telefon:{' '}
-            <a href="tel:+4921187971940" className="text-primary hover:underline">
-              0211-87971940
+            <a href="tel:+4971196881540" className="text-primary hover:underline">
+              +49 711 96881540
             </a>
             <br />
             Website:{' '}
-            <a href="https://efficient-flow.solutions" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-              efficient-flow.solutions
+            <a href="https://for-tel.de" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+              for-tel.de
             </a>
           </p>
 

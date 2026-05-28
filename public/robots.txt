@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://efficient-flow.solutions/sitemap.xml
+Sitemap: https://for-tel.de/sitemap.xml

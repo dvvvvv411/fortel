@@ -18,17 +18,17 @@ const Datenschutz = () => {
 
           <h2 className="text-2xl font-extrabold tracking-tight mb-6">1. Verantwortlicher</h2>
           <p>
-            Efficient Flow Solutions GmbH<br />
-            Marc-Chagall-Str. 142<br />
-            40477 Düsseldorf<br />
+            for.tel Solutions GmbH<br />
+            Hornbergstr. 35<br />
+            70794 Filderstadt<br />
             E-Mail:{' '}
-            <a href="mailto:info@efficient-flow.com" className="text-primary hover:underline">
-              info@efficient-flow.com
+            <a href="mailto:info@for-tel.de" className="text-primary hover:underline">
+              info@for-tel.de
             </a>
             <br />
             Telefon:{' '}
-            <a href="tel:+4921187971940" className="text-primary hover:underline">
-              0211-87971940
+            <a href="tel:+4971196881540" className="text-primary hover:underline">
+              +49 711 96881540
             </a>
           </p>
 

@@ -12,19 +12,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'E-Mail',
-    value: 'info@efficient-flow.com',
-    href: 'mailto:info@efficient-flow.com',
+    value: 'info@for-tel.de',
+    href: 'mailto:info@for-tel.de',
   },
   {
     icon: Phone,
     label: 'Telefon',
-    value: '0211-87971940',
-    href: 'tel:+4921187971940',
+    value: '+49 711 96881540',
+    href: 'tel:+4971196881540',
   },
   {
     icon: MapPin,
     label: 'Adresse',
-    value: 'Marc-Chagall-Str. 142, 40477 Düsseldorf',
+    value: 'Hornbergstr. 35, 70794 Filderstadt',
     href: '#',
   },
   {
