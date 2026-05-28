@@ -3,12 +3,12 @@ import { ArrowRight, Building2, ShieldCheck, Cable, Users, CalendarDays, Lightbu
 
 const HeroBento = () => {
   return (
-    <section className="relative w-full flex items-start justify-center bg-muted/40 pt-24 sm:pt-28 pb-24 px-4 sm:px-6 md:px-8 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-primary/[0.06] blur-[120px] pointer-events-none" />
+    <section className="relative w-full flex items-start justify-center bg-muted/40 pt-24 sm:pt-28 pb-24 px-4 sm:px-6 md:px-8">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-primary/[0.06] blur-[120px] pointer-events-none -z-0" />
 
       <div className="relative max-w-7xl w-full grid grid-cols-12 gap-5 lg:gap-6 items-start">
         {/* ───── LEFT: STICKY MAIN CONTENT (transparent) ───── */}
-        <div className="hero-animate hero-animate-1 col-span-12 lg:col-span-7 lg:sticky lg:top-28 lg:self-start flex flex-col justify-between relative">
+        <div className="hero-animate hero-animate-1 col-span-12 lg:col-span-7 lg:sticky lg:top-24 lg:self-start flex flex-col justify-between relative">
           <div className="relative">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full mb-8">
               <ShieldCheck size={13} className="text-primary" />

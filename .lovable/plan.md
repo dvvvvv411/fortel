@@ -1,21 +1,30 @@
-# Hero: linke Seite transparent + sticky, rechte Seite scrollt
+## Ziel
+Die linke Hälfte der Hero-Section bleibt beim Scrollen sichtbar, bis der Nutzer die nächste Sektion erreicht. Die rechte Hälfte scrollt normal weiter. Kein Redesign der Inhalte, nur das Verhalten und das Layout der Hero-Section werden korrigiert.
 
-## Änderungen in `src/components/landing-v2/HeroBento.tsx`
+## Umsetzungsplan
+1. **Sticky-Verhalten der linken Hero-Spalte sauber aufsetzen**
+   - Die linke Textspalte bekommt einen echten Sticky-Wrapper auf Desktop.
+   - Der Sticky-Offset wird an die tatsächliche Header-Höhe angepasst, damit der Text beim Scrollen sauber unter dem Header stehen bleibt.
+   - Auf Mobile bleibt die Section normal gestapelt, damit nichts unruhig oder gequetscht wirkt.
 
-**Linke Spalte**
-- Card-Look entfernen: kein `bg-background`, keine `rounded-[2.5rem]`, kein `shadow`, kein `border`, kein Glow-Overlay, kein Padding der Card. Inhalt sitzt direkt auf dem Section-Hintergrund.
-- `sticky top-28 self-start` damit sie beim Scrollen oben kleben bleibt (Top-Offset passend zur Header-Höhe ≈ 7rem).
-- Interner Aufbau (Eyebrow, H1, Subline, CTAs, Stats) bleibt 1:1 erhalten — nur die Hülle entfällt.
+2. **Hero-Layout so umbauen, dass Sticky sichtbar funktioniert**
+   - Die Grid-Struktur wird so ausgerichtet, dass die linke Spalte oben startet und nicht vertikal zentriert ist.
+   - Falls nötig entferne ich störende Overflow-/Container-Eigenschaften, die `position: sticky` blockieren oder optisch abschneiden.
+   - Die rechte Spalte bleibt die scrollende Seite und liefert genug Höhe, damit der Sticky-Effekt bis zum nächsten Abschnitt sichtbar ist.
 
-**Rechte Spalte**
-- Bleibt als 3 Karten (Expertise-Quadrant + Branchen + Verlässlich.) bestehen, aber scrollt jetzt am Sticky-Block vorbei.
-- Damit Scroll überhaupt entsteht: zusätzlich 1 weitere "Insights"-Karte unten in der rechten Spalte (z. B. „Aktuelle Branchen-Fokus" Liste mit 3 Bullets), sodass die rechte Spalte deutlich höher ist als die linke. So entsteht die gewünschte Sticky-Wirkung ohne den Rest der Seite anzufassen.
+3. **Feinschliff für sauberen Übergang zur nächsten Sektion**
+   - Abstände unten in der Hero-Section werden so abgestimmt, dass die linke Spalte exakt dann „loslässt“, wenn die nächste Sektion beginnt.
+   - Ich lasse die linke Seite transparent auf dem Hero-Hintergrund stehen, ohne zusätzliche Card-Hülle.
+   - Bestehende Inhalte, Typografie, Farben und CTAs bleiben erhalten.
 
-**Section-Container**
-- `items-center` → `items-start` damit Sticky funktioniert.
-- `pb-16` → `pb-24` für etwas mehr Luft beim Scroll-Übergang in den nächsten Block.
+## Technische Details
+- Datei: `src/components/landing-v2/HeroBento.tsx`
+- Wahrscheinliche Anpassungen:
+  - Sticky auf einen dedizierten linken Inner-Wrapper legen
+  - `items-start` statt zentrierter Grid-Ausrichtung
+  - problematische `overflow-hidden`-Stellen prüfen/entfernen, wo sie Sticky behindern
+  - `top-*` Offset für Desktop feinjustieren
+  - rechte Spalte in ihrer natürlichen Höhe scrollen lassen
 
-## Nicht angefasst
-- Header, Tokens, Farben, Typografie
-- Inhalte der bestehenden 3 rechten Tiles
-- Animationen (`hero-animate-*`)
+## Ergebnis
+Die Hero wirkt ruhiger: links bleibt die Kernbotschaft stehen, rechts läuft der Content vorbei, und beim Erreichen der nächsten Sektion endet der Sticky-Effekt sauber.
