@@ -1,57 +1,71 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Search, PenTool, Rocket, CheckCircle2, Users, Zap, Shield, RefreshCw } from 'lucide-react';
+import { Search, PenTool, FileSignature, HardHat, CheckCircle2, Users, Shield, Scale, RefreshCw } from 'lucide-react';
 
 const steps = [
   {
     icon: Search,
     number: '01',
     title: 'Analyse',
-    subtitle: 'Verstehen & Identifizieren',
-    description: 'Wir tauchen tief in Ihre bestehenden Prozesse ein, führen Interviews mit Stakeholdern und analysieren Datenflüsse. Das Ergebnis: ein klares Bild aller Stärken, Schwächen und Potenziale.',
+    subtitle: 'Verstehen & Bewerten',
+    description: 'Bestandsaufnahme, Stakeholder-Interviews und technische Bewertung. Wir verstehen Auftrag, Rahmenbedingungen und Risiken vor jeder Planung.',
     details: [
       'Stakeholder-Interviews & Workshops',
-      'Prozess-Mapping & Dokumentation',
-      'Datenanalyse & Benchmarking',
-      'Schwachstellen- & Potenzialanalyse',
+      'Bestandsaufnahme & technische Bewertung',
+      'Anforderungs- und Rahmenanalyse',
+      'Risiko- und Schnittstellenanalyse',
       'Priorisierte Handlungsempfehlungen',
     ],
-    duration: '2–4 Wochen',
+    duration: '1–4 Wochen',
   },
   {
     icon: PenTool,
     number: '02',
-    title: 'Konzept',
-    subtitle: 'Planen & Gestalten',
-    description: 'Basierend auf der Analyse entwickeln wir eine maßgeschneiderte Strategie und technische Architektur. Transparente Meilensteine und iteratives Feedback stellen sicher, dass Sie immer den Überblick behalten.',
+    title: 'Konzept & Planung',
+    subtitle: 'Lösung & Kostenrahmen',
+    description: 'Technisches Konzept, Variantenvergleich und Lastenheft. Mit belastbarem Kostenrahmen und klarem Terminplan.',
     details: [
-      'Strategische Roadmap-Erstellung',
-      'Technische Architektur & Design',
-      'Prototyping & Wireframing',
-      'Meilensteinplanung & Timeline',
-      'Budget- und Ressourcenplanung',
+      'Technisches Konzept & Lastenheft',
+      'Variantenvergleich & Wirtschaftlichkeit',
+      'Vor- und Entwurfsplanung',
+      'Kostenschätzung & -berechnung',
+      'Termin- und Meilensteinplanung',
     ],
-    duration: '2–6 Wochen',
+    duration: '2–8 Wochen',
   },
   {
-    icon: Rocket,
+    icon: FileSignature,
     number: '03',
-    title: 'Umsetzung',
-    subtitle: 'Entwickeln & Optimieren',
-    description: 'Agile Implementierung mit zweiwöchigen Sprints, kontinuierlichem Feedback und messbaren Ergebnissen ab der ersten Iteration. Wir liefern nicht nur Code, sondern echten Geschäftswert.',
+    title: 'Ausschreibung & Vergabe',
+    subtitle: 'LV, Submission, Vergabe',
+    description: 'Leistungsverzeichnis, Vergabeverfahren und Vergabeempfehlung — auch öffentlich nach VOB/VOL. Wir begleiten Verhandlungen und Beauftragung.',
     details: [
-      'Agile Entwicklung in Sprints',
-      'Kontinuierliche Integration & Deployment',
-      'Regelmäßige Demos & Feedback-Loops',
-      'Qualitätssicherung & Testing',
-      'Go-Live Begleitung & Support',
+      'Leistungsverzeichnis & Ausschreibungsunterlagen',
+      'Vergabeverfahren (privat & öffentlich)',
+      'Angebotsprüfung & Preisspiegel',
+      'Vergabeempfehlung & Vergabegespräche',
+      'Vertragsgestaltung & Beauftragung',
     ],
-    duration: '4–16 Wochen',
+    duration: '4–12 Wochen',
+  },
+  {
+    icon: HardHat,
+    number: '04',
+    title: 'Realisierung & Betrieb',
+    subtitle: 'Bauüberwachung & Abnahme',
+    description: 'Bauüberwachung, Termin- und Kostenkontrolle, Abnahme und Übergabe. Auf Wunsch begleiten wir den Betrieb weiter.',
+    details: [
+      'Bauüberwachung & Qualitätssicherung',
+      'Termin- und Kostencontrolling',
+      'Claim- und Nachtragsmanagement',
+      'Abnahme & Mängelmanagement',
+      'Übergabe, Dokumentation & Schulung',
+    ],
+    duration: 'projektspezifisch',
   },
 ];
 
@@ -59,22 +73,22 @@ const principles = [
   {
     icon: Users,
     title: 'Partnerschaftlich',
-    description: 'Wir arbeiten Seite an Seite mit Ihrem Team — keine Black Box, sondern volle Transparenz.',
+    description: 'Wir arbeiten Seite an Seite mit Ihrem Team — keine Black Box, volle Transparenz.',
   },
   {
-    icon: Zap,
-    title: 'Agil & Iterativ',
-    description: 'Schnelle Ergebnisse durch kurze Zyklen, kontinuierliches Feedback und flexible Anpassung.',
+    icon: Scale,
+    title: 'Herstellerneutral',
+    description: 'Keine Provisionen, keine Lock-Ins. Empfehlungen rein nach Auftrag und Anforderung.',
   },
   {
     icon: Shield,
-    title: 'Qualitätsgetrieben',
-    description: 'Automatisierte Tests, Code Reviews und Best Practices — wir liefern Software, die hält.',
+    title: 'Normenkonform',
+    description: 'Planung nach DIN VDE, HOAI, VOB/VOL und einschlägigen Branchenrichtlinien.',
   },
   {
     icon: RefreshCw,
     title: 'Nachhaltig',
-    description: 'Langfristig wartbare Lösungen statt Quick-Fixes. Ihr Investment zahlt sich dauerhaft aus.',
+    description: 'Langfristig betreibbare Anlagen statt Quick-Fixes. Ihr Investment trägt dauerhaft.',
   },
 ];
 
@@ -93,18 +107,16 @@ const Methodik = () => {
 
   return (
     <>
-
       <PageHero
         title="Unsere"
         highlight="Methodik"
-        subtitle="Ein bewährter Dreischritt-Prozess für nachhaltige digitale Transformation — transparent, agil und ergebnisorientiert."
+        subtitle="Ein bewährter Vier-Phasen-Prozess für technische Projekte — strukturiert, transparent, planbar."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Methodik' },
         ]}
       />
 
-      {/* Steps detail */}
       <section ref={ref} className="py-20">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
           {steps.map((step, i) => {
@@ -122,7 +134,7 @@ const Methodik = () => {
                         <Icon size={26} className="text-primary-foreground" />
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-muted-foreground tracking-wider">SCHRITT {step.number}</span>
+                        <span className="text-xs font-bold text-muted-foreground tracking-wider">PHASE {step.number}</span>
                         <h2 className="text-3xl font-extrabold tracking-tight">{step.title}</h2>
                       </div>
                     </div>
@@ -152,7 +164,6 @@ const Methodik = () => {
         </div>
       </section>
 
-      {/* Principles */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12 scroll-hidden">

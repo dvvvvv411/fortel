@@ -1,14 +1,14 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const clients = [
-  { name: 'Automotive AG', sector: 'Automotive' },
+  { name: 'Industrie AG', sector: 'Industrie' },
+  { name: 'TK-Carrier Süd', sector: 'Telekommunikation' },
+  { name: 'Energie+', sector: 'Energieversorger' },
+  { name: 'Maschinenbau Werk', sector: 'Anlagenbau' },
+  { name: 'Stadtwerke', sector: 'Versorger' },
+  { name: 'Bundesbehörde', sector: 'Öffentl. Hand' },
   { name: 'MedTech GmbH', sector: 'Medizintechnik' },
-  { name: 'Logistik Süd', sector: 'Logistik' },
-  { name: 'Maschinenbau Werk', sector: 'Industrie' },
-  { name: 'FinServ Group', sector: 'Finanzdienstleistung' },
-  { name: 'Energie+', sector: 'Energie' },
-  { name: 'HandelsHaus', sector: 'Handel' },
-  { name: 'PublicSector', sector: 'Öffentlicher Sektor' },
+  { name: 'Verkehrsbetrieb', sector: 'Infrastruktur' },
 ];
 
 const TrustLogos = () => {
@@ -17,7 +17,7 @@ const TrustLogos = () => {
     <section ref={ref} className="relative py-16 sm:py-20 px-4 sm:px-6 border-y border-border bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <p className={`text-center text-xs uppercase tracking-[0.25em] text-muted-foreground mb-10 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          Vertrauen von Mittelstand und Konzern
+          Vertrauen von Mittelstand, Versorgern und öffentlicher Hand
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-6 gap-y-8 items-center">
           {clients.map((c, i) => (

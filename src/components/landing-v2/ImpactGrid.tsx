@@ -14,22 +14,22 @@ const ImpactGrid = () => {
         <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Kennzahlen</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
-            Belastbare Zahlen aus 20 Jahren Projektpraxis.
+            Belastbare Zahlen aus 18 Jahren Projektpraxis.
           </h2>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-[220px] gap-3 sm:gap-4">
           {[
-            { v: c1, suffix: '+', label: 'Projekte ausgeliefert', sub: 'Web, Mobile, Backend', icon: TrendingUp },
+            { v: c1, suffix: '+', label: 'Projekte begleitet', sub: 'Beratung, Steuerung, Planung', icon: TrendingUp },
             { v: c2, suffix: '+', label: 'Kunden', sub: 'Mittelstand bis Konzern', icon: Euro },
-            { v: c3, suffix: '%', label: 'Ø Effizienzplus', sub: 'gemessen, nicht geschätzt', icon: TrendingDown, prefix: '+' },
+            { v: c3, suffix: '%', label: 'Ø Termintreue', sub: 'gemessen, nicht geschätzt', icon: TrendingDown },
             { v: c4, suffix: '', label: 'Jahre Erfahrung', sub: 'seit 2006, ein Team', icon: Clock },
           ].map((s, i) => (
             <div key={i} className={`p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex flex-col justify-between scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}>
               <s.icon size={18} className="text-primary" />
               <div>
                 <div className="font-display text-5xl sm:text-6xl font-bold tabular-nums leading-none text-foreground">
-                  {s.prefix}{s.v}<span className="text-primary">{s.suffix}</span>
+                  {s.v}<span className="text-primary">{s.suffix}</span>
                 </div>
                 <p className="mt-3 text-sm font-semibold">{s.label}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{s.sub}</p>

@@ -1,75 +1,66 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ArrowRight, CheckCircle2, Globe, Smartphone, Server, BarChart3 } from 'lucide-react';
-
-import reactSvg from '@/assets/tech/react.svg';
-import nextjsSvg from '@/assets/tech/nextjs.svg';
-import nodejsSvg from '@/assets/tech/nodejs.svg';
-import pythonSvg from '@/assets/tech/python.svg';
-import postgresqlSvg from '@/assets/tech/postgresql.svg';
-import csharpSvg from '@/assets/tech/csharp.svg';
-import html5Svg from '@/assets/tech/html5.svg';
-import css3Svg from '@/assets/tech/css3.svg';
-import phpSvg from '@/assets/tech/php.svg';
-
-const techStack = [
-  { name: 'React', icon: reactSvg },
-  { name: 'Next.js', icon: nextjsSvg },
-  { name: 'Node.js', icon: nodejsSvg },
-  { name: 'Python', icon: pythonSvg },
-  { name: 'PostgreSQL', icon: postgresqlSvg },
-  { name: 'C#', icon: csharpSvg },
-  { name: 'HTML5', icon: html5Svg },
-  { name: 'CSS3', icon: css3Svg },
-  { name: 'PHP', icon: phpSvg },
-];
+import { CheckCircle2, Cable, Radio, Shield, Network, Zap, ServerCog } from 'lucide-react';
 
 const capabilities = [
   {
-    icon: Globe,
-    title: 'Web-Applikationen',
-    description: 'Moderne, performante Single-Page-Applications und Progressive Web Apps mit React, Next.js und TypeScript.',
+    icon: Cable,
+    title: 'Elektrotechnische Anlagen',
+    description:
+      'Planung von Starkstrom- und Schwachstromanlagen — Niederspannung, USV, Beleuchtung, Verteilungen und Erdung nach geltenden Normen (DIN VDE).',
   },
   {
-    icon: Server,
-    title: 'Backend & APIs',
-    description: 'Skalierbare REST- und GraphQL-APIs mit Node.js, Python oder .NET — inklusive Datenbank-Design und Cloud-Deployment.',
+    icon: Radio,
+    title: 'Fernmelde- & Kommunikationstechnik',
+    description:
+      'Telekommunikations-, Daten- und Übertragungstechnik. Von strukturierter Verkabelung über LWL-Trassen bis zu aktiven Netzwerk- und VoIP-Komponenten.',
   },
   {
-    icon: BarChart3,
-    title: 'Dashboards & Analytics',
-    description: 'Echtzeit-Dashboards und Datenvisualisierung für fundierte Geschäftsentscheidungen auf einen Blick.',
+    icon: Shield,
+    title: 'Sicherheits- & Gefahrenmeldetechnik',
+    description:
+      'Brandmeldeanlagen, Einbruchmeldetechnik, Videoüberwachung und Zutrittskontrolle — geplant und ausgeschrieben nach den einschlägigen Richtlinien.',
   },
   {
-    icon: Smartphone,
-    title: 'Responsive & Mobile',
-    description: 'Jede Anwendung wird mobile-first entwickelt und funktioniert perfekt auf allen Geräten und Bildschirmgrößen.',
+    icon: Network,
+    title: 'Rechenzentrums- & Serverraum-Infrastruktur',
+    description:
+      'Kühlung, Stromversorgung, Brandschutz, Verkabelung und Monitoring für Serverräume und kleine bis mittlere Rechenzentren.',
   },
 ];
 
-const projects = [
+const phases = [
+  { name: 'Grundlagen­ermittlung', desc: 'Bestand, Anforderungen, Randbedingungen' },
+  { name: 'Vorplanung', desc: 'Lösungs­ansätze, Variantenvergleich, Kostenrahmen' },
+  { name: 'Entwurfs­planung', desc: 'Berechnungen, Schemata, Kostenberechnung' },
+  { name: 'Genehmigungs­planung', desc: 'Unterlagen für Behörden & Betreiber' },
+  { name: 'Ausführungs­planung', desc: 'Werk- und Detailpläne, Stücklisten' },
+  { name: 'Ausschreibung & Vergabe', desc: 'LV, Submission, Vergabeempfehlung' },
+  { name: 'Bauüberwachung', desc: 'Termine, Qualität, Abnahme, Dokumentation' },
+];
+
+const references = [
   {
-    title: 'Logistik-Dashboard',
-    category: 'Dashboard & Analytics',
-    description: 'Echtzeit-Tracking und Optimierung von Lieferketten für ein mittelständisches Logistikunternehmen.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
+    title: 'Fernmeldetechnik Verwaltungsneubau',
+    category: 'Öffentliche Hand',
+    description: 'Planung und Bauüberwachung der gesamten Daten-, Telefon- und Sicherheitstechnik über alle Leistungsphasen.',
+    tags: ['Fernmeldetechnik', 'Sicherheitstechnik', 'LPH 1–9'],
   },
   {
-    title: 'HR-Management Platform',
-    category: 'Web-Applikation',
-    description: 'Digitalisierung des gesamten HR-Prozesses — von Bewerbungen über Onboarding bis zur Personalverwaltung.',
-    tags: ['Next.js', 'Python', 'Cloud'],
+    title: 'Modernisierung Werksinfrastruktur',
+    category: 'Industrie',
+    description: 'Konzept und Ausschreibung der elektrotechnischen Anlagen für eine Produktionsstandort-Erweiterung.',
+    tags: ['Elektrotechnik', 'Ausschreibung', 'Bauüberwachung'],
   },
   {
-    title: 'Produktionssteuerung',
-    category: 'Prozessautomation',
-    description: 'Automatisierte Steuerung und Überwachung von Fertigungsprozessen mit IoT-Integration.',
-    tags: ['C#', '.NET', 'IoT'],
+    title: 'Glasfaser-Rollout Versorger',
+    category: 'TK / Energie',
+    description: 'Technische und wirtschaftliche Projektsteuerung eines mehrjährigen FTTH-Ausbaus.',
+    tags: ['Projektsteuerung', 'LWL', 'Controlling'],
   },
 ];
 
@@ -77,6 +68,7 @@ const Software = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   useEffect(() => {
+    document.title = 'Anlagenplanung | for.tel Solutions';
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('scroll-visible')),
       { threshold: 0.1 }
@@ -87,14 +79,13 @@ const Software = () => {
 
   return (
     <>
-
       <PageHero
-        title="Maßgeschneiderte"
-        highlight="Software-Lösungen"
-        subtitle="Von der Idee bis zum Deployment — wir entwickeln Software, die Ihre Prozesse transformiert und mit Ihrem Unternehmen wächst."
+        title="Planung &"
+        highlight="Anlagentechnik"
+        subtitle="Planung und Vertrieb elektrotechnischer und fernmeldetechnischer Anlagen aller Art — von der Grundlagenermittlung bis zur Inbetriebnahme."
         breadcrumb={[
           { label: 'Home', href: '/' },
-          { label: 'Software' },
+          { label: 'Anlagenplanung' },
         ]}
       />
 
@@ -104,7 +95,7 @@ const Software = () => {
           <div className={`text-center mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
             <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Kompetenzen</p>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Was wir <span className="text-gradient-blue">entwickeln</span>
+              Was wir <span className="text-gradient-blue">planen</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -127,32 +118,35 @@ const Software = () => {
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* Leistungsphasen */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12 scroll-hidden">
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Technologien</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Leistungsphasen</p>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Unser <span className="text-gradient-blue">Tech Stack</span>
+              Planung nach <span className="text-gradient-blue">HOAI-Logik</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Wir setzen auf bewährte, moderne Technologien für maximale Performance und Zukunftssicherheit.
+              Wir übernehmen einzelne Leistungsphasen oder die gesamte Planung von LPH 1 bis 9.
             </p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-6 scroll-hidden">
-            {techStack.map((tech) => (
-              <div key={tech.name} className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 rounded-2xl bg-white border border-border/60 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-primary/20 transition-all">
-                  <img src={tech.icon} alt={tech.name} className="w-8 h-8" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {phases.map((p, i) => (
+              <div key={p.name} className="rounded-2xl border border-border/60 bg-white p-5 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary font-display font-bold text-sm flex items-center justify-center shrink-0">
+                  {String(i + 1).padStart(2, '0')}
                 </div>
-                <span className="text-xs font-medium text-muted-foreground">{tech.name}</span>
+                <div>
+                  <p className="font-semibold text-sm text-foreground">{p.name}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{p.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Referenzen */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12 scroll-hidden">
@@ -162,7 +156,7 @@ const Software = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {projects.map((project) => (
+            {references.map((project) => (
               <div key={project.title} className="scroll-hidden rounded-2xl border border-border/60 bg-white p-8 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/[0.05] transition-all duration-500">
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
                 <h3 className="text-xl font-bold tracking-tight mt-2 mb-3">{project.title}</h3>

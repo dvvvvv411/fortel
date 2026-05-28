@@ -39,6 +39,14 @@ const Impressum = () => {
             DE300637047
           </p>
 
+          <h3 className="text-lg font-bold mt-8 mb-3">Unternehmensgegenstand</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Technische Unternehmensberatung, technische und wirtschaftliche Projektberatung und Controlling,
+            Projektmanagement, Personalberatung und damit zusammenhängende Dienstleistungen sowie sonstige
+            Akquisitionsdienstleistungen; ferner die Planung und der Vertrieb von elektrotechnischen und
+            fernmeldetechnischen Anlagen aller Art.
+          </p>
+
           <h3 className="text-lg font-bold mt-8 mb-3">Kontakt</h3>
           <p>
             E-Mail:{' '}

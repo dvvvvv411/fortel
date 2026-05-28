@@ -20,8 +20,8 @@ const CTASection = () => {
           </h2>
         </div>
         <p className={`scroll-hidden delay-1 ${isVisible ? 'scroll-visible' : ''} text-lg text-white/80 max-w-xl mx-auto mb-10`}>
-          Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Prozesse
-          optimieren und Ihr Unternehmen digitalisieren können.
+          Lassen Sie uns gemeinsam besprechen, wie wir Ihr Technik-Projekt
+          beratend, steuernd oder planerisch nach vorn bringen.
         </p>
         <div className={`scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''}`}>
           <Link

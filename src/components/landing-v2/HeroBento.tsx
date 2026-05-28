@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ShieldCheck, Check, Factory, Truck, HeartPulse, Package } from 'lucide-react';
-import reactLogo from '@/assets/tech/react.svg';
-import csharpLogo from '@/assets/tech/csharp.svg';
-import postgresLogo from '@/assets/tech/postgresql.svg';
-import nodeLogo from '@/assets/tech/nodejs.svg';
-import nextLogo from '@/assets/tech/nextjs.svg';
-import pythonLogo from '@/assets/tech/python.svg';
+import { ArrowRight, ShieldCheck, Check, Factory, Radio, Zap, Building2, Lightbulb, ClipboardList, Users, Cable } from 'lucide-react';
 
 const HeroBento = () => {
   return (
@@ -14,9 +8,8 @@ const HeroBento = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-primary/[0.07] blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl w-full grid grid-cols-12 gap-4 sm:gap-5 auto-rows-auto">
-        {/* ───── HEADLINE BLOCK (left, large) ───── */}
+        {/* ───── HEADLINE BLOCK ───── */}
         <div className="hero-animate hero-animate-1 col-span-12 lg:col-span-8 lg:row-span-2 relative rounded-2xl border border-border bg-background p-8 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden">
-          {/* subtle inner aura */}
           <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary/[0.08] blur-3xl pointer-events-none" />
 
           <div className="relative">
@@ -26,15 +19,16 @@ const HeroBento = () => {
             </div>
 
             <h1 className="mt-6 font-display text-[2.25rem] sm:text-5xl lg:text-[3.75rem] font-extrabold text-foreground tracking-tight leading-[1.04]">
-              Software-Entwicklung
+              Technische Beratung &amp;
               <br />
-              für den <span className="text-primary">Mittelstand.</span>
+              <span className="text-primary">Anlagenplanung.</span>
             </h1>
 
             <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Wir planen, bauen und betreiben individuelle Unternehmens­software — mit festem
-              Inhouse-Team aus der Region Stuttgart.{' '}
-              <span className="text-foreground font-medium">Verlässlich. Wartbar. Dokumentiert.</span>
+              Wir beraten, steuern und planen technische Projekte — von der Machbarkeitsstudie
+              über Projektmanagement und Personalberatung bis zur Planung elektro- und
+              fernmeldetechnischer Anlagen.{' '}
+              <span className="text-foreground font-medium">Verlässlich. Unabhängig. Aus einer Hand.</span>
             </p>
           </div>
 
@@ -68,16 +62,16 @@ const HeroBento = () => {
 
         {/* ───── STAT TILE 2 ───── */}
         <div className="hero-animate hero-animate-2 col-span-6 lg:col-span-4 rounded-2xl border border-border bg-background p-5 sm:p-6 flex flex-col justify-between min-h-[120px]">
-          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Geliefert</p>
+          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Begleitet</p>
           <div>
             <p className="font-display text-4xl sm:text-5xl font-extrabold text-foreground tabular-nums leading-none">
               150<span className="text-primary">+</span>
             </p>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2">Projekte umgesetzt</p>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2">Projekte realisiert</p>
           </div>
         </div>
 
-        {/* ───── PROJEKT-STATUS-KARTE (rechts, groß) ───── */}
+        {/* ───── PROJEKT-STATUS-KARTE ───── */}
         <div className="hero-animate hero-animate-3 col-span-12 lg:col-span-4 lg:row-span-2 lg:col-start-9 lg:row-start-1 rounded-2xl border border-border bg-background overflow-hidden flex flex-col">
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/40">
             <div className="flex items-center gap-1.5">
@@ -93,7 +87,7 @@ const HeroBento = () => {
               <div>
                 <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Aktuelles Projekt</p>
                 <h3 className="font-display text-lg font-bold text-foreground leading-tight">
-                  ERP-Modernisierung
+                  Fernmelde-Rollout
                 </h3>
               </div>
               <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-semibold border border-primary/20">
@@ -114,9 +108,9 @@ const HeroBento = () => {
 
             <div className="space-y-2.5 flex-1">
               {[
-                { label: 'Konzept abgeschlossen', done: true },
-                { label: 'Backend live geschaltet', done: true },
-                { label: 'Frontend in Arbeit', done: false },
+                { label: 'Machbarkeit & Konzept', done: true },
+                { label: 'Ausschreibung vergeben', done: true },
+                { label: 'Bauüberwachung läuft', done: false },
               ].map((m) => (
                 <div key={m.label} className="flex items-center gap-2.5 text-[13px]">
                   <div
@@ -158,38 +152,38 @@ const HeroBento = () => {
           <div className="mt-4 grid grid-cols-4 gap-2">
             {[
               { Icon: Factory, label: 'Industrie' },
-              { Icon: Truck, label: 'Logistik' },
-              { Icon: HeartPulse, label: 'Health' },
-              { Icon: Package, label: 'Handel' },
+              { Icon: Radio, label: 'TK / Carrier' },
+              { Icon: Zap, label: 'Energie' },
+              { Icon: Building2, label: 'Öff. Hand' },
             ].map(({ Icon, label }) => (
               <div
                 key={label}
                 className="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-muted/30 py-2.5 hover:border-primary/40 hover:bg-primary/[0.04] transition-colors"
               >
                 <Icon size={18} className="text-primary" />
-                <span className="text-[10px] text-muted-foreground">{label}</span>
+                <span className="text-[10px] text-muted-foreground text-center leading-tight">{label}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ───── TECH-STACK-KACHEL ───── */}
+        {/* ───── DISZIPLINEN-KACHEL ───── */}
         <div className="hero-animate hero-animate-5 col-span-12 sm:col-span-6 lg:col-span-4 rounded-2xl border border-border bg-background p-5 sm:p-6">
-          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Tech-Stack</p>
-          <p className="font-display text-base font-bold text-foreground mt-1">Womit wir bauen</p>
-          <div className="mt-4 flex items-center gap-3 flex-wrap">
-            {[reactLogo, csharpLogo, nextLogo, nodeLogo, postgresLogo, pythonLogo].map((src, i) => (
+          <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Disziplinen</p>
+          <p className="font-display text-base font-bold text-foreground mt-1">Was wir leisten</p>
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            {[
+              { Icon: Lightbulb, label: 'Beratung' },
+              { Icon: ClipboardList, label: 'Projektmgmt.' },
+              { Icon: Users, label: 'Personal' },
+              { Icon: Cable, label: 'Anlagenplanung' },
+            ].map(({ Icon, label }) => (
               <div
-                key={i}
-                className="w-10 h-10 rounded-lg border border-border bg-muted/30 flex items-center justify-center hover:border-primary/40 transition-colors"
+                key={label}
+                className="flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2.5 hover:border-primary/40 hover:bg-primary/[0.04] transition-colors"
               >
-                <img
-                  src={src}
-                  alt=""
-                  className="w-5 h-5 object-contain"
-                  onContextMenu={(e) => e.preventDefault()}
-                  draggable={false}
-                />
+                <Icon size={16} className="text-primary shrink-0" />
+                <span className="text-[12px] text-foreground font-medium leading-tight">{label}</span>
               </div>
             ))}
           </div>

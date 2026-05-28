@@ -2,10 +2,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import processBg from '@/assets/landing/process-bg.jpg';
 
 const steps = [
-  { n: '01', title: 'Analyse', desc: 'Workshop, Ist-Aufnahme, Zieldefinition. Wir verstehen Geschäftsprozess und Anforderungen vor der ersten Zeile Code.', dur: '1 – 2 Wochen' },
-  { n: '02', title: 'Konzept', desc: 'Architektur, Datenmodell und Schnittstellen. Klickbarer Prototyp und transparente Aufwandsschätzung.', dur: '2 – 3 Wochen' },
-  { n: '03', title: 'Umsetzung', desc: 'Zwei-Wochen-Sprints mit regelmäßigen Demos. Sie sehen messbaren Fortschritt statt reiner Statusberichte.', dur: '8 – 16 Wochen' },
-  { n: '04', title: 'Betrieb', desc: 'Go-Live, Einführung, Monitoring. Wartung, Support und Weiterentwicklung im vereinbarten SLA.', dur: 'fortlaufend' },
+  { n: '01', title: 'Analyse', desc: 'Bestandsaufnahme, Stakeholder-Interviews und Zieldefinition. Wir verstehen Auftrag, Rahmenbedingungen und Risiken bevor wir planen.', dur: '1 – 3 Wochen' },
+  { n: '02', title: 'Konzept', desc: 'Technisches Konzept, Lastenheft, Kostenschätzung. Optional Machbarkeitsstudie und Vergleichsvarianten.', dur: '2 – 6 Wochen' },
+  { n: '03', title: 'Ausschreibung & Realisierung', desc: 'Leistungsverzeichnis, Vergabe, Bauüberwachung. Wir steuern Termine, Kosten und Qualität bis zur Abnahme.', dur: '3 – 18 Monate' },
+  { n: '04', title: 'Betrieb & Übergabe', desc: 'Inbetriebnahme, Dokumentation, Schulung. Auf Wunsch weiterführendes Projektcontrolling oder Service-Begleitung.', dur: 'fortlaufend' },
 ];
 
 const ProcessFlow = () => {

@@ -13,7 +13,7 @@ const Footer = () => {
               <img src={logo} alt="for.tel Solutions" className="h-10 hover:scale-105 transition-transform duration-200" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Beratung, Digitalisierung und Software für Unternehmen, die bereit sind, effizienter zu arbeiten.
+              Technische Beratung, Projektmanagement, Personalberatung und Anlagenplanung — aus einer Hand, seit 2006.
             </p>
           </div>
 
@@ -41,10 +41,10 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4 text-foreground">Leistungen</h4>
             <ul className="space-y-2.5">
               {[
-                { label: 'Beratung', href: '/leistungen' },
-                { label: 'Digitalisierung', href: '/leistungen' },
-                { label: 'Software', href: '/software' },
-                { label: 'Automatisierung', href: '/leistungen' },
+                { label: 'Technische Beratung', href: '/leistungen' },
+                { label: 'Projektmanagement', href: '/leistungen' },
+                { label: 'Personalberatung', href: '/leistungen' },
+                { label: 'Anlagenplanung', href: '/software' },
               ].map((link, i) => (
                 <li key={i}>
                   <Link to={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">

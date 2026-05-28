@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Code2, Workflow, Brain, Cloud, Database, Layers, ArrowUpRight } from 'lucide-react';
+import { Lightbulb, ClipboardCheck, FileSpreadsheet, HardHat, UserSearch, Cable, ArrowUpRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import codeImage from '@/assets/landing/feature-code.jpg';
 
 const items = [
-  { icon: Code2, title: 'Custom Software', body: 'Webapps, Portale & interne Tools — gebaut um Ihr Geschäft, nicht andersrum.' },
-  { icon: Workflow, title: 'Prozess­digitalisierung', body: 'Vom Papierberg zum API-Call: Workflows, die wirklich laufen.' },
-  { icon: Brain, title: 'KI & Automatisierung', body: 'LLMs, Agents & RAG — produktiv eingesetzt, nicht nur demoed.' },
-  { icon: Cloud, title: 'Cloud & DevOps', body: 'Skalierbare Architektur. Azure, AWS, Kubernetes — sauber aufgesetzt.' },
-  { icon: Database, title: 'Daten & Integration', body: 'ERP, CRM, Legacy — sauber verbunden, in Echtzeit synchronisiert.' },
-  { icon: Layers, title: 'IT-Beratung', body: 'Architektur, Stack-Entscheidungen, Roadmap. Klartext statt Folienorgie.' },
+  { icon: Lightbulb, title: 'Technische Beratung', body: 'Machbarkeitsstudien, Lastenhefte, technische Konzepte — als unabhängiger Sparringspartner für Bauherren und Betreiber.' },
+  { icon: ClipboardCheck, title: 'Projektmanagement', body: 'Termine, Kosten, Qualität — wir steuern komplexe Technik­projekte planbar und transparent.' },
+  { icon: FileSpreadsheet, title: 'Projekt­controlling', body: 'Wirtschaftliche Steuerung, Soll-Ist-Abgleich, Reporting an Geschäftsführung und Lenkungskreis.' },
+  { icon: HardHat, title: 'Ausschreibung & Vergabe', body: 'Leistungs­verzeichnisse, Vergabeverfahren, Bauüberwachung — sauber dokumentiert nach HOAI-Logik.' },
+  { icon: UserSearch, title: 'Personalberatung', body: 'Fach- und Führungskräfte für Technik, Projekt­management und Vertrieb — passgenau und diskret.' },
+  { icon: Cable, title: 'Elektro- & Fernmelde­technik', body: 'Planung und Vertrieb elektro­technischer und fernmelde­technischer Anlagen aller Art.' },
 ];
 
 const BentoFeatures = () => {
@@ -49,7 +49,7 @@ const BentoFeatures = () => {
           <div className={`relative overflow-hidden rounded-lg border border-border min-h-[240px] sm:col-span-2 lg:col-span-2 group scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
             <img
               src={codeImage}
-              alt="Software-Entwicklung am Standort Filderstadt"
+              alt="for.tel Solutions Standort Filderstadt"
               width={1024}
               height={1024}
               loading="lazy"
@@ -61,11 +61,11 @@ const BentoFeatures = () => {
             <div className="relative h-full flex flex-col justify-end p-8 sm:p-10 text-background">
               <p className="text-[11px] uppercase tracking-[0.25em] text-primary-glow mb-3 font-semibold">Standort Deutschland</p>
               <h3 className="font-display text-xl sm:text-2xl font-bold leading-tight max-w-md">
-                Inhouse-Entwicklung in Filderstadt — kein Offshoring.
+                Inhabergeführtes Beratungshaus in Filderstadt.
               </h3>
               <p className="mt-3 text-sm text-background/80 max-w-md leading-relaxed">
-                Festes Team, dokumentierte Standards, Tests &amp; Code-Reviews. Software,
-                die auch in fünf Jahren noch wartbar ist.
+                Festes Team, klare Verantwortlichkeiten, dokumentierte Prozesse. Technik-Projekte,
+                die auch in fünf Jahren noch nachvollziehbar sind.
               </p>
             </div>
           </div>

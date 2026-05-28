@@ -13,7 +13,7 @@ import Footer from '@/components/landing/Footer';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'for.tel Solutions – Software-Entwicklung & IT-Beratung';
+    document.title = 'for.tel Solutions – Technische Beratung, Projektmanagement & Anlagenplanung';
   }, []);
 
   return (

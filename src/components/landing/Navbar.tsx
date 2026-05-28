@@ -5,7 +5,7 @@ import { Menu, X, ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 
 const navLinks = [
   { label: 'Leistungen', href: '/leistungen' },
-  { label: 'Software', href: '/software' },
+  { label: 'Anlagenplanung', href: '/software' },
   { label: 'Methodik', href: '/methodik' },
   { label: 'Team', href: '/team' },
   { label: 'Karriere', href: '/karriere' },

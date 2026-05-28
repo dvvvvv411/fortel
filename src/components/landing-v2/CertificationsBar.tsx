@@ -1,13 +1,13 @@
-import { ShieldCheck, Server, FileCheck2, MapPin, Lock, Award } from 'lucide-react';
+import { ShieldCheck, FileCheck2, MapPin, Award, Building2, Scale } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const items = [
   { icon: ShieldCheck, label: 'DSGVO-konform', sub: 'Auftragsverarbeitung & TOM' },
-  { icon: Server, label: 'Hosting in Deutschland', sub: 'ISO-27001-Rechenzentren' },
-  { icon: Lock, label: 'ISO 27001-ready', sub: 'Sicherheitsprozesse etabliert' },
+  { icon: Scale, label: 'HOAI-orientiert', sub: 'Planungs- & Beratungsleistungen' },
+  { icon: Building2, label: 'VOB/VOL-konform', sub: 'Vergabeverfahren öffentlich & privat' },
   { icon: FileCheck2, label: 'Verträge nach BGB', sub: 'Werkvertrag, AGB, NDA' },
-  { icon: MapPin, label: 'Made in Germany', sub: 'Inhouse-Team Filderstadt' },
-  { icon: Award, label: 'Code-Eigentum bei Ihnen', sub: 'Keine Vendor-Lock-Ins' },
+  { icon: MapPin, label: 'Made in Germany', sub: 'Festes Team in Filderstadt' },
+  { icon: Award, label: 'Herstellerneutral', sub: 'Keine Provisionen, keine Lock-Ins' },
 ];
 
 const CertificationsBar = () => {
@@ -18,7 +18,7 @@ const CertificationsBar = () => {
         <div className={`max-w-2xl mb-10 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">Standards &amp; Compliance</p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold leading-tight">
-            Verlässliche Rahmen­bedingungen für Ihre Software.
+            Verlässliche Rahmen­bedingungen für Ihr Projekt.
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
