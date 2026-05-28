@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
-    allowedHosts: ["efficient-flow.solutions", "www.efficient-flow.solutions"],
+    allowedHosts: ["for-tel.de", "www.for-tel.de"],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

@@ -4,7 +4,7 @@ const stats = [
   { value: 150, suffix: '+', label: 'Abgeschlossene Projekte' },
   { value: 80, suffix: '+', label: 'Zufriedene Kunden' },
   { value: 47, suffix: '%', label: 'Ø Effizienzsteigerung' },
-  { value: 5, suffix: '+', label: 'Jahre Erfahrung' },
+  { value: 20, suffix: '+', label: 'Jahre Erfahrung' },
 ];
 
 const StatItem = ({ value, suffix, label, isVisible }: { value: number; suffix: string; label: string; isVisible: boolean }) => {
