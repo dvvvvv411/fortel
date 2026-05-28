@@ -33,32 +33,33 @@ const Navbar = () => {
   return (
     <>
       {/* Contact top bar */}
-      <div className="relative z-[60] hidden md:block bg-foreground text-background/90">
-        <div className="max-w-7xl mx-auto px-6 h-9 flex items-center justify-between text-xs">
+      <div className="relative z-[60] hidden md:block bg-muted/60 border-b border-border text-muted-foreground">
+        <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between text-xs">
           <div className="flex items-center gap-6">
-            <a href="tel:+4971124086840" className="hover:text-background transition-colors flex items-center gap-1.5">
+            <a href="tel:+4971124086840" className="hover:text-primary transition-colors flex items-center gap-1.5">
               <Phone size={12}/> +49 711 24086840
             </a>
-            <a href="mailto:info@for-tel.de" className="hover:text-background transition-colors flex items-center gap-1.5">
+            <a href="mailto:info@for-tel.de" className="hover:text-primary transition-colors flex items-center gap-1.5">
               <Mail size={12}/> info@for-tel.de
             </a>
           </div>
-          <div className="flex items-center gap-5 text-background/70">
+          <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><MapPin size={12}/> Filderstadt · DE</span>
             <span className="hidden lg:inline">Mo – Fr · 08:00 – 18:00</span>
           </div>
         </div>
       </div>
 
+
       {/* Main header bar */}
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           scrolled
-            ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm'
+            ? 'bg-background/90 backdrop-blur-xl border-b border-border'
             : 'bg-background border-b border-border/60'
         }`}
       >
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-20' : 'h-24'}`}>
           {/* Logo */}
           <Link to="/" className="shrink-0 flex items-center">
             <img
@@ -68,12 +69,13 @@ const Navbar = () => {
               fetchPriority="high"
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-8' : 'h-10'}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-11' : 'h-14'}`}
             />
           </Link>
 
+
           {/* Desktop nav links */}
-          <nav className="hidden lg:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const active = location.pathname === link.href;
               return (
@@ -81,34 +83,36 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href}
                   className={`relative text-sm font-medium transition-colors group ${
-                    active ? 'text-primary' : 'text-foreground/80 hover:text-primary'
+                    active ? 'text-primary' : 'text-foreground/70 hover:text-primary'
                   }`}
                 >
                   {link.label}
-                  <span className={`absolute -bottom-1.5 left-0 right-0 h-px bg-primary transition-transform origin-left ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                  <span className={`absolute -bottom-2 left-0 right-0 h-0.5 bg-primary transition-transform origin-left ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
                 </Link>
               );
             })}
           </nav>
 
+
           {/* Right side: CTA */}
           <div className="flex items-center gap-3">
             <Link
               to="/kontakt"
-              className="hidden md:inline-flex items-center gap-2 px-5 h-10 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all whitespace-nowrap"
+              className="hidden md:inline-flex items-center gap-2 px-6 h-11 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all whitespace-nowrap group"
             >
               Projekt anfragen
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
 
             {/* Mobile burger */}
             <button
-              className="lg:hidden p-2.5 rounded-md border border-border bg-background text-foreground"
+              className="lg:hidden p-2.5 rounded-full border border-border bg-background text-foreground"
               onClick={() => setMobileOpen(true)}
               aria-label="Menü öffnen"
             >
               <Menu size={22} />
             </button>
+
           </div>
         </div>
       </header>
@@ -127,7 +131,7 @@ const Navbar = () => {
         >
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
             <Link to="/" onClick={() => setMobileOpen(false)}>
-              <img src={logo} alt="for.tel Solutions" className="h-8" draggable={false} onContextMenu={(e) => e.preventDefault()} />
+              <img src={logo} alt="for.tel Solutions" className="h-10" draggable={false} onContextMenu={(e) => e.preventDefault()} />
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
