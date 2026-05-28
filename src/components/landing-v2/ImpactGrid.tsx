@@ -29,7 +29,7 @@ const ImpactGrid = () => {
               <s.icon size={18} className="text-primary" />
               <div>
                 <div className="font-display text-5xl sm:text-6xl font-bold tabular-nums leading-none text-foreground">
-                  {s.prefix}{s.v}<span className="text-primary">{s.suffix}</span>
+                  {s.v}<span className="text-primary">{s.suffix}</span>
                 </div>
                 <p className="mt-3 text-sm font-semibold">{s.label}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{s.sub}</p>
