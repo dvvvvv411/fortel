@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Code2, Workflow, Brain, Cloud, Database, Layers, ArrowUpRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import codeImage from '@/assets/landing/feature-code.jpg';
 
 const items = [
   { icon: Code2, title: 'Custom Software', body: 'Webapps, Portale & interne Tools — gebaut um Ihr Geschäft, nicht andersrum.' },
@@ -44,6 +45,41 @@ const BentoFeatures = () => {
               </div>
             </div>
           ))}
+
+          {/* Image accent card — spans 2 cols on lg */}
+          <div className={`relative overflow-hidden rounded-3xl border border-border min-h-[260px] sm:col-span-2 lg:col-span-2 group scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+            <img
+              src={codeImage}
+              alt="Code-Editor mit violetten Akzenten"
+              width={1024}
+              height={1024}
+              loading="lazy"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-foreground/85 via-foreground/40 to-transparent" />
+            <div className="relative h-full flex flex-col justify-end p-8 sm:p-10 text-background">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary-glow mb-3">// made in filderstadt</div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold leading-tight max-w-md">
+                Code, der altert wie guter Wein — nicht wie Milch.
+              </h3>
+              <p className="mt-3 text-sm text-background/80 max-w-md leading-relaxed">
+                Inhouse-Team, Clean-Code-Standards, Test-Coverage &gt; 80 %. Sie bekommen Software, an die man nach 3 Jahren noch dranbauen kann.
+              </p>
+            </div>
+          </div>
+
+          {/* Filler card to balance grid on lg */}
+          <div className={`bento-card p-8 sm:p-10 flex flex-col justify-between min-h-[260px] bg-primary text-primary-foreground border-primary scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary-foreground/70">// next step</div>
+            <div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold leading-tight">Ihre Idee. Unser Stack.</h3>
+              <Link to="/kontakt" className="mt-5 inline-flex items-center gap-2 font-semibold text-sm group">
+                Kostenfreies Erstgespräch <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"/>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
