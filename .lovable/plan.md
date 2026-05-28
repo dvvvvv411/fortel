@@ -1,59 +1,55 @@
-## Ziel
+# Landingpage entschlacken
 
-Vollständiger Farb- & Logo-Rebrand: Weg vom bestehenden Blau hin zur **Electric Violet**-Palette, dazu eine neue minimalistische **Wortmarke "for.tel"**.
+Die aktuelle Seite wirkt überladen: Hero hat 8 Bento-Kacheln gleichzeitig (Headline, Counter, Ticker, Terminal, CPU-Box, Jahre-Kachel, Marquee, Status-Bar), danach folgen direkt nochmal 6 Feature-Kacheln, dann KPI-Grid mit nochmal denselben Zahlen. Viele Sektionen kämpfen um Aufmerksamkeit. Tech-Vibe bleibt — aber ruhiger, fokussierter, mit klarer Lesereihenfolge.
 
-## Neue Farbpalette (Electric Violet)
+## Leitprinzipien
+- **Eine Hauptbotschaft pro Sektion** — Hero macht Hero, KPIs machen KPIs.
+- **Weniger ist mehr** — pro Sektion max. 1 starkes visuelles Element statt 5 kleine.
+- **Mehr Whitespace** — größere Abstände, weniger Cards nebeneinander.
+- **Wiederholungen raus** — Counter (Projekte/Jahre/Effizienz) nur EINMAL auf der Seite, nicht 2× wie aktuell.
 
-| Token | HSL | Hex | Verwendung |
-|---|---|---|---|
-| `--primary` | `258 90% 56%` | #7c3aed | Hauptakzent, Buttons, Links, CTA |
-| `--primary-dark` | `243 75% 21%` | #1e1b4b | Hover, Tiefenkontrast |
-| `--primary-glow` | `258 90% 75%` | #c4b5fd | Glow, Highlights, Hero-Akzente |
-| `--accent` | `258 90% 96%` | very light violet | Hover-Backgrounds, Soft-Pills |
-| `--ring` | `258 90% 56%` | — | Focus-Ringe |
-| `--foreground` | `258 30% 8%` | sehr dunkles Violett-Schwarz | Body-Text (bisher reines Navy) |
-| `--background` | `0 0% 100%` | bleibt weiß | — |
+## Konkrete Änderungen
 
-Sekundärer Verlauf für Gradients: **#7c3aed → #c4b5fd** (statt Blue → Cyan).
+### 1. Hero (`HeroBento.tsx`) — radikal reduzieren
+Statt 8 Kacheln nur noch:
+- **Großes Statement** (Headline + Subline + 2 CTAs) — zentriert oder links, viel Luft
+- **Ein** dezentes visuelles Element rechts (z. B. das Code-Terminal ODER ein animierter Mesh-Gradient-Blob, nicht beides)
+- Status-Bar oben dezent behalten (1 Zeile)
+- Marquee-Ticker entfernen (oder ans Seitenende verschieben als Trust-Bar)
+- Live-Telemetrie, CPU-Box, Counter-Kacheln → raus aus Hero
 
-## Änderungen im Code
+### 2. Features (`BentoFeatures.tsx`) — Grid beruhigen
+- 6 Disziplinen bleiben, aber als **gleichmäßiges 3×2-Grid** statt asymmetrischem Bento
+- Visualisierungen pro Card reduzieren (kein Bar-Chart + Netzwerk + Heatmap + Sparkline gleichzeitig) — pro Card 1 schlichtes Icon-Detail
+- Mehr Padding, größere Typo, weniger Mono-Tags
 
-### 1. `src/index.css`
-- Alle Blau-HSL-Werte (`217 91% 60%`, `199 89% 48%`, `224 76% 48%`) durch Violet-Werte ersetzen.
-- Utility-Klassen umbenennen **wäre Breaking-Risk** (~30+ Verwendungen) → besser: `bg-gradient-blue`, `text-gradient-blue`, `bg-gradient-blue-subtle`, `bg-gradient-blue-section` **behalten** den Klassennamen, aber die Gradient-Farben werden auf Violet umgestellt. Kein Refactor in Komponenten nötig.
-- `hero-gradient` (Z. 87–92): Orbs auf Violet umstellen.
-- `glow-pulse`-Keyframe (Z. 164–167): Box-Shadow auf Violet.
-- Sidebar-Tokens & Accent ebenfalls anpassen.
+### 3. Process Flow (`ProcessFlow.tsx`) — Terminal-Stil entschärfen
+- Behält dunkle Sektion, aber CLI-Optik reduzieren
+- 3–4 Schritte horizontal/vertikal mit klarer Nummerierung statt Terminal-Output
 
-### 2. `tailwind.config.ts`
-- Keine strukturellen Änderungen — die Tokens lesen aus CSS-Variablen.
-- Optional: `primary.glow` als neuen Sub-Token hinzufügen.
+### 4. Impact Grid (`ImpactGrid.tsx`) — entweder hier ODER im Hero
+- Da Hero entschlackt wird, bleiben die KPIs hier — als ruhige 4er-Zeile
+- Keine doppelte Zählung mehr
 
-### 3. Neues Logo
-- **Stil:** Minimalistische Wortmarke "for.tel" — keine Bildmarke.
-- **Typografie:** Geometrische Sans (z. B. Inter Black / Space Grotesk Bold), kleines Detail-Akzent: der **Punkt** zwischen `for` und `tel` in Violet (`#7c3aed`) gesetzt — als visuelles Brand-Element.
-- **Wortlaut:** `for.tel` (klein) — Punkt farblich akzentuiert.
-- **Erzeugung:** Per Image-Gen-Tool als hochauflösendes PNG mit transparentem Hintergrund.
-- **Zwei Varianten:**
-  - `src/assets/logo.png` — dunkle Schrift (für hellen Header/Footer).
-  - `src/assets/logo-light.png` — weiße Schrift (Reserve für dunkle Sections, falls später benötigt).
-- Alte `logo.png` wird überschrieben — alle Imports (Navbar 3×, Footer 1×) bleiben unverändert.
+### 5. Voices (`VoicesSection.tsx`) — minimal kürzen
+- 3 Testimonials bleiben, aber ohne Mono-Klammern und mit ruhigerer Card-Optik
 
-### 4. Favicon
-- Optional in diesem Schritt: neues `public/favicon.png` aus dem Logo-Symbol (Punkt-Mark in Violet auf weißem/transparentem Hintergrund).
+### 6. FAQ + FinalCTA
+- FAQ-Terminal-Optik leicht entschärfen (weniger Mono, mehr Lesbarkeit)
+- FinalCTA bleibt im Wesentlichen
 
-### 5. Memory-Update
-- `mem://design/leitlinien` aktualisieren: Primary ist nicht mehr Blau, sondern Electric Violet.
-- Core-Eintrag im `mem://index.md` entsprechend updaten.
+## Reihenfolge danach
+1. Hero (ruhig, fokussiert)
+2. Trust-Marquee (1 dünne Zeile)
+3. Features (3×2 Grid)
+4. Process (4 Schritte)
+5. Impact (4 KPIs)
+6. Voices (3 Stimmen)
+7. FAQ
+8. Final CTA
+9. Footer
 
-## Vorgehen
-
-1. **Logo generieren** mit `imagegen--generate_image` (premium-tier wegen Text-Lesbarkeit), Wortmarke "for.tel" mit violettem Punkt, transparenter Hintergrund → speichern als `src/assets/logo.png` (überschreibt).
-2. **`src/index.css`** komplett auf Violet-Tokens umstellen (Variablen + Utility-Gradients + Hero-Gradient + Glow).
-3. **Memory-Files** aktualisieren.
-4. Visuell verifizieren: Startseite + Impressum + Karriere + Hero ansehen.
-
-## Offene Punkte
-
-- Wenn dir die generierte Wortmarke nicht gefällt, generiere ich gerne 2–3 weitere Varianten.
-- Falls du später doch eine Bildmarke / ein Icon (z. B. nur den violetten Punkt als App-Icon) brauchst, kann ich das jederzeit nachziehen.
+## Technisches
+- Keine neuen Dependencies, keine Logik-Änderungen.
+- Nur Edits in `src/components/landing-v2/*` und ggf. minimale CSS-Aufräumarbeiten.
+- Animationen bleiben (IntersectionObserver), nur weniger gleichzeitig.

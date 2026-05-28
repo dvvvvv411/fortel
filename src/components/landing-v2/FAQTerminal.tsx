@@ -19,11 +19,12 @@ const FAQTerminal = () => {
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div className={`mb-14 text-center scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// faq.md</div>
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// faq</div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Die ehrlichen <span className="gradient-text-violet">Antworten</span>.
+            Häufig gestellte <span className="gradient-text-violet">Fragen</span>.
           </h2>
         </div>
+
 
         <div className={`bento-card p-2 sm:p-4 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           {faqs.map((f, i) => {

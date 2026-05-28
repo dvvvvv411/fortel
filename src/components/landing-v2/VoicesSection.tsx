@@ -28,14 +28,14 @@ const voices = [
 const VoicesSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.05);
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6 bg-gradient-blue-section">
+    <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// signal from the field</div>
+        <div className={`max-w-3xl mb-16 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4">// stimmen</div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            Was unsere Kunden <br className="hidden sm:block"/>
-            <span className="gradient-text-violet">wirklich</span> sagen.
+            Was Kunden <span className="gradient-text-violet">wirklich</span> sagen.
           </h2>
+
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
