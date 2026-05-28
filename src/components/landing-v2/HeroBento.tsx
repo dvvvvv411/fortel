@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, ShieldCheck, Cable, Users, CalendarDays, Lightbulb } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Cable, Users, CalendarDays, Lightbulb, CheckCircle2 } from 'lucide-react';
 
 const HeroBento = () => {
   return (
-    <section className="relative w-full flex items-center justify-center bg-muted/40 pt-24 sm:pt-28 pb-16 px-4 sm:px-6 md:px-8 overflow-hidden">
+    <section className="relative w-full flex items-start justify-center bg-muted/40 pt-24 sm:pt-28 pb-24 px-4 sm:px-6 md:px-8 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full bg-primary/[0.06] blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl w-full grid grid-cols-12 gap-5 lg:gap-6">
-        {/* ───── LEFT: MAIN CONTENT CARD ───── */}
-        <div className="hero-animate hero-animate-1 col-span-12 lg:col-span-7 bg-background rounded-[2.5rem] p-8 md:p-12 lg:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-border flex flex-col justify-between relative overflow-hidden group">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/[0.05] blur-[100px] rounded-full group-hover:bg-primary/10 transition-colors duration-700" />
-
+      <div className="relative max-w-7xl w-full grid grid-cols-12 gap-5 lg:gap-6 items-start">
+        {/* ───── LEFT: STICKY MAIN CONTENT (transparent) ───── */}
+        <div className="hero-animate hero-animate-1 col-span-12 lg:col-span-7 lg:sticky lg:top-28 lg:self-start flex flex-col justify-between relative">
           <div className="relative">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full mb-8">
               <ShieldCheck size={13} className="text-primary" />
@@ -151,6 +149,31 @@ const HeroBento = () => {
                 Aus einer Hand.
               </div>
             </div>
+          </div>
+
+          {/* Extra "Branchen-Fokus" tile — adds scroll length so sticky effect is visible */}
+          <div className="hero-animate hero-animate-4 bg-background rounded-[2.5rem] p-7 sm:p-8 border border-border shadow-[0_20px_40px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-[2px] w-8 bg-primary rounded-full" />
+              <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                Branchen-Fokus
+              </span>
+            </div>
+            <h3 className="font-display text-lg sm:text-xl font-bold text-foreground leading-tight mb-4">
+              Wo wir Mehrwert schaffen.
+            </h3>
+            <ul className="space-y-3">
+              {[
+                'Telekommunikation & Fernmeldenetze',
+                'Energie- & Verteilnetzbetreiber',
+                'Industrie & öffentliche Hand',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                  <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

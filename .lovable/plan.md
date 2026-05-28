@@ -1,29 +1,21 @@
-# Header überarbeiten + Logo größer
+# Hero: linke Seite transparent + sticky, rechte Seite scrollt
 
-Ziel: ruhigerer, premium-seriöser Header mit prominenterem Logo. Betrifft nur `src/components/landing/Navbar.tsx`.
+## Änderungen in `src/components/landing-v2/HeroBento.tsx`
 
-## Änderungen
+**Linke Spalte**
+- Card-Look entfernen: kein `bg-background`, keine `rounded-[2.5rem]`, kein `shadow`, kein `border`, kein Glow-Overlay, kein Padding der Card. Inhalt sitzt direkt auf dem Section-Hintergrund.
+- `sticky top-28 self-start` damit sie beim Scrollen oben kleben bleibt (Top-Offset passend zur Header-Höhe ≈ 7rem).
+- Interner Aufbau (Eyebrow, H1, Subline, CTAs, Stats) bleibt 1:1 erhalten — nur die Hülle entfällt.
 
-**Logo skalieren**
-- Default-Höhe: `h-10` → `h-14` (≈ +40 %)
-- Scrolled-Höhe: `h-8` → `h-11`
-- Mobile-Sidebar-Logo: `h-8` → `h-10`
-- Header-Höhe entsprechend angepasst: Default `h-20` → `h-24`, scrolled `h-16` → `h-20`
+**Rechte Spalte**
+- Bleibt als 3 Karten (Expertise-Quadrant + Branchen + Verlässlich.) bestehen, aber scrollt jetzt am Sticky-Block vorbei.
+- Damit Scroll überhaupt entsteht: zusätzlich 1 weitere "Insights"-Karte unten in der rechten Spalte (z. B. „Aktuelle Branchen-Fokus" Liste mit 3 Bullets), sodass die rechte Spalte deutlich höher ist als die linke. So entsteht die gewünschte Sticky-Wirkung ohne den Rest der Seite anzufassen.
 
-**Header-Refinement**
-- Top-Bar (Kontaktleiste): Hintergrund `bg-foreground` → dezenter `bg-muted/60` mit `border-b border-border`, Text `text-muted-foreground`. Wirkt weniger schwer, edler. Höhe `h-9` → `h-10`.
-- Telefon-/Mail-Hover: violett (`hover:text-primary`) statt weiß.
-- Main-Header: keine Schatten mehr, statt `shadow-sm` nur dünner `border-b border-border`. Hintergrund im Scroll-Zustand `bg-background/90 backdrop-blur-xl` (statt `/95 backdrop-blur-md`) — leichtere, modernere Optik.
-- Nav-Links: Abstand `gap-9` → `gap-8`, Schriftgrad bleibt `text-sm font-medium`, aktive Underline-Höhe `-bottom-1.5` → `-bottom-2`, Strich-Stärke `h-px` → `h-0.5` für bessere Sichtbarkeit. Statt `text-foreground/80` jetzt `text-foreground/70` für ruhigere Hierarchie.
-- CTA-Button: `rounded-md` → `rounded-full`, `h-10` → `h-11`, Pfeil-Icon hover `translate-x-0.5`. Wirkt freundlicher und premium.
-- Mobile-Burger: `rounded-md` → `rounded-full`, gleiche Optik.
+**Section-Container**
+- `items-center` → `items-start` damit Sticky funktioniert.
+- `pb-16` → `pb-24` für etwas mehr Luft beim Scroll-Übergang in den nächsten Block.
 
-**Was bleibt unverändert**
-- Navigationspunkte und Reihenfolge
-- Mobile-Sidebar-Struktur und -Inhalte
-- Routen, Logik, Scroll-Verhalten
-- Farben/Tokens (alles bleibt semantisch)
-
-## Technische Details
-
-Nur `src/components/landing/Navbar.tsx` wird editiert. Keine neuen Dependencies, keine Logik-Änderungen, keine Token-Änderungen in `index.css` oder `tailwind.config.ts`.
+## Nicht angefasst
+- Header, Tokens, Farben, Typografie
+- Inhalte der bestehenden 3 rechten Tiles
+- Animationen (`hero-animate-*`)
