@@ -71,61 +71,62 @@ const HeroBento = () => {
 
         {/* ───── RIGHT: VISUAL COLUMN ───── */}
         <div className="col-span-12 lg:col-span-5 grid grid-rows-[auto_auto] gap-5 lg:gap-6">
-          {/* Project status mockup */}
-          <div className="hero-animate hero-animate-2 bg-background rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-border overflow-hidden relative p-7 sm:p-8">
-            <div className="flex items-center justify-between mb-7">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-destructive/30 border border-destructive/40" />
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400/30 border border-amber-400/40" />
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/30 border border-emerald-400/40" />
+          {/* Expertise-Quadrant Card */}
+          <div className="hero-animate hero-animate-2 bg-background rounded-[2.5rem] p-7 sm:p-8 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-border relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/[0.06] rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 mb-7">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="h-[2px] w-8 bg-primary rounded-full" />
+                <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                  Expertise &amp; Wertschöpfung
+                </span>
               </div>
-              <div className="text-[10px] font-mono text-muted-foreground/70 tracking-widest uppercase">
-                projekt-status.app
-              </div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground leading-tight mb-2.5">
+                Ganzheitliche Engineering-<br />Lösungen aus Filderstadt.
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Seit 2006 begleiten wir komplexe Infrastrukturprojekte mit
+                inhabergeführter Präzision und tiefem technischen Verständnis.
+              </p>
             </div>
 
-            <div className="space-y-6">
-              <div>
-                <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                  Aktuelles Projekt
-                </span>
-                <h3 className="font-display text-xl font-bold text-foreground mt-0.5">
-                  Fernmelde-Rollout
-                </h3>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm font-semibold">
-                  <span className="text-muted-foreground">Phase 3 von 5</span>
-                  <span className="text-primary tabular-nums">68 %</span>
-                </div>
-                <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
-                  <div className="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style={{ width: '68%' }} />
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-1">
-                {[
-                  { label: 'Machbarkeit & Konzept', done: true },
-                  { label: 'Ausschreibung vergeben', done: true },
-                  { label: 'Bauüberwachung', done: false },
-                ].map((m) => (
-                  <div key={m.label} className={`flex items-center gap-3 text-sm ${m.done ? '' : 'opacity-60'}`}>
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
-                        m.done
-                          ? 'bg-emerald-100 border border-emerald-200 text-emerald-600'
-                          : 'bg-muted border border-border'
-                      }`}
-                    >
-                      {m.done && <Check size={12} strokeWidth={3} />}
-                    </div>
-                    <span className={m.done ? 'text-foreground' : 'text-muted-foreground'}>{m.label}</span>
+            <div className="relative z-10 grid grid-cols-2 gap-3">
+              {[
+                { Icon: Cable, label: 'Anlagenplanung', sub: 'Elektro & Fernmelden' },
+                { Icon: Users, label: 'Personalberatung', sub: 'Experten-Recruiting' },
+                { Icon: CalendarDays, label: 'Management', sub: 'Projektsteuerung' },
+                { Icon: Lightbulb, label: 'Beratung', sub: 'Strategie & Technik' },
+              ].map(({ Icon, label, sub }) => (
+                <div
+                  key={label}
+                  className="p-3.5 rounded-2xl bg-muted/50 border border-border transition-all duration-300 hover:bg-background hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon size={15} className="text-primary" />
                   </div>
-                ))}
+                  <div className="text-xs font-semibold text-foreground">{label}</div>
+                  <div className="text-[10px] text-muted-foreground mt-1 uppercase tracking-wider leading-tight">
+                    {sub}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative z-10 mt-7 pt-5 border-t border-border flex items-center justify-between">
+              <div className="flex -space-x-2">
+                <div className="w-7 h-7 rounded-full bg-primary text-primary-foreground text-[9px] font-bold flex items-center justify-center ring-2 ring-background">MK</div>
+                <div className="w-7 h-7 rounded-full bg-indigo-500 text-white text-[9px] font-bold flex items-center justify-center ring-2 ring-background">TS</div>
+                <div className="w-7 h-7 rounded-full bg-emerald-500 text-white text-[9px] font-bold flex items-center justify-center ring-2 ring-background">AL</div>
+                <div className="w-7 h-7 rounded-full bg-muted text-foreground text-[9px] font-bold flex items-center justify-center ring-2 ring-background border border-border">+18</div>
+              </div>
+              <div className="text-right">
+                <div className="text-[10px] font-bold text-foreground uppercase tracking-tight">Verlässlichkeit</div>
+                <div className="text-[10px] text-muted-foreground">Inhabergeführt seit 2006</div>
               </div>
             </div>
           </div>
+
 
           {/* Two smaller info tiles */}
           <div className="grid grid-cols-2 gap-5 lg:gap-6">
