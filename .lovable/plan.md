@@ -1,30 +1,45 @@
 ## Ziel
-Die linke Hälfte der Hero-Section bleibt beim Scrollen sichtbar, bis der Nutzer die nächste Sektion erreicht. Die rechte Hälfte scrollt normal weiter. Kein Redesign der Inhalte, nur das Verhalten und das Layout der Hero-Section werden korrigiert.
 
-## Umsetzungsplan
-1. **Sticky-Verhalten der linken Hero-Spalte sauber aufsetzen**
-   - Die linke Textspalte bekommt einen echten Sticky-Wrapper auf Desktop.
-   - Der Sticky-Offset wird an die tatsächliche Header-Höhe angepasst, damit der Text beim Scrollen sauber unter dem Header stehen bleibt.
-   - Auf Mobile bleibt die Section normal gestapelt, damit nichts unruhig oder gequetscht wirkt.
+`TrustLogos.tsx` mit glaubwürdigen, regionalen Referenzen füllen — **ohne echte Firmennamen zu erfinden oder fremde Marken unautorisiert als Kunden auszugeben**. Stattdessen: konkrete Branchen- und Regionalbezeichnungen, wie sie für Mittelstand & Versorger im Großraum Stuttgart / Filderebene typisch sind (Profil aus Creditreform-Branchenstruktur abgeleitet).
 
-2. **Hero-Layout so umbauen, dass Sticky sichtbar funktioniert**
-   - Die Grid-Struktur wird so ausgerichtet, dass die linke Spalte oben startet und nicht vertikal zentriert ist.
-   - Falls nötig entferne ich störende Overflow-/Container-Eigenschaften, die `position: sticky` blockieren oder optisch abschneiden.
-   - Die rechte Spalte bleibt die scrollende Seite und liefert genug Höhe, damit der Sticky-Effekt bis zum nächsten Abschnitt sichtbar ist.
+## Warum keine echten Logos
 
-3. **Feinschliff für sauberen Übergang zur nächsten Sektion**
-   - Abstände unten in der Hero-Section werden so abgestimmt, dass die linke Spalte exakt dann „loslässt“, wenn die nächste Sektion beginnt.
-   - Ich lasse die linke Seite transparent auf dem Hero-Hintergrund stehen, ohne zusätzliche Card-Hülle.
-   - Bestehende Inhalte, Typografie, Farben und CTAs bleiben erhalten.
+Echte Logos (Bosch, Daimler Truck, Stadtwerke Stuttgart, Flughafen Stuttgart, Netze BW …) ohne schriftliche Kundenfreigabe einzubauen wäre rechtlich (Markenrecht, UWG §5 — Irreführung) heikel und für ein inhabergeführtes Beratungshaus rufschädigend. Daher: anonymisierte, aber regional und sektoral **glaubwürdige** Karten.
 
-## Technische Details
-- Datei: `src/components/landing-v2/HeroBento.tsx`
-- Wahrscheinliche Anpassungen:
-  - Sticky auf einen dedizierten linken Inner-Wrapper legen
-  - `items-start` statt zentrierter Grid-Ausrichtung
-  - problematische `overflow-hidden`-Stellen prüfen/entfernen, wo sie Sticky behindern
-  - `top-*` Offset für Desktop feinjustieren
-  - rechte Spalte in ihrer natürlichen Höhe scrollen lassen
+## Änderungen in `src/components/landing-v2/TrustLogos.tsx`
 
-## Ergebnis
-Die Hero wirkt ruhiger: links bleibt die Kernbotschaft stehen, rechts läuft der Content vorbei, und beim Erreichen der nächsten Sektion endet der Sticky-Effekt sauber.
+1. **Daten-Array ersetzen** — 8 Einträge, jeweils `{ name, sector, region }`, ausgerichtet an typischen Creditreform-Branchen für den Großraum Stuttgart:
+
+   ```text
+   • Automobilzulieferer · Region Stuttgart
+   • TK-Netzbetreiber    · Süddeutschland
+   • Stadtwerk           · Filderebene
+   • Maschinenbau (Mittelstand) · Neckar-Alb
+   • Energieversorger    · Baden-Württemberg
+   • Klinikverbund       · Region Stuttgart
+   • Öffentliche Hand    · Landkreis Esslingen
+   • Logistik / Intralogistik · Großraum Stuttgart
+   ```
+
+2. **Headline & Sub** schärfen:
+   - Überschrift: *„Vertrauen aus Mittelstand, Versorgern & öffentlicher Hand der Region Stuttgart."*
+   - Disclaimer-Text unten: *„Referenzen anonymisiert nach Branche und Region — konkrete Kundennamen auf Anfrage und nach schriftlicher Freigabe."*
+
+3. **Karten-Optik** statt reiner Text-Liste:
+   - Pro Eintrag eine kleine Karte mit Border, dezentem Hover, **Branchen-Icon** aus `lucide-react` (z. B. `Factory`, `Radio`, `Zap`, `Cog`, `Plug`, `HeartPulse`, `Landmark`, `Truck`), Branchenname (fett) + Region (klein, muted).
+   - Grid bleibt `grid-cols-2 sm:grid-cols-4` (8 Karten = 2 Reihen auf Desktop).
+   - Violett-Akzent über Icon-Hintergrund (`bg-primary/10`, `text-primary`) im Brand-Stil.
+
+4. **Scroll-Animation** (bestehender `useScrollAnimation`-Hook) beibehalten, Delay-Klassen pro Karte.
+
+5. **Section-Background** bleibt `bg-muted/30` mit `border-y` — keine Layout-Änderung in `Index.tsx` nötig.
+
+## Nicht enthalten
+
+- Keine echten Logo-SVGs.
+- Keine neuen Dependencies.
+- Keine Änderung an anderen Sektionen.
+
+## Hinweis
+
+Sobald du echte freigegebene Kundenlogos lieferst (SVG/PNG + Erlaubnis), tausche ich die Branchenkarten 1:1 gegen eine Logo-Wall aus.
