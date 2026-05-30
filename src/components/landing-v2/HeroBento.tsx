@@ -33,14 +33,14 @@ const HeroBento = () => {
             <div className="flex flex-wrap gap-3 sm:gap-4">
               <Link
                 to="/kontakt"
-                className="group/btn inline-flex items-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-semibold rounded-2xl transition-all shadow-lg shadow-primary/20 hover:bg-primary/90 hover:-translate-y-0.5"
+                className="group/btn inline-flex items-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-semibold rounded-md transition-all shadow-lg shadow-primary/20 hover:bg-primary/90 hover:-translate-y-0.5"
               >
                 Projekt anfragen
                 <ArrowRight size={17} className="transition-transform group-hover/btn:translate-x-1" />
               </Link>
               <Link
                 to="/leistungen"
-                className="inline-flex items-center px-7 py-4 bg-background text-foreground border border-border font-semibold rounded-2xl hover:border-primary/40 hover:bg-muted transition-all"
+                className="inline-flex items-center px-7 py-4 bg-background text-foreground border border-border font-semibold rounded-md hover:border-primary/40 hover:bg-muted transition-all"
               >
                 Unsere Leistungen
               </Link>
@@ -70,7 +70,7 @@ const HeroBento = () => {
         {/* ───── RIGHT: VISUAL COLUMN ───── */}
         <div className="col-span-12 lg:col-span-5 grid grid-rows-[auto_auto] gap-5 lg:gap-6">
           {/* Expertise-Quadrant Card */}
-          <div className="hero-animate hero-animate-2 bg-background rounded-[2.5rem] p-7 sm:p-8 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-border relative overflow-hidden">
+          <div className="hero-animate hero-animate-2 bg-background rounded-lg p-7 sm:p-8 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-border relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/[0.06] rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 mb-7">
@@ -98,7 +98,7 @@ const HeroBento = () => {
               ].map(({ Icon, label, sub }) => (
                 <div
                   key={label}
-                  className="p-3.5 rounded-2xl bg-muted/50 border border-border transition-all duration-300 hover:bg-background hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20"
+                  className="p-3.5 rounded-md bg-muted/50 border border-border transition-all duration-300 hover:bg-background hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20"
                 >
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Icon size={15} className="text-primary" />
@@ -128,8 +128,8 @@ const HeroBento = () => {
 
           {/* Two smaller info tiles */}
           <div className="grid grid-cols-2 gap-5 lg:gap-6">
-            <div className="hero-animate hero-animate-3 bg-background rounded-[2.5rem] p-6 sm:p-8 border border-border shadow-[0_20px_40px_-12px_rgba(0,0,0,0.04)] hover:shadow-xl transition-shadow group flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <div className="hero-animate hero-animate-3 bg-background rounded-lg p-6 sm:p-8 border border-border shadow-[0_20px_40px_-12px_rgba(0,0,0,0.04)] hover:shadow-xl transition-shadow group flex flex-col">
+              <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Building2 size={22} className="text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <div className="font-display font-bold text-foreground">Branchen</div>
@@ -138,7 +138,7 @@ const HeroBento = () => {
               </div>
             </div>
 
-            <div className="hero-animate hero-animate-4 bg-primary rounded-[2.5rem] p-6 sm:p-8 shadow-[0_20px_40px_-12px_hsl(var(--primary)/0.3)] flex flex-col justify-end relative overflow-hidden">
+            <div className="hero-animate hero-animate-4 bg-primary rounded-lg p-6 sm:p-8 shadow-[0_20px_40px_-12px_hsl(var(--primary)/0.3)] flex flex-col justify-end relative overflow-hidden">
               <div className="absolute top-0 right-0 p-6 sm:p-8">
                 <ShieldCheck size={28} className="text-primary-foreground/25" />
               </div>
@@ -152,7 +152,7 @@ const HeroBento = () => {
           </div>
 
           {/* Extra "Branchen-Fokus" tile — adds scroll length so sticky effect is visible */}
-          <div className="hero-animate hero-animate-4 bg-background rounded-[2.5rem] p-7 sm:p-8 border border-border shadow-[0_20px_40px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden">
+          <div className="hero-animate hero-animate-4 bg-background rounded-lg p-7 sm:p-8 border border-border shadow-[0_20px_40px_-12px_rgba(0,0,0,0.04)] relative overflow-hidden">
             <div className="flex items-center gap-2 mb-4">
               <span className="h-[2px] w-8 bg-primary rounded-full" />
               <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">

@@ -6,7 +6,7 @@ const FinalCTA = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   return (
     <section ref={ref} className="relative py-24 sm:py-32 px-4 sm:px-6">
-      <div className={`max-w-7xl mx-auto relative rounded-xl overflow-hidden bg-foreground text-background p-10 sm:p-14 lg:p-20 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
+      <div className={`max-w-7xl mx-auto relative rounded-md overflow-hidden bg-foreground text-background p-10 sm:p-14 lg:p-20 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
         {/* subtle glow */}
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[120px]" />
 
