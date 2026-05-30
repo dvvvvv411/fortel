@@ -31,7 +31,7 @@ const ProcessFlow = () => {
           backgroundSize: '60px 60px',
         }}
       />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-y-1/2 rounded-full bg-primary/30 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-y-1/2 rounded-full bg-primary/12 blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>

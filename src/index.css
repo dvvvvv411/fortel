@@ -7,36 +7,36 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 258 30% 10%;
+    --foreground: 220 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 258 30% 10%;
+    --card-foreground: 220 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 258 30% 10%;
+    --popover-foreground: 220 15% 12%;
 
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
     --primary-dark: 243 75% 21%;
     --primary-glow: 258 90% 76%;
 
-    --secondary: 258 30% 94%;
-    --secondary-foreground: 258 30% 10%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 15% 12%;
 
-    --muted: 258 25% 96%;
-    --muted-foreground: 258 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 42%;
 
     --accent: 258 90% 96%;
-    --accent-foreground: 258 30% 10%;
+    --accent-foreground: 220 15% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 258 25% 91%;
-    --input: 258 25% 91%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
     --ring: 262 83% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.375rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 258 15% 26%;
@@ -87,22 +87,20 @@
 /* Hero gradient background */
 .hero-gradient {
   background: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, hsl(262 83% 58% / 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 30% 20%, hsl(280 85% 65% / 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 30% at 70% 20%, hsl(258 90% 76% / 0.1) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 50% 0%, hsl(262 83% 58% / 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 30% 20%, hsl(280 85% 65% / 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 70% 20%, hsl(258 90% 76% / 0.05) 0%, transparent 50%);
 }
 
 /* Scroll animation classes */
 .scroll-hidden {
   opacity: 0;
-  transform: translateY(24px);
-  filter: blur(3px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
 }
 .scroll-visible {
   opacity: 1;
   transform: translateY(0);
-  filter: blur(0);
 }
 .scroll-hidden.delay-1 { transition-delay: 80ms; }
 .scroll-hidden.delay-2 { transition-delay: 160ms; }
