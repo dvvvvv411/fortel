@@ -46,8 +46,8 @@ const AboutSnapshot = () => {
         </div>
 
         <div className={`relative scroll-hidden delay-2 ${isVisible ? 'scroll-visible' : ''}`}>
-          <div className="absolute -inset-6 bg-gradient-to-br from-primary/25 via-primary-glow/15 to-transparent rounded-lg blur-2xl opacity-80" />
-          <div className="relative rounded-lg overflow-hidden border border-border shadow-2xl shadow-primary/10 aspect-[4/5] bg-muted">
+          <div className="absolute -inset-6 bg-gradient-to-br from-primary/25 via-primary-glow/15 to-transparent rounded-lg blur-3xl opacity-40" />
+          <div className="relative rounded-lg overflow-hidden border border-border shadow-sm aspect-[4/5] bg-muted">
             <img
               src={aboutImage}
               alt="for.tel Solutions Büro in Filderstadt"
