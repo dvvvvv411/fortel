@@ -103,11 +103,6 @@ const Team = () => {
           { label: 'Home', href: '/' },
           { label: 'Team' },
         ]}
-        meta={[
-          { label: 'Führung', value: 'inhabergeführt' },
-          { label: 'Standort', value: 'Filderstadt · DE' },
-          { label: 'Aktiv seit', value: '2006' },
-        ]}
       />
 
 

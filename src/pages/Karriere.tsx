@@ -28,11 +28,6 @@ const Karriere = () => {
           { label: 'Home', href: '/' },
           { label: 'Karriere' },
         ]}
-        meta={[
-          { label: 'Standort', value: 'Filderstadt · DE' },
-          { label: 'Vertrag', value: 'unbefristet' },
-          { label: 'Einstieg', value: 'sofort möglich' },
-        ]}
       />
 
       <section className="py-20">

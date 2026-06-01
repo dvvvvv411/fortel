@@ -70,11 +70,6 @@ const Kontakt = () => {
           { label: 'Home', href: '/' },
           { label: 'Kontakt' },
         ]}
-        meta={[
-          { label: 'Telefon', value: '+49 711 96881540' },
-          { label: 'E-Mail', value: 'info@for-tel.de' },
-          { label: 'Reaktion', value: '< 24 Stunden' },
-        ]}
       />
 
       <section ref={ref} className="py-20">

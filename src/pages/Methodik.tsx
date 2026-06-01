@@ -116,11 +116,6 @@ const Methodik = () => {
           { label: 'Home', href: '/' },
           { label: 'Methodik' },
         ]}
-        meta={[
-          { label: 'Phasen', value: '4 Schritte' },
-          { label: 'Reporting', value: 'dokumentiert' },
-          { label: 'Steuerung', value: 'messbar' },
-        ]}
       />
 
       <section ref={ref} className="py-20">

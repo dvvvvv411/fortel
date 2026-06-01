@@ -88,11 +88,6 @@ const Software = () => {
           { label: 'Home', href: '/' },
           { label: 'Anlagenplanung' },
         ]}
-        meta={[
-          { label: 'Disziplin', value: 'Elektro & Fernmelden' },
-          { label: 'Leistung', value: 'HOAI Lph 1–9' },
-          { label: 'Standards', value: 'VDE · DIN' },
-        ]}
       />
 
       {/* Capabilities */}
