@@ -95,12 +95,18 @@ const Team = () => {
     <>
 
       <PageHero
+        eyebrow="Team"
         title="Unser"
         highlight="Team"
         subtitle="Die Menschen hinter for.tel Solutions — Berater, Projektleiter und Planer mit Branchenerfahrung."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Team' },
+        ]}
+        meta={[
+          { label: 'Führung', value: 'inhabergeführt' },
+          { label: 'Standort', value: 'Filderstadt · DE' },
+          { label: 'Aktiv seit', value: '2006' },
         ]}
       />
 
