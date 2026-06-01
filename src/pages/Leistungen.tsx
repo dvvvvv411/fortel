@@ -106,11 +106,6 @@ const Leistungen = () => {
           { label: 'Home', href: '/' },
           { label: 'Leistungen' },
         ]}
-        meta={[
-          { label: 'Säulen', value: '4 Disziplinen' },
-          { label: 'Erfahrung', value: 'seit 2006' },
-          { label: 'Beratung', value: 'herstellerneutral' },
-        ]}
       />
 
       <div ref={ref} className="max-w-6xl mx-auto px-6 py-20">
