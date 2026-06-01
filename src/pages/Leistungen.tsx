@@ -98,12 +98,18 @@ const Leistungen = () => {
   return (
     <>
       <PageHero
+        eyebrow="Leistungen"
         title="Unsere"
         highlight="Leistungen"
         subtitle="Vier Säulen: Technische Beratung, Projektmanagement, Personalberatung und Anlagenplanung — aus einer Hand."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Leistungen' },
+        ]}
+        meta={[
+          { label: 'Säulen', value: '4 Disziplinen' },
+          { label: 'Erfahrung', value: 'seit 2006' },
+          { label: 'Beratung', value: 'herstellerneutral' },
         ]}
       />
 

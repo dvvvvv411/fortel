@@ -62,12 +62,18 @@ const Kontakt = () => {
     <>
 
       <PageHero
+        eyebrow="Kontakt"
         title="Kontaktieren"
         highlight="Sie uns"
         subtitle="Beratung, Projektsteuerung, Personal oder Anlagenplanung — sprechen Sie uns an. Wir melden uns innerhalb von 24 Stunden zurück."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Kontakt' },
+        ]}
+        meta={[
+          { label: 'Telefon', value: '+49 711 96881540' },
+          { label: 'E-Mail', value: 'info@for-tel.de' },
+          { label: 'Reaktion', value: '< 24 Stunden' },
         ]}
       />
 

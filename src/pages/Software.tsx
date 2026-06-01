@@ -80,12 +80,18 @@ const Software = () => {
   return (
     <>
       <PageHero
+        eyebrow="Anlagenplanung"
         title="Planung &"
         highlight="Anlagentechnik"
         subtitle="Planung und Vertrieb elektrotechnischer und fernmeldetechnischer Anlagen aller Art — von der Grundlagenermittlung bis zur Inbetriebnahme."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Anlagenplanung' },
+        ]}
+        meta={[
+          { label: 'Disziplin', value: 'Elektro & Fernmelden' },
+          { label: 'Leistung', value: 'HOAI Lph 1–9' },
+          { label: 'Standards', value: 'VDE · DIN' },
         ]}
       />
 

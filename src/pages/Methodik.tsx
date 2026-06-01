@@ -108,12 +108,18 @@ const Methodik = () => {
   return (
     <>
       <PageHero
+        eyebrow="Methodik"
         title="Unsere"
         highlight="Methodik"
         subtitle="Ein bewährter Vier-Phasen-Prozess für technische Projekte — strukturiert, transparent, planbar."
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Methodik' },
+        ]}
+        meta={[
+          { label: 'Phasen', value: '4 Schritte' },
+          { label: 'Reporting', value: 'dokumentiert' },
+          { label: 'Steuerung', value: 'messbar' },
         ]}
       />
 
