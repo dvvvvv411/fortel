@@ -5,7 +5,7 @@ import aboutImage from '@/assets/landing/about-building.jpg';
 
 const points = [
   'Unabhängiges Beratungshaus in Filderstadt — herstellerneutral',
-  '18+ Jahre Erfahrung, 150+ Technik-Projekte begleitet',
+  '20+ Jahre Erfahrung, 150+ Technik-Projekte begleitet',
   'Direkter Draht zu Beratern, Projektleitung & Geschäftsführung',
   'Klare Honorarmodelle, transparent kalkuliert',
 ];

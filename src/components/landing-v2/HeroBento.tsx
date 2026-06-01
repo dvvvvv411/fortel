@@ -50,7 +50,7 @@ const HeroBento = () => {
           <div className="relative mt-12 lg:mt-16 grid grid-cols-2 gap-8 border-t border-border pt-8">
             <div>
               <div className="font-display text-3xl sm:text-4xl font-extrabold text-foreground tabular-nums">
-                18<span className="text-foreground/40">+</span>
+                20<span className="text-foreground/40">+</span>
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground font-medium uppercase tracking-wider mt-1">
                 Jahre Erfahrung

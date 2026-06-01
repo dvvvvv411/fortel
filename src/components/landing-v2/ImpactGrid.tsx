@@ -14,7 +14,7 @@ const ImpactGrid = () => {
         <div className={`max-w-3xl mb-14 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Kennzahlen</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
-            Belastbare Zahlen aus 18 Jahren Projektpraxis.
+            Belastbare Zahlen aus 20 Jahren Projektpraxis.
           </h2>
         </div>
 
