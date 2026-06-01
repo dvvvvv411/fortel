@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
+import PageHero from '@/components/landing/PageHero';
 import Footer from '@/components/landing/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Input } from '@/components/ui/input';
@@ -12,7 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Mail, Phone, MapPin, Clock, Send, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const contactInfo = [
   { icon: Phone, label: 'Telefon', value: '+49 711 96881540', href: 'tel:+4971196881540' },
@@ -69,26 +69,16 @@ const Kontakt = () => {
 
   return (
     <>
-      {/* Kompakter, links-bündiger Hero */}
-      <section className="pt-28 md:pt-32 pb-8 md:pb-10 border-b border-border/60 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-5">
-            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-            <ChevronRight size={12} className="opacity-50" />
-            <span className="text-foreground font-medium">Kontakt</span>
-          </nav>
-          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-primary mb-3">
-            Kontakt
-          </p>
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
-            Kontakt aufnehmen<span className="text-primary">.</span>
-          </h1>
-          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl">
-            Beratung, Projektsteuerung, Personal oder Anlagenplanung — sprechen Sie uns an.
-            Wir antworten innerhalb von 24 Stunden an Werktagen.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Kontakt"
+        title="Kontakt"
+        highlight="aufnehmen"
+        subtitle="Beratung, Projektsteuerung, Personal oder Anlagenplanung — sprechen Sie uns an. Wir antworten innerhalb von 24 Stunden an Werktagen."
+        breadcrumb={[
+          { label: 'Home', href: '/' },
+          { label: 'Kontakt' },
+        ]}
+      />
 
       <section ref={ref} className="py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
