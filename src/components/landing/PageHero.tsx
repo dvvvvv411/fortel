@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 
 interface PageHeroProps {
   title: string;
@@ -11,16 +10,15 @@ interface PageHeroProps {
 
 const PageHero = ({ title, highlight, subtitle, breadcrumb, eyebrow }: PageHeroProps) => {
   return (
-    <section className="relative pt-28 md:pt-32 pb-16 md:pb-20 overflow-hidden bg-muted/40 border-b border-border">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[420px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <nav className="hero-animate hero-animate-1 flex items-center gap-1.5 mb-8 text-xs uppercase tracking-wider">
+    <section className="relative bg-background border-b border-border pt-32 md:pt-40 pb-20 md:pb-24 px-4 sm:px-6">
+      <div className="relative max-w-5xl mx-auto text-center">
+        {/* Breadcrumb */}
+        <nav className="hero-animate hero-animate-1 flex items-center justify-center gap-2 mb-10 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           {breadcrumb.map((item, i) => (
-            <span key={i} className="flex items-center gap-1.5">
-              {i > 0 && <ChevronRight size={12} className="text-muted-foreground/50" />}
+            <span key={i} className="flex items-center gap-2">
+              {i > 0 && <span className="text-muted-foreground/40">›</span>}
               {item.href ? (
-                <Link to={item.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+                <Link to={item.href} className="hover:text-foreground transition-colors">
                   {item.label}
                 </Link>
               ) : (
@@ -30,26 +28,24 @@ const PageHero = ({ title, highlight, subtitle, breadcrumb, eyebrow }: PageHeroP
           ))}
         </nav>
 
+        {/* Eyebrow: thin violet bar + label */}
         {eyebrow && (
-          <div className="hero-animate hero-animate-1 inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            <span className="text-primary text-xs font-semibold tracking-wide uppercase">
+          <div className="hero-animate hero-animate-1 flex flex-col items-center gap-3 mb-8">
+            <span className="h-[2px] w-10 bg-primary" />
+            <span className="text-[11px] uppercase tracking-[0.25em] text-primary font-semibold">
               {eyebrow}
             </span>
           </div>
         )}
 
-        <h1 className="hero-animate hero-animate-2 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.08] mb-6 max-w-4xl">
+        {/* Headline — rein typografisch, einziger Akzent: violetter Punkt */}
+        <h1 className="hero-animate hero-animate-2 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] text-foreground mb-8">
           {title}
-          {highlight && (
-            <>
-              {' '}
-              <span className="text-primary">{highlight}</span>
-            </>
-          )}
+          {highlight && <> {highlight}</>}
+          <span className="text-primary">.</span>
         </h1>
 
-        <p className="hero-animate hero-animate-3 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+        <p className="hero-animate hero-animate-3 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
           {subtitle}
         </p>
       </div>
