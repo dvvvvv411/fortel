@@ -18,10 +18,10 @@ const AboutSnapshot = () => {
         <div className={`scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Über uns</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1]">
-            Inhabergeführt. Seit 2006. Standort Deutschland.
+            Seit 2006 am Markt. Standort Deutschland.
           </h2>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-            for.tel Solutions ist ein inhabergeführtes Beratungshaus aus der Region Stuttgart.
+            for.tel Solutions ist ein unabhängiges Beratungshaus aus der Region Stuttgart.
             Wir beraten technisch und wirtschaftlich, übernehmen Projektsteuerung, vermitteln Fachpersonal
             und planen elektro- und fernmeldetechnische Anlagen — bodenständig und herstellerneutral.
           </p>
