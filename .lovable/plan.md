@@ -1,40 +1,46 @@
-# Plan: Karriere-Stellen zurücksetzen
+# Team-Seite Anpassungen
 
-Die Datei `src/data/karriereStellen.ts` wird so überarbeitet, dass die alten 5 Stellenanzeigen wieder erscheinen. Die Struktur (`Stelle`-Interface, Felder, Slug-basiertes Routing) bleibt unverändert — nur die Inhalte des `stellen`-Arrays werden ersetzt.
+Datei: `src/pages/Team.tsx`
 
-## Neue Stellen (Reihenfolge wie auf /karriere angezeigt)
+## Änderungen
 
-1. **Mitarbeiter (m/w/d) für Onlineprozess-Tests**
-   - slug: `onlineprozess-tests`
-   - Standort: Düsseldorf · Modell: Remote / Minijob / Teilzeit
-   - Arbeitszeit: Flexibel (ca. 5–30 Std./Woche) · Stundenlohn: 29 €
-   - Status: Sofort verfügbar
+### 1. Nummern (01–04) entfernen
+- `number` Feld aus allen Abteilungen entfernen
+- `<p className="text-xs font-mono text-primary tracking-wider">{dept.number}</p>` aus dem JSX entfernen
 
-2. **Mitarbeiter (m/w/d) für Softwareentwicklung**
-   - slug: `softwareentwicklung`
-   - Standort: Düsseldorf · Modell: Remote
-   - (kein Stundenlohn / keine Arbeitszeit-Angabe)
+### 2. Michael Schreiber → Projektleiter
+- Rolle "Head of Technology" → "Projektleiter"
+- Beschreibung leicht anpassen: "Leitet komplexe Kundenprojekte und sorgt dafür, dass Anforderungen, Zeitpläne und Qualität zuverlässig zusammenkommen."
 
-3. **Mitarbeiter (m/w/d) für UX/UI Design**
-   - slug: `ux-ui-design`
-   - Standort: Düsseldorf · Modell: Remote
+### 3. Zwei neue Abteilungen + 5 neue Mitarbeiter
 
-4. **Mitarbeiter (m/w/d) für DevOps & Cloud-Infrastruktur**
-   - slug: `devops-cloud-infrastruktur`
-   - Standort: Düsseldorf · Modell: Remote
+**Neue Abteilung: Qualitätssicherung & Testing** (passend zum Kerngeschäft)
+- **Daniel Krüger** — Lead Quality Assurance
+  Verantwortet Teststrategien für Kundenprojekte und stellt einheitliche Qualitätsstandards über alle Tester-Teams hinweg sicher.
+- **Lena Bachmann** — Testkoordinatorin
+  Plant Testzyklen, verteilt Aufgaben an unsere Tester-Community und wertet Ergebnisse strukturiert aus.
 
-5. **Werkstudent (m/w/d) im Bereich Digitalisierung**
-   - slug: `werkstudent-digitalisierung`
-   - Standort: Düsseldorf · Modell: Hybrid
+**Neue Abteilung: Kunden & Beratung**
+- **Tobias Reinhardt** — Senior Consultant
+  Berät Kunden bei der Optimierung digitaler Prozesse und übersetzt Geschäftsanforderungen in messbare Testkonzepte.
+- **Carolin Maier** — Key Account Managerin
+  Erste Ansprechpartnerin für unsere Großkunden — von der ersten Anfrage bis zur langfristigen Partnerschaft.
 
-Für jede Stelle werden `beschreibung`, `aufgaben`, `voraussetzungen`, `benefits` exakt aus den vom Nutzer gelieferten Texten übernommen. `kurzbeschreibung` wird kompakt aus dem "Über die Position"-Absatz abgeleitet (1–2 Sätze für die Listendarstellung).
+**Ergänzung in bestehender Abteilung "Technologie":**
+- **Stefan Lindner** — Softwareentwickler
+  Entwickelt interne Tools und Schnittstellen, mit denen unsere Tester effizient und nachvollziehbar arbeiten können.
 
-## Was sich NICHT ändert
+## Resultierende Struktur
+1. Geschäftsführung — Manfred Beutel
+2. Betrieb & Finanzen — Sabine Vogt, Andrea Wenzel
+3. People & Community — Jonas Beckmann, Katrin Hofmann
+4. Technologie — Michael Schreiber (Projektleiter), Stefan Lindner *(neu)*
+5. Qualitätssicherung & Testing *(neu)* — Daniel Krüger, Lena Bachmann
+6. Kunden & Beratung *(neu)* — Tobias Reinhardt, Carolin Maier
 
-- `src/pages/Karriere.tsx` und `src/pages/KarriereDetail.tsx` bleiben identisch — sie rendern die Daten generisch.
-- Die optionalen Felder (`arbeitszeit`, `stundenlohn`, `status`) werden nur dort gesetzt, wo angegeben; die Detailseiten-Sidebar blendet fehlende Felder bereits korrekt aus.
-- Bewerbungsformular-Verlinkung (`/karriere/bewerbung?stelle=…`) funktioniert weiter über `stelle.titel`.
+Gesamt: 10 Personen in 6 Abteilungen. Keine Nummern mehr.
 
-## Hinweise
-
-- Da die Slugs sich ändern, sind alte Detail-Links (z. B. `/karriere/webseiten-app-tester`) nicht mehr gültig und führen via `Navigate` zurück auf `/karriere`. Falls Redirects gewünscht sind, bitte Bescheid geben.
+## Technische Details
+- Nur `src/pages/Team.tsx` wird angepasst (Daten-Array + JSX).
+- Grid `md:grid-cols-[220px_1fr]` bleibt; linke Spalte zeigt nur noch Titel + Intro.
+- Bestehende Scroll-Animation und Trennlinien zwischen Abteilungen bleiben unverändert.
