@@ -57,22 +57,6 @@ const Karriere = () => {
                           {stelle.stundenlohn}/h
                         </span>
                       )}
-                      {stelle.status && (
-                        <span
-                          className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-xs font-medium ${
-                            stelle.status === 'Sofort verfügbar'
-                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                              : 'bg-amber-50 text-amber-700 border-amber-200'
-                          }`}
-                        >
-                          <span
-                            className={`h-1.5 w-1.5 rounded-full ${
-                              stelle.status === 'Sofort verfügbar' ? 'bg-emerald-500' : 'bg-amber-500'
-                            }`}
-                          />
-                          {stelle.status}
-                        </span>
-                      )}
                     </div>
 
                     <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">

@@ -133,7 +133,7 @@ const Bewerbung = () => {
                   <SelectContent>
                     <SelectItem value="minijob">Minijob</SelectItem>
                     <SelectItem value="teilzeit">Teilzeit</SelectItem>
-                    <SelectItem value="vollzeit">Vollzeit</SelectItem>
+                    
                   </SelectContent>
                 </Select>
               </div>
