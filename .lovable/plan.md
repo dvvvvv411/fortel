@@ -1,34 +1,24 @@
-## Update phone number everywhere to +49 711-96881540
+## Ziel
+Alle Vorkommen von `for-tel.de` durch `for-tel.com` ersetzen (inkl. E-Mail-Adressen, Links, Strukturdaten, App-Subdomain und Vite-AllowedHosts).
 
-Replace the old/for-telefon number across all source files and project memory.
+## Betroffene Dateien (17 Stellen)
+- `index.html` — JSON-LD `url` + `email`
+- `src/components/landing-v2/FinalCTA.tsx` — Anzeige `info@for-tel.de`
+- `src/components/landing-v2/HeroSplit.tsx` — Mock-URL `app.for-tel.de/dashboard`
+- `src/components/landing/Footer.tsx` — `mailto:` + Anzeige
+- `src/components/landing/HeroSection.tsx` — Mock-URL `app.for-tel.de/...`
+- `src/components/landing/Navbar.tsx` — Desktop- & Mobile-Mail (2 Stellen)
+- `src/pages/Datenschutz.tsx` — `mailto:` + Anzeige
+- `src/pages/Impressum.tsx` — `mailto:` + Anzeige + Website-Link `https://for-tel.de`
+- `src/pages/Kontakt.tsx` — Kontaktdaten-Array
+- `vite.config.ts` — `allowedHosts`: `for-tel.de`/`www.for-tel.de` → `for-tel.com`/`www.for-tel.com`
 
-### Files to change
+## Vorgehen
+Eine globale, deterministische Text-Ersetzung: `for-tel.de` → `for-tel.com`. Keine Style- oder Layout-Änderungen.
 
-1. **src/components/landing/Navbar.tsx** (2 occurrences)
-   - Top bar: `tel:+4971124086840` → `tel:+4971196881540`
-   - Top bar display: `+49 711 24086840` → `+49 711-96881540`
-   - Mobile menu: same href + display update
+## Memory
+- `mem://technik/deployment-config` aktualisieren (neue allowedHosts).
+- `mem://projekt/identitaet` prüfen/aktualisieren (Domain/E-Mail).
 
-2. **src/components/landing-v2/FinalCTA.tsx** (1 occurrence)
-   - Display text: `+49 711 24086840` → `+49 711-96881540`
-
-3. **src/pages/Impressum.tsx** (1 occurrence)
-   - Display text: `+49 711 96881540` → `+49 711-96881540`
-
-4. **src/pages/Datenschutz.tsx** (1 occurrence)
-   - Display text: `+49 711 96881540` → `+49 711-96881540`
-
-5. **src/pages/Kontakt.tsx** (2 occurrences)
-   - Contact info value: `+49 711 96881540` → `+49 711-96881540`
-   - Form placeholder: `+49 123 456 789` → `+49 711-96881540`
-
-6. **src/components/landing/Footer.tsx** (1 occurrence)
-   - Display text: `+49 711 96881540` → `+49 711-96881540`
-
-7. **src/pages/Bewerbung.tsx** (1 occurrence)
-   - Form placeholder: `+49 123 456 789` → `+49 711-96881540`
-
-8. **mem://projekt/identitaet**
-   - Phone field: `0211-87971940` → `+49 711-96881540`
-
-No other logic or layout changes.
+## Offene Frage
+- Soll `for-tel.de` zusätzlich als Alias in `allowedHosts` erhalten bleiben (falls die alte Domain noch zeigt), oder komplett entfernt werden? Default im Plan: **entfernen** (durch `.com` ersetzen).

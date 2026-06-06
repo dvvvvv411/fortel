@@ -74,7 +74,7 @@ const HeroSplit = () => {
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
               </div>
               <div className="ml-3 px-3 py-1 bg-background border border-border rounded-md text-[10px] text-muted-foreground/70 w-full max-w-xs truncate font-mono">
-                app.for-tel.de/dashboard
+                app.for-tel.com/dashboard
               </div>
             </div>
 

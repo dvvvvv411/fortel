@@ -16,7 +16,7 @@ import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const contactInfo = [
   { icon: Phone, label: 'Telefon', value: '+49 711-96881540', href: 'tel:+4971196881540' },
-  { icon: Mail, label: 'E-Mail', value: 'info@for-tel.de', href: 'mailto:info@for-tel.de' },
+  { icon: Mail, label: 'E-Mail', value: 'info@for-tel.com', href: 'mailto:info@for-tel.com' },
   { icon: MapPin, label: 'Adresse', value: 'Hornbergstr. 35, 70794 Filderstadt', href: undefined },
   { icon: Clock, label: 'Öffnungszeiten', value: 'Mo–Fr · 09:00 – 18:00 Uhr', href: undefined },
 ];

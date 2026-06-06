@@ -38,7 +38,7 @@ const FinalCTA = () => {
               </div>
               <div className="rounded-md border border-background/15 p-3">
                 <p className="text-background/55 uppercase tracking-widest text-[10px]">E-Mail</p>
-                <p className="mt-1 text-background font-semibold">info@for-tel.de</p>
+                <p className="mt-1 text-background font-semibold">info@for-tel.com</p>
               </div>
             </div>
           </div>
