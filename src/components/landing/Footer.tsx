@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo + Tagline */}
           <div>
             <Link to="/" className="flex items-center mb-4">
-              <img src={logo} alt="for.tel Solutions" className="h-7 hover:scale-105 transition-transform duration-200" />
+              <img src={logo} alt="for.tel Solutions" className="h-5 hover:scale-105 transition-transform duration-200" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Technische Beratung, Projektmanagement, Personalberatung und Anlagenplanung — aus einer Hand, seit 2006.
