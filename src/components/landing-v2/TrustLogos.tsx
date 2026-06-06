@@ -1,52 +1,65 @@
-import { Factory, Radio, Zap, Cog, Plug, HeartPulse, Landmark, Truck, type LucideIcon } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-type Reference = { icon: LucideIcon; sector: string; region: string };
-
-const references: Reference[] = [
-  { icon: Factory,    sector: 'Automobilzulieferer',          region: 'Region Stuttgart' },
-  { icon: Radio,      sector: 'TK-Netzbetreiber',             region: 'Süddeutschland' },
-  { icon: Zap,        sector: 'Stadtwerk',                    region: 'Filderebene' },
-  { icon: Cog,        sector: 'Maschinenbau · Mittelstand',   region: 'Neckar-Alb' },
-  { icon: Plug,       sector: 'Energieversorger',             region: 'Baden-Württemberg' },
-  { icon: HeartPulse, sector: 'Klinikverbund',                region: 'Region Stuttgart' },
-  { icon: Landmark,   sector: 'Öffentliche Hand',             region: 'Landkreis Esslingen' },
-  { icon: Truck,      sector: 'Logistik & Intralogistik',     region: 'Großraum Stuttgart' },
+// TODO: Platzhalter-Wortmarken — später durch echte <img src="/logos/xyz.svg" /> ersetzen.
+const placeholderLogos = [
+  'LUMITEC',
+  'NORDWERK',
+  'CORDIS',
+  'ELBA SYSTEMS',
+  'STRATO',
+  'HELVETICA',
+  'MERCURA',
+  'WESTWERK',
+  'QUANTIS',
+  'BLAUHAUS',
+  'AVENO',
+  'FALKENBERG',
 ];
 
 const TrustLogos = () => {
   const { ref, isVisible } = useScrollAnimation(0.05);
+
+  // Doppelte Liste für nahtlose Endlos-Animation (translateX -50%)
+  const track = [...placeholderLogos, ...placeholderLogos];
+
   return (
     <section ref={ref} className="relative py-16 sm:py-20 px-4 sm:px-6 border-y border-border bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center max-w-2xl mx-auto mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Referenzen</p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold leading-tight">
-            Vertrauen aus Mittelstand, Versorgern &amp; öffentlicher Hand der Region Stuttgart.
+            Unternehmen, die auf for.tel Solutions vertrauen.
           </h2>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground">
+            Eine Auswahl unserer Kunden aus Mittelstand, Industrie und öffentlicher Hand.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-          {references.map(({ icon: Icon, sector, region }, i) => (
-            <div
-              key={sector}
-              className={`group flex items-center gap-3 p-4 sm:p-5 rounded-md border border-border bg-background hover:border-primary/40 hover:shadow-md transition-all scroll-hidden delay-${(i % 6) + 1} ${isVisible ? 'scroll-visible' : ''}`}
-              title={`${sector} · ${region}`}
-            >
-              <div className="w-10 h-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                <Icon size={18} className="text-primary" />
+        <div
+          className={`group relative overflow-hidden scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}
+          style={{
+            maskImage:
+              'linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)',
+          }}
+        >
+          <div className="flex w-max animate-marquee gap-12 sm:gap-16 group-hover:[animation-play-state:paused]">
+            {track.map((name, i) => (
+              <div
+                key={`${name}-${i}`}
+                className="flex h-14 shrink-0 items-center justify-center px-2"
+                aria-hidden={i >= placeholderLogos.length ? 'true' : undefined}
+                title={name}
+              >
+                {/* TODO: replace with real <img src=`/logos/${slug}.svg` alt={name} className="h-8 w-auto opacity-60 hover:opacity-100" /> */}
+                <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-foreground/40 hover:text-foreground transition-colors whitespace-nowrap">
+                  {name}
+                </span>
               </div>
-              <div className="min-w-0">
-                <div className="font-display font-bold text-sm leading-tight truncate">{sector}</div>
-                <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-0.5 truncate">{region}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
-        <p className="mt-10 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
-          Referenzen anonymisiert nach Branche und Region — konkrete Kundennamen auf Anfrage und nach schriftlicher Freigabe.
-        </p>
       </div>
     </section>
   );
