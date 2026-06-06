@@ -1,18 +1,11 @@
 ## Ziel
-Logo nochmal **30% kleiner** skalieren (zusätzlich zur vorherigen Reduktion).
+Favicon durch das angehängte `faviconfortel.png` ersetzen.
 
-## Änderungen
-`src/components/landing/Navbar.tsx` & `src/components/landing/Footer.tsx`:
-
-| Stelle | Aktuell | Neu (~30% kleiner) |
-|---|---|---|
-| Navbar Desktop (unscrolled) | `h-10` (40px) | `h-7` (28px) |
-| Navbar Desktop (scrolled) | `h-8` (32px) | `h-6` (24px) → besser `h-[22px]` für exakt 30% |
-| Navbar Mobile-Menü | `h-7` (28px) | `h-5` (20px) |
-| Footer | `h-7` (28px) | `h-5` (20px) |
-
-Konkret nutze ich saubere Tailwind-Steps: **h-7 → h-5, h-8 → h-6, h-10 → h-7**.
+## Schritte
+1. `public/favicon.ico` löschen (sonst überschreibt der Browser-Default das neue Favicon).
+2. `public/favicon.png` (und ggf. `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`) durch die hochgeladene Datei ersetzen — alle zeigen jetzt das neue „for.tel"-Icon.
+3. `index.html`: sicherstellen, dass `<link rel="icon" href="/favicon.png" type="image/png">` aktiv ist und kein `.ico`-Verweis mehr existiert.
 
 ## Nicht geändert
-- Header-Höhe (`h-20`/`h-24`) bleibt — nur das Logo schrumpft, mehr Whitespace.
-- Keine anderen Komponenten/Styles.
+- Logo in Navbar/Footer (bleibt wie zuletzt skaliert).
+- Sonstige Assets.
