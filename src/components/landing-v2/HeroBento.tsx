@@ -13,7 +13,7 @@ const HeroBento = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full mb-8">
               <ShieldCheck size={13} className="text-primary" />
               <span className="text-primary text-xs font-semibold tracking-wide uppercase">
-                Inhabergeführt · seit 2006 · Filderstadt
+                Gegründet 2006 · Filderstadt
               </span>
             </div>
 
@@ -85,7 +85,7 @@ const HeroBento = () => {
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Seit 2006 begleiten wir komplexe Infrastrukturprojekte mit
-                inhabergeführter Präzision und tiefem technischen Verständnis.
+                unabhängiger Präzision und tiefem technischen Verständnis.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ const HeroBento = () => {
               </div>
               <div className="text-right">
                 <div className="text-[10px] font-bold text-foreground uppercase tracking-tight">Verlässlichkeit</div>
-                <div className="text-[10px] text-muted-foreground">Inhabergeführt seit 2006</div>
+                <div className="text-[10px] text-muted-foreground">Seit 2006 am Markt</div>
               </div>
             </div>
           </div>

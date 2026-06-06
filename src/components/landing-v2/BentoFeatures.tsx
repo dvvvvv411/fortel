@@ -61,7 +61,7 @@ const BentoFeatures = () => {
             <div className="relative h-full flex flex-col justify-end p-8 sm:p-10 text-background">
               <p className="text-[11px] uppercase tracking-[0.25em] text-primary-glow mb-3 font-semibold">Standort Deutschland</p>
               <h3 className="font-display text-xl sm:text-2xl font-bold leading-tight max-w-md">
-                Inhabergeführtes Beratungshaus in Filderstadt.
+                Unabhängiges Beratungshaus in Filderstadt.
               </h3>
               <p className="mt-3 text-sm text-background/80 max-w-md leading-relaxed">
                 Festes Team, klare Verantwortlichkeiten, dokumentierte Prozesse. Technik-Projekte,
