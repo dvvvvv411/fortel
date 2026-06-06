@@ -67,8 +67,6 @@ const Navbar = () => {
               alt="for.tel Solutions"
               loading="eager"
               fetchPriority="high"
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
               className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-11' : 'h-14'}`}
             />
           </Link>
@@ -131,7 +129,7 @@ const Navbar = () => {
         >
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
             <Link to="/" onClick={() => setMobileOpen(false)}>
-              <img src={logo} alt="for.tel Solutions" className="h-10" draggable={false} onContextMenu={(e) => e.preventDefault()} />
+              <img src={logo} alt="for.tel Solutions" className="h-10" />
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
