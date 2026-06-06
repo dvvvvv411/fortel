@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
-    allowedHosts: ["for-tel.de", "www.for-tel.de"],
+    allowedHosts: ["for-tel.de", "www.for-tel.de", "for-tel.solutions", "www.for-tel.solutions"],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
