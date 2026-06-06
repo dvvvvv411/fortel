@@ -8,84 +8,64 @@ const departments = [
   {
     number: '01',
     title: 'Geschäftsführung',
-    intro: 'Strategische Verantwortung, Beratung und Vertrieb auf Vorstandsebene.',
+    intro: 'Strategische Ausrichtung und unternehmerische Verantwortung.',
     members: [
       {
-        name: 'Ulrich Papst',
+        name: 'Manfred Beutel',
         role: 'Geschäftsführer',
         description:
-          'Über 30 Jahre Erfahrung in technischer Beratung, Projektleitung und Anlagenplanung.',
-      },
-      {
-        name: 'Thomas Papst',
-        role: 'Geschäftsführer',
-        description:
-          'Führt das Unternehmen gemeinsam mit seinem Vater und verantwortet Beratung und Vertrieb.',
+          'Gründer von for.tel Solutions mit langjähriger Erfahrung im Aufbau digitaler Test- und Service-Teams. Verantwortet die strategische Ausrichtung.',
       },
     ],
   },
   {
     number: '02',
-    title: 'Projektmanagement & Planung',
-    intro: 'Steuerung und Fachplanung über alle Gewerke — von der Vergabe bis zur Abnahme.',
+    title: 'Betrieb & Finanzen',
+    intro: 'Operative Steuerung und verlässliche Abwicklung aller Aufträge und Auszahlungen.',
     members: [
       {
-        name: 'Laura Schneider',
-        role: 'Leitung Projektmanagement',
+        name: 'Sabine Vogt',
+        role: 'Leiterin Operations',
         description:
-          'Steuert komplexe Technik-Projekte über alle Gewerke hinweg — von Vergabe bis Abnahme.',
+          'Sorgt dafür, dass jeder Auftrag reibungslos läuft und unsere Tester pünktlich ihre Vergütung erhalten.',
       },
       {
-        name: 'Michael Fischer',
-        role: 'Senior Projektleiter',
-        description: 'Verantwortet Großprojekte in Telekommunikation und Energieversorgung.',
-      },
-      {
-        name: 'Anna Hoffmann',
-        role: 'Planerin Fernmeldetechnik',
-        description: 'Plant Daten-, Telefon- und Sicherheitstechnik bis zur Ausführungsplanung.',
-      },
-      {
-        name: 'Sebastian Richter',
-        role: 'Planer Elektrotechnik',
-        description: 'Plant Stark- und Schwachstromanlagen nach DIN VDE und einschlägigen Normen.',
+        name: 'Andrea Wenzel',
+        role: 'Leiterin Finanzen',
+        description:
+          'Hält alle Zahlen im Blick und stellt sicher, dass Auszahlungen zuverlässig und transparent erfolgen.',
       },
     ],
   },
   {
     number: '03',
-    title: 'Beratung & Controlling',
-    intro: 'Wirtschaftliche und technische Expertise für belastbare Entscheidungen.',
+    title: 'People & Community',
+    intro: 'Erste Ansprechpartner für Bewerber und Mitarbeitende — vom Onboarding bis zur Kultur.',
     members: [
       {
-        name: 'Julia Wagner',
-        role: 'Senior Consultant',
+        name: 'Jonas Beckmann',
+        role: 'Recruiting & Community',
         description:
-          'Verbindet wirtschaftliches Know-how mit technischem Verständnis für belastbare Entscheidungen.',
+          'Erste Anlaufstelle für neue Bewerber. Begleitet dich vom ersten Klick bis zum erfolgreichen Onboarding.',
       },
       {
-        name: 'Markus Bauer',
-        role: 'Projektcontroller',
-        description: 'Verantwortet Termin-, Kosten- und Qualitätscontrolling in laufenden Mandaten.',
+        name: 'Katrin Hofmann',
+        role: 'Head of People & Culture',
+        description:
+          'Verantwortlich für ein wertschätzendes Miteinander — intern wie auch in der Zusammenarbeit mit unseren Mitarbeitenden.',
       },
     ],
   },
   {
     number: '04',
-    title: 'Personalberatung',
-    intro: 'Diskrete und passgenaue Besetzung von Fach- und Führungspositionen.',
+    title: 'Technologie',
+    intro: 'Sichere, stabile und schnelle Prozesse als Fundament unserer Plattform.',
     members: [
       {
-        name: 'Sarah Meier',
-        role: 'Leitung Personalberatung',
+        name: 'Michael Schreiber',
+        role: 'Head of Technology',
         description:
-          'Besetzt Fach- und Führungspositionen in Technik und Vertrieb — diskret und passgenau.',
-      },
-      {
-        name: 'Jonas Hartmann',
-        role: 'Recruiter',
-        description:
-          'Identifiziert Kandidaten in Telekommunikation, Elektrotechnik und Anlagenbau.',
+          'Leitet die technische Entwicklung unserer Plattform und sorgt für sichere, stabile und schnelle Prozesse.',
       },
     ],
   },
