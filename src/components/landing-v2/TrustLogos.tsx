@@ -1,37 +1,42 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import {
+  Network,
+  Server,
+  Cable,
+  PhoneCall,
+  Users,
+  ShieldCheck,
+  Radio,
+  Building2,
+} from 'lucide-react';
 
-// TODO: Platzhalter-Wortmarken — später durch echte <img src="/logos/xyz.svg" /> ersetzen.
-const placeholderLogos = [
-  'LUMITEC',
-  'NORDWERK',
-  'CORDIS',
-  'ELBA SYSTEMS',
-  'STRATO',
-  'HELVETICA',
-  'MERCURA',
-  'WESTWERK',
-  'QUANTIS',
-  'BLAUHAUS',
-  'AVENO',
-  'FALKENBERG',
+const projectTypes = [
+  { icon: Network, label: 'Netzwerkmodernisierung' },
+  { icon: Server, label: 'Rechenzentrumsplanung' },
+  { icon: Cable, label: 'Glasfaser-Outsourcing' },
+  { icon: PhoneCall, label: 'TK-Beschaffung' },
+  { icon: Users, label: 'Personalberatung' },
+  { icon: ShieldCheck, label: 'IT-Sicherheitskonzepte' },
+  { icon: Radio, label: 'Mobilfunk-Rollouts' },
+  { icon: Building2, label: 'Standortvernetzung' },
 ];
 
-const TrustLogos = () => {
+const ProjectTypesMarquee = () => {
   const { ref, isVisible } = useScrollAnimation(0.05);
 
-  // Doppelte Liste für nahtlose Endlos-Animation (translateX -50%)
-  const track = [...placeholderLogos, ...placeholderLogos];
+  // Doppelte Liste für nahtlose Endlos-Animation
+  const track = [...projectTypes, ...projectTypes];
 
   return (
     <section ref={ref} className="relative py-16 sm:py-20 px-4 sm:px-6 border-y border-border bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center max-w-2xl mx-auto mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Referenzen</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4 font-semibold">Projekttypen</p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold leading-tight">
-            Unternehmen, die auf for.tel Solutions vertrauen.
+            Worin wir Tag für Tag liefern.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-            Eine Auswahl unserer Kunden aus Mittelstand, Industrie und öffentlicher Hand.
+            Ein Auszug konkreter Projektarten, die unsere Teams planen, umsetzen und betreiben.
           </p>
         </div>
 
@@ -44,17 +49,16 @@ const TrustLogos = () => {
               'linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)',
           }}
         >
-          <div className="flex w-max animate-marquee gap-12 sm:gap-16 group-hover:[animation-play-state:paused]">
-            {track.map((name, i) => (
+          <div className="flex w-max animate-marquee gap-6 sm:gap-8 group-hover:[animation-play-state:paused]">
+            {track.map(({ icon: Icon, label }, i) => (
               <div
-                key={`${name}-${i}`}
-                className="flex h-14 shrink-0 items-center justify-center px-2"
-                aria-hidden={i >= placeholderLogos.length ? 'true' : undefined}
-                title={name}
+                key={`${label}-${i}`}
+                className="flex h-14 shrink-0 items-center gap-3 rounded-md border border-border bg-background/60 px-5"
+                aria-hidden={i >= projectTypes.length ? 'true' : undefined}
               >
-                {/* TODO: replace with real <img src=`/logos/${slug}.svg` alt={name} className="h-8 w-auto opacity-60 hover:opacity-100" /> */}
-                <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-foreground/40 hover:text-foreground transition-colors whitespace-nowrap">
-                  {name}
+                <Icon className="h-5 w-5 text-primary shrink-0" aria-hidden="true" />
+                <span className="font-display text-sm sm:text-base font-semibold tracking-tight text-foreground/80 whitespace-nowrap">
+                  {label}
                 </span>
               </div>
             ))}
@@ -65,4 +69,4 @@ const TrustLogos = () => {
   );
 };
 
-export default TrustLogos;
+export default ProjectTypesMarquee;
