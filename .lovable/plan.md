@@ -1,33 +1,27 @@
-## Plan: Neuer Hero (Software & Web) auf Landingpage
+## Plan: Referenzen-Sektion zu Logo-Karussell umbauen
 
 ### Ziel
-Bisherigen `HeroBento` (Engineering/Anlagenplanung-Bento) komplett ersetzen durch einen neuen Split-Screen-Hero, der **for.tel Solutions als Software- & Webentwicklungs-Firma** positioniert. Basis: vom Nutzer gewählte Direction v1 (Dashboard + Trust-Stack).
+Die bestehende Branchen-/Regions-Grid (`src/components/landing-v2/TrustLogos.tsx`) wird durch ein **endlos laufendes Logo-Karussell** mit Platzhalter-Unternehmen ersetzt. Echte Logos werden später vom Nutzer eingesetzt.
 
-### Inhalte (komplett neuer Text)
-- **Eyebrow:** „Software & Web aus Filderstadt · seit 2006" (mit violettem Dot)
-- **Headline:** „Maßgeschneiderte Software. *Exzellente Webentwicklung.*" (zweiter Teil violett)
-- **Subline:** „Wir begleiten mittelständische Unternehmen bei der digitalen Transformation. Von performanten Web-Applikationen bis hin zu komplexen Software-Architekturen — verlässlich, individuell und technologisch auf höchstem Niveau."
-- **CTAs:** „Projekt starten" (primary, → /kontakt) und „Referenzen ansehen" (outline, → /leistungen)
-- **Trust-Stack-Bar:** Label „Trusted Tech Stack" + React · Node.js · TypeScript · Python · PostgreSQL
-
-### Visual rechts (Browser-Mockup einer Web-App)
-Browser-Chrome mit URL `app.for-tel.de/dashboard`, darin:
-- 3 KPI-Tiles (12.847 / 98,4% / € 42k) mit violetten Akzentbalken
-- Bar-Chart-Block (10 Säulen, eine in voller Primärfarbe als Highlight)
-- 2 schwebende Status-Chips: „System Status · 100% Verfügbar" (unten links) + „deploy · prod" mit pulsierendem Dot (oben rechts)
+### Inhalt
+- **Eyebrow:** „Referenzen" (violett, klein)
+- **Headline:** „Unternehmen, die auf for.tel Solutions vertrauen."
+- **Subline (kurz):** „Eine Auswahl unserer Kunden aus Mittelstand, Industrie und öffentlicher Hand."
+- **Karussell-Reihe** mit ~10 Platzhalter-Logos (reine Wortmarken in `font-display`, neutralgrau, leichtes Hover → Graphit). Beispiel-Namen: Lumitec, Nordwerk, Cordis Group, ELBA Systems, Strato Industries, Helvetica Werke, Mercura, Westwerk, Quantis, BlauHaus, AVENO, Falkenberg AG
+- Die alte anonymisierte Branchenliste + Hinweistext entfällt komplett.
 
 ### Technische Umsetzung
-1. **Neue Datei** `src/components/landing-v2/HeroSplit.tsx`
-   - Nutzt ausschließlich semantische Tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`, `text-muted-foreground`) — keine Hex-Werte direkt
-   - Radius durchgehend `rounded-md` (= 0.375rem), Schatten max `shadow-sm`
-   - Animations-Klassen `hero-animate hero-animate-1..4` aus bestehendem `useScrollAnimation`-System
-   - Top-Padding `pt-28 sm:pt-32` für persistenten absoluten Header
-   - Lucide-Icons (`ArrowRight`, `CheckCircle2`), keine neuen Dependencies
-2. **`src/pages/Index.tsx`:** Import von `HeroBento` → `HeroSplit` tauschen, `<HeroBento />` → `<HeroSplit />`
-3. **Alte Datei** `src/components/landing-v2/HeroBento.tsx` bleibt im Repo (nicht mehr referenziert) — falls gewünscht, kann sie in einem späteren Step gelöscht werden.
+1. **`TrustLogos.tsx` komplett ersetzen:**
+   - Endlos-Marquee per CSS: zwei identische `flex`-Reihen nebeneinander, Container `overflow-hidden`, Inner-Track via Tailwind `animate-[marquee_40s_linear_infinite]`.
+   - Edge-Fade links/rechts via `mask-image: linear-gradient(...)` damit Logos sanft ein-/ausblenden.
+   - Pause-on-hover (`hover:[animation-play-state:paused]`).
+   - Jedes „Logo" = `<div>` mit Textmarke (`font-display font-bold text-xl text-foreground/50 hover:text-foreground transition-colors`), Mindesthöhe 56px, horizontaler Abstand via `gap-12 sm:gap-16`.
+   - Platzhalter-Hinweis als sehr dezenter Kommentar im Code: `{/* TODO: replace with real <img src=".../logo.svg" /> */}`
+2. **`tailwind.config.ts`:** `keyframes.marquee` (`from { transform: translateX(0) }` → `to { transform: translateX(-50%) }`) und `animation.marquee: 'marquee 40s linear infinite'` hinzufügen.
+3. Keine neuen Dependencies. Light mode, semantische Tokens (`bg-background`, `border-border`, `text-foreground`, `text-primary`), Radius `rounded-md`, max `shadow-sm` — passt zu Memory-Regeln.
 
 ### Nicht betroffen
-TrustLogos, BentoFeatures, ProcessFlow, Footer und alle anderen Sektionen bleiben unverändert. Nur der Hero wird ausgetauscht.
+Hero, BentoFeatures, ProcessFlow, Footer etc. — nur diese Sektion wird ausgetauscht. Komponentenname `TrustLogos` und Import in `Index.tsx` bleiben gleich.
 
 ### Aufwand
-1 neue Datei, 2 Zeilen-Edits in `Index.tsx`. Keine neuen Packages, keine Schema-Änderungen.
+1 Datei neu schreiben (TrustLogos.tsx), 1 kleiner Tailwind-Config-Eintrag. Kein Schema, keine Packages.
