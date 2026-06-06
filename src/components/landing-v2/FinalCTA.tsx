@@ -34,7 +34,7 @@ const FinalCTA = () => {
             <div className="mt-3 grid grid-cols-2 gap-3 text-[12px]">
               <div className="rounded-md border border-background/15 p-3">
                 <p className="text-background/55 uppercase tracking-widest text-[10px]">Telefon</p>
-                <p className="mt-1 text-background font-semibold">+49 711 24086840</p>
+                <p className="mt-1 text-background font-semibold">+49 711-96881540</p>
               </div>
               <div className="rounded-md border border-background/15 p-3">
                 <p className="text-background/55 uppercase tracking-widest text-[10px]">E-Mail</p>
