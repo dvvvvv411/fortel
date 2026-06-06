@@ -44,17 +44,23 @@ const HeroSplit = () => {
             </Link>
           </div>
 
-          <div className="hero-animate hero-animate-4 mt-12 flex flex-wrap items-center gap-x-8 gap-y-3">
-            <div className="text-[11px] font-semibold tracking-[0.18em] uppercase text-muted-foreground/70">
-              Trusted Tech Stack
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 font-display font-semibold text-foreground/60 text-sm">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>TypeScript</span>
-              <span>Python</span>
-              <span>PostgreSQL</span>
-            </div>
+          <div className="hero-animate hero-animate-4 mt-12 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70">
+              <CheckCircle2 size={15} className="text-primary" />
+              Maßgeschneidert
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70">
+              <CheckCircle2 size={15} className="text-primary" />
+              Skalierbar
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70">
+              <CheckCircle2 size={15} className="text-primary" />
+              Langlebig
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70">
+              <CheckCircle2 size={15} className="text-primary" />
+              Made in Germany
+            </span>
           </div>
         </div>
 
