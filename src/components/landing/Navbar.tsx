@@ -67,7 +67,7 @@ const Navbar = () => {
               alt="for.tel Solutions"
               loading="eager"
               fetchPriority="high"
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-11' : 'h-14'}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-8' : 'h-10'}`}
             />
           </Link>
 
