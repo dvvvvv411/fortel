@@ -1,20 +1,33 @@
-## Plan: Kontakt-Hero an Unterseiten-Style angleichen
+## Plan: Neuer Hero (Software & Web) auf Landingpage
 
-### Problem
-Die `/kontakt`-Seite hat einen custom, linksbündigen Inline-Hero (kleinere Schrift, eigene Breadcrumb, kein Eyebrow-Balken). Alle anderen Unterseiten nutzen die zentrale `PageHero`-Komponente mit centered Layout, Eyebrow-Balken und großem Headline-Style.
+### Ziel
+Bisherigen `HeroBento` (Engineering/Anlagenplanung-Bento) komplett ersetzen durch einen neuen Split-Screen-Hero, der **for.tel Solutions als Software- & Webentwicklungs-Firma** positioniert. Basis: vom Nutzer gewählte Direction v1 (Dashboard + Trust-Stack).
 
-### Änderung
-In `src/pages/Kontakt.tsx` den inline Hero-Block (Zeilen ~72–91) durch den Import und Aufruf der `PageHero`-Komponente ersetzen:
+### Inhalte (komplett neuer Text)
+- **Eyebrow:** „Software & Web aus Filderstadt · seit 2006" (mit violettem Dot)
+- **Headline:** „Maßgeschneiderte Software. *Exzellente Webentwicklung.*" (zweiter Teil violett)
+- **Subline:** „Wir begleiten mittelständische Unternehmen bei der digitalen Transformation. Von performanten Web-Applikationen bis hin zu komplexen Software-Architekturen — verlässlich, individuell und technologisch auf höchstem Niveau."
+- **CTAs:** „Projekt starten" (primary, → /kontakt) und „Referenzen ansehen" (outline, → /leistungen)
+- **Trust-Stack-Bar:** Label „Trusted Tech Stack" + React · Node.js · TypeScript · Python · PostgreSQL
 
-- **Import:** `import PageHero from '@/components/landing/PageHero';`
-- **Props:**
-  - `eyebrow="Kontakt"`
-  - `title="Kontakt"`
-  - `highlight="aufnehmen"`
-  - `subtitle="Beratung, Projektsteuerung, Personal oder Anlagenplanung — sprechen Sie uns an. Wir antworten innerhalb von 24 Stunden an Werktagen."`
-  - `breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Kontakt' }]}`
+### Visual rechts (Browser-Mockup einer Web-App)
+Browser-Chrome mit URL `app.for-tel.de/dashboard`, darin:
+- 3 KPI-Tiles (12.847 / 98,4% / € 42k) mit violetten Akzentbalken
+- Bar-Chart-Block (10 Säulen, eine in voller Primärfarbe als Highlight)
+- 2 schwebende Status-Chips: „System Status · 100% Verfügbar" (unten links) + „deploy · prod" mit pulsierendem Dot (oben rechts)
 
-Der Rest der Seite (Sidebar, Formular, FAQ, Footer) bleibt unverändert.
+### Technische Umsetzung
+1. **Neue Datei** `src/components/landing-v2/HeroSplit.tsx`
+   - Nutzt ausschließlich semantische Tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`, `text-muted-foreground`) — keine Hex-Werte direkt
+   - Radius durchgehend `rounded-md` (= 0.375rem), Schatten max `shadow-sm`
+   - Animations-Klassen `hero-animate hero-animate-1..4` aus bestehendem `useScrollAnimation`-System
+   - Top-Padding `pt-28 sm:pt-32` für persistenten absoluten Header
+   - Lucide-Icons (`ArrowRight`, `CheckCircle2`), keine neuen Dependencies
+2. **`src/pages/Index.tsx`:** Import von `HeroBento` → `HeroSplit` tauschen, `<HeroBento />` → `<HeroSplit />`
+3. **Alte Datei** `src/components/landing-v2/HeroBento.tsx` bleibt im Repo (nicht mehr referenziert) — falls gewünscht, kann sie in einem späteren Step gelöscht werden.
+
+### Nicht betroffen
+TrustLogos, BentoFeatures, ProcessFlow, Footer und alle anderen Sektionen bleiben unverändert. Nur der Hero wird ausgetauscht.
 
 ### Aufwand
-1 Datei, 1 Komponenten-Austausch. Keine neuen Dependencies.
+1 neue Datei, 2 Zeilen-Edits in `Index.tsx`. Keine neuen Packages, keine Schema-Änderungen.

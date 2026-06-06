@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import HeroBento from '@/components/landing-v2/HeroBento';
+import HeroSplit from '@/components/landing-v2/HeroSplit';
 import TrustLogos from '@/components/landing-v2/TrustLogos';
 import BentoFeatures from '@/components/landing-v2/BentoFeatures';
 import ProcessFlow from '@/components/landing-v2/ProcessFlow';
@@ -18,7 +18,7 @@ const Index = () => {
 
   return (
     <>
-      <HeroBento />
+      <HeroSplit />
       <TrustLogos />
       <BentoFeatures />
       <ProcessFlow />
