@@ -1,11 +1,40 @@
-## Ziel
-Favicon durch das angehängte `faviconfortel.png` ersetzen.
+# Plan: Karriere-Stellen zurücksetzen
 
-## Schritte
-1. `public/favicon.ico` löschen (sonst überschreibt der Browser-Default das neue Favicon).
-2. `public/favicon.png` (und ggf. `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`) durch die hochgeladene Datei ersetzen — alle zeigen jetzt das neue „for.tel"-Icon.
-3. `index.html`: sicherstellen, dass `<link rel="icon" href="/favicon.png" type="image/png">` aktiv ist und kein `.ico`-Verweis mehr existiert.
+Die Datei `src/data/karriereStellen.ts` wird so überarbeitet, dass die alten 5 Stellenanzeigen wieder erscheinen. Die Struktur (`Stelle`-Interface, Felder, Slug-basiertes Routing) bleibt unverändert — nur die Inhalte des `stellen`-Arrays werden ersetzt.
 
-## Nicht geändert
-- Logo in Navbar/Footer (bleibt wie zuletzt skaliert).
-- Sonstige Assets.
+## Neue Stellen (Reihenfolge wie auf /karriere angezeigt)
+
+1. **Mitarbeiter (m/w/d) für Onlineprozess-Tests**
+   - slug: `onlineprozess-tests`
+   - Standort: Düsseldorf · Modell: Remote / Minijob / Teilzeit
+   - Arbeitszeit: Flexibel (ca. 5–30 Std./Woche) · Stundenlohn: 29 €
+   - Status: Sofort verfügbar
+
+2. **Mitarbeiter (m/w/d) für Softwareentwicklung**
+   - slug: `softwareentwicklung`
+   - Standort: Düsseldorf · Modell: Remote
+   - (kein Stundenlohn / keine Arbeitszeit-Angabe)
+
+3. **Mitarbeiter (m/w/d) für UX/UI Design**
+   - slug: `ux-ui-design`
+   - Standort: Düsseldorf · Modell: Remote
+
+4. **Mitarbeiter (m/w/d) für DevOps & Cloud-Infrastruktur**
+   - slug: `devops-cloud-infrastruktur`
+   - Standort: Düsseldorf · Modell: Remote
+
+5. **Werkstudent (m/w/d) im Bereich Digitalisierung**
+   - slug: `werkstudent-digitalisierung`
+   - Standort: Düsseldorf · Modell: Hybrid
+
+Für jede Stelle werden `beschreibung`, `aufgaben`, `voraussetzungen`, `benefits` exakt aus den vom Nutzer gelieferten Texten übernommen. `kurzbeschreibung` wird kompakt aus dem "Über die Position"-Absatz abgeleitet (1–2 Sätze für die Listendarstellung).
+
+## Was sich NICHT ändert
+
+- `src/pages/Karriere.tsx` und `src/pages/KarriereDetail.tsx` bleiben identisch — sie rendern die Daten generisch.
+- Die optionalen Felder (`arbeitszeit`, `stundenlohn`, `status`) werden nur dort gesetzt, wo angegeben; die Detailseiten-Sidebar blendet fehlende Felder bereits korrekt aus.
+- Bewerbungsformular-Verlinkung (`/karriere/bewerbung?stelle=…`) funktioniert weiter über `stelle.titel`.
+
+## Hinweise
+
+- Da die Slugs sich ändern, sind alte Detail-Links (z. B. `/karriere/webseiten-app-tester`) nicht mehr gültig und führen via `Navigate` zurück auf `/karriere`. Falls Redirects gewünscht sind, bitte Bescheid geben.
