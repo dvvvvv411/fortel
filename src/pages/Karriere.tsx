@@ -44,7 +44,7 @@ const Karriere = () => {
                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                       {stelle.titel}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1.5">
                         <MapPin size={14} />
                         {stelle.standort}
@@ -52,7 +52,29 @@ const Karriere = () => {
                       <span className="px-2.5 py-0.5 rounded-full bg-accent text-accent-foreground text-xs font-medium">
                         {stelle.modell}
                       </span>
+                      {stelle.stundenlohn && (
+                        <span className="px-2.5 py-0.5 rounded-full bg-accent text-accent-foreground text-xs font-medium">
+                          {stelle.stundenlohn}/h
+                        </span>
+                      )}
+                      {stelle.status && (
+                        <span
+                          className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-xs font-medium ${
+                            stelle.status === 'Sofort verfügbar'
+                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                              : 'bg-amber-50 text-amber-700 border-amber-200'
+                          }`}
+                        >
+                          <span
+                            className={`h-1.5 w-1.5 rounded-full ${
+                              stelle.status === 'Sofort verfügbar' ? 'bg-emerald-500' : 'bg-amber-500'
+                            }`}
+                          />
+                          {stelle.status}
+                        </span>
+                      )}
                     </div>
+
                     <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">
                       {stelle.kurzbeschreibung}
                     </p>
