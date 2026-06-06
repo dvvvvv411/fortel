@@ -3,85 +3,95 @@ import { useEffect } from 'react';
 import PageHero from '@/components/landing/PageHero';
 import CTASection from '@/components/landing/CTASection';
 import Footer from '@/components/landing/Footer';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-import sarahMeier from '@/assets/team/sarah-meier.jpg';
-import michaelFischer from '@/assets/team/michael-fischer.jpg';
-import jonasHartmann from '@/assets/team/jonas-hartmann.jpg';
-import thomasWeber from '@/assets/team/thomas-weber.jpg';
-import lauraSchneider from '@/assets/team/laura-schneider.jpg';
-import danielKrause from '@/assets/team/daniel-krause.jpg';
-import annaHoffmann from '@/assets/team/anna-hoffmann.jpg';
-import markusBauer from '@/assets/team/markus-bauer.jpg';
-import juliaWagner from '@/assets/team/julia-wagner.jpg';
-import sebastianRichter from '@/assets/team/sebastian-richter.jpg';
-
-const teamMembers = [
+const departments = [
   {
-    name: 'Ulrich Papst',
-    role: 'Geschäftsführer',
-    description: 'Über 30 Jahre Erfahrung in technischer Beratung, Projektleitung und Anlagenplanung.',
-    image: thomasWeber,
+    number: '01',
+    title: 'Geschäftsführung',
+    intro: 'Strategische Verantwortung, Beratung und Vertrieb auf Vorstandsebene.',
+    members: [
+      {
+        name: 'Ulrich Papst',
+        role: 'Geschäftsführer',
+        description:
+          'Über 30 Jahre Erfahrung in technischer Beratung, Projektleitung und Anlagenplanung.',
+      },
+      {
+        name: 'Thomas Papst',
+        role: 'Geschäftsführer',
+        description:
+          'Führt das Unternehmen gemeinsam mit seinem Vater und verantwortet Beratung und Vertrieb.',
+      },
+    ],
   },
   {
-    name: 'Thomas Papst',
-    role: 'Geschäftsführer',
-    description: 'Führt das Unternehmen gemeinsam mit seinem Vater und verantwortet Beratung und Vertrieb.',
-    image: danielKrause,
+    number: '02',
+    title: 'Projektmanagement & Planung',
+    intro: 'Steuerung und Fachplanung über alle Gewerke — von der Vergabe bis zur Abnahme.',
+    members: [
+      {
+        name: 'Laura Schneider',
+        role: 'Leitung Projektmanagement',
+        description:
+          'Steuert komplexe Technik-Projekte über alle Gewerke hinweg — von Vergabe bis Abnahme.',
+      },
+      {
+        name: 'Michael Fischer',
+        role: 'Senior Projektleiter',
+        description: 'Verantwortet Großprojekte in Telekommunikation und Energieversorgung.',
+      },
+      {
+        name: 'Anna Hoffmann',
+        role: 'Planerin Fernmeldetechnik',
+        description: 'Plant Daten-, Telefon- und Sicherheitstechnik bis zur Ausführungsplanung.',
+      },
+      {
+        name: 'Sebastian Richter',
+        role: 'Planer Elektrotechnik',
+        description: 'Plant Stark- und Schwachstromanlagen nach DIN VDE und einschlägigen Normen.',
+      },
+    ],
   },
   {
-    name: 'Laura Schneider',
-    role: 'Leitung Projektmanagement',
-    description: 'Steuert komplexe Technik-Projekte über alle Gewerke hinweg — von Vergabe bis Abnahme.',
-    image: lauraSchneider,
+    number: '03',
+    title: 'Beratung & Controlling',
+    intro: 'Wirtschaftliche und technische Expertise für belastbare Entscheidungen.',
+    members: [
+      {
+        name: 'Julia Wagner',
+        role: 'Senior Consultant',
+        description:
+          'Verbindet wirtschaftliches Know-how mit technischem Verständnis für belastbare Entscheidungen.',
+      },
+      {
+        name: 'Markus Bauer',
+        role: 'Projektcontroller',
+        description: 'Verantwortet Termin-, Kosten- und Qualitätscontrolling in laufenden Mandaten.',
+      },
+    ],
   },
   {
-    name: 'Michael Fischer',
-    role: 'Senior Projektleiter',
-    description: 'Verantwortet Großprojekte in Telekommunikation und Energieversorgung.',
-    image: michaelFischer,
-  },
-  {
-    name: 'Julia Wagner',
-    role: 'Senior Consultant',
-    description: 'Verbindet wirtschaftliches Know-how mit technischem Verständnis für belastbare Entscheidungen.',
-    image: juliaWagner,
-  },
-  {
-    name: 'Anna Hoffmann',
-    role: 'Planerin Fernmeldetechnik',
-    description: 'Plant Daten-, Telefon- und Sicherheitstechnik bis zur Ausführungsplanung.',
-    image: annaHoffmann,
-  },
-  {
-    name: 'Markus Bauer',
-    role: 'Projektcontroller',
-    description: 'Verantwortet Termin-, Kosten- und Qualitätscontrolling in laufenden Mandaten.',
-    image: markusBauer,
-  },
-  {
-    name: 'Sarah Meier',
-    role: 'Leitung Personalberatung',
-    description: 'Besetzt Fach- und Führungspositionen in Technik und Vertrieb — diskret und passgenau.',
-    image: sarahMeier,
-  },
-  {
-    name: 'Jonas Hartmann',
-    role: 'Recruiter',
-    description: 'Identifiziert Kandidaten in Telekommunikation, Elektrotechnik und Anlagenbau.',
-    image: jonasHartmann,
-  },
-  {
-    name: 'Sebastian Richter',
-    role: 'Planer Elektrotechnik',
-    description: 'Plant Stark- und Schwachstromanlagen nach DIN VDE und einschlägigen Normen.',
-    image: sebastianRichter,
+    number: '04',
+    title: 'Personalberatung',
+    intro: 'Diskrete und passgenaue Besetzung von Fach- und Führungspositionen.',
+    members: [
+      {
+        name: 'Sarah Meier',
+        role: 'Leitung Personalberatung',
+        description:
+          'Besetzt Fach- und Führungspositionen in Technik und Vertrieb — diskret und passgenau.',
+      },
+      {
+        name: 'Jonas Hartmann',
+        role: 'Recruiter',
+        description:
+          'Identifiziert Kandidaten in Telekommunikation, Elektrotechnik und Anlagenbau.',
+      },
+    ],
   },
 ];
 
 const Team = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('scroll-visible')),
@@ -93,7 +103,6 @@ const Team = () => {
 
   return (
     <>
-
       <PageHero
         eyebrow="Team"
         title="Unser"
@@ -105,26 +114,40 @@ const Team = () => {
         ]}
       />
 
-
-      <section ref={ref} className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {teamMembers.map((member, i) => (
+      <section className="max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="space-y-16">
+          {departments.map((dept, idx) => (
             <div
-              key={member.name}
-              className={`scroll-hidden delay-${Math.min(i % 4 + 1, 4)} ${isVisible ? 'scroll-visible' : ''} group flex flex-col items-center text-center p-5 rounded-2xl border border-border/60 bg-card hover:shadow-lg hover:shadow-primary/[0.05] hover:border-primary/20 transition-all duration-300`}
+              key={dept.number}
+              className={`scroll-hidden ${idx > 0 ? 'pt-16 border-t border-border' : ''}`}
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-border/40 group-hover:ring-primary/30 transition-all duration-300 mb-3">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500 select-none pointer-events-none"
-                  onContextMenu={(e) => e.preventDefault()}
-                  draggable={false}
-                />
+              <div className="grid md:grid-cols-[220px_1fr] gap-8 md:gap-12">
+                <div>
+                  <p className="text-xs font-mono text-primary tracking-wider">{dept.number}</p>
+                  <h2 className="text-2xl font-semibold text-foreground mt-2 leading-tight">
+                    {dept.title}
+                  </h2>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                    {dept.intro}
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+                  {dept.members.map((member) => (
+                    <div key={member.name}>
+                      <h3 className="text-lg font-semibold text-foreground leading-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-primary mt-1">
+                        {member.role}
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                        {member.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-sm font-bold text-foreground leading-tight">{member.name}</h3>
-              <p className="text-xs font-semibold text-primary mt-0.5">{member.role}</p>
-              <p className="text-[11px] text-muted-foreground mt-2 leading-relaxed line-clamp-3">{member.description}</p>
             </div>
           ))}
         </div>
