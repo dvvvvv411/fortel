@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import HeroSplit from '@/components/landing-v2/HeroSplit';
 import TrustLogos from '@/components/landing-v2/TrustLogos';
-import BentoFeatures from '@/components/landing-v2/BentoFeatures';
+import ServicesTabs from '@/components/landing-v2/ServicesTabs';
 import ProcessFlow from '@/components/landing-v2/ProcessFlow';
 import ImpactGrid from '@/components/landing-v2/ImpactGrid';
 import CertificationsBar from '@/components/landing-v2/CertificationsBar';
