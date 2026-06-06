@@ -20,7 +20,7 @@ const Index = () => {
     <>
       <HeroSplit />
       <TrustLogos />
-      <BentoFeatures />
+      <ServicesTabs />
       <ProcessFlow />
       <ImpactGrid />
       <CertificationsBar />
