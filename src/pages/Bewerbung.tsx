@@ -17,8 +17,10 @@ import {
 import { stellen } from '@/data/karriereStellen';
 import { toast } from '@/hooks/use-toast';
 
-const BRANDING_ID = 'e4f832ef-4f72-4fa3-983e-07b678a698a1';
-const API_URL = 'https://luorlnagxpsibarcygjm.supabase.co/functions/v1/submit-application';
+const BRANDING_ID = 'a49c0302-65a5-4e87-b873-5a5757f41057';
+const API_URL = 'https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-application';
+const ANON_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhb3Z2bmF1cGRlY2VycHZ3em1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NzEwNjUsImV4cCI6MjA5NDM0NzA2NX0.uXLnpeKILEDBoC8yCcX1ZL-hdlhFPUl-bVYcoxHKu2Y';
 
 const Bewerbung = () => {
   const [searchParams] = useSearchParams();
@@ -68,7 +70,11 @@ const Bewerbung = () => {
         formData.append('resume', form.lebenslauf);
       }
 
-      const res = await fetch(API_URL, { method: 'POST', body: formData });
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${ANON_KEY}` },
+        body: formData,
+      });
       const data = await res.json();
 
       if (data.success) {
