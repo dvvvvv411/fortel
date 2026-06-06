@@ -5,7 +5,7 @@ const ImpactGrid = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const c1 = useCounterAnimation(150, 2000, isVisible);
   const c2 = useCounterAnimation(80, 1800, isVisible);
-  const c3 = useCounterAnimation(47, 1600, isVisible);
+  const c3 = useCounterAnimation(85, 1600, isVisible);
   const c4 = useCounterAnimation(20, 1400, isVisible);
 
   return (
@@ -22,7 +22,7 @@ const ImpactGrid = () => {
           {[
             { v: c1, suffix: '+', label: 'Projekte begleitet', sub: 'Beratung, Steuerung, Planung', icon: TrendingUp },
             { v: c2, suffix: '+', label: 'Kunden', sub: 'Mittelstand bis Konzern', icon: Euro },
-            { v: c3, suffix: '%', label: 'Ø Termintreue', sub: 'gemessen, nicht geschätzt', icon: TrendingDown },
+            { v: c3, suffix: '%', label: 'Kosteneinsparung', sub: 'durch Prozessoptimierung', icon: TrendingUp },
             { v: c4, suffix: '', label: 'Jahre Erfahrung', sub: 'seit 2006, ein Team', icon: Clock },
           ].map((s, i) => (
             <div key={i} className={`p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex flex-col justify-between scroll-hidden delay-${i + 1} ${isVisible ? 'scroll-visible' : ''}`}>
