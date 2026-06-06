@@ -36,8 +36,8 @@ const Navbar = () => {
       <div className="relative z-[60] hidden md:block bg-muted/60 border-b border-border text-muted-foreground">
         <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between text-xs">
           <div className="flex items-center gap-6">
-            <a href="tel:+4971124086840" className="hover:text-primary transition-colors flex items-center gap-1.5">
-              <Phone size={12}/> +49 711 24086840
+            <a href="tel:+4971196881540" className="hover:text-primary transition-colors flex items-center gap-1.5">
+              <Phone size={12}/> +49 711-96881540
             </a>
             <a href="mailto:info@for-tel.de" className="hover:text-primary transition-colors flex items-center gap-1.5">
               <Mail size={12}/> info@for-tel.de
@@ -158,7 +158,7 @@ const Navbar = () => {
 
           <div className="px-6 py-6 border-t border-border bg-muted/40 space-y-3">
             <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="tel:+4971124086840" className="flex items-center gap-2.5 hover:text-foreground transition-colors"><Phone size={14} className="text-primary"/> +49 711 24086840</a>
+              <a href="tel:+4971196881540" className="flex items-center gap-2.5 hover:text-foreground transition-colors"><Phone size={14} className="text-primary"/> +49 711-96881540</a>
               <a href="mailto:info@for-tel.de" className="flex items-center gap-2.5 hover:text-foreground transition-colors"><Mail size={14} className="text-primary"/> info@for-tel.de</a>
               <div className="flex items-center gap-2.5"><MapPin size={14} className="text-primary"/> Filderstadt, DE</div>
             </div>

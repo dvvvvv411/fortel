@@ -164,7 +164,7 @@ const Bewerbung = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="telefon">Telefon *</Label>
-                  <Input id="telefon" name="telefon" type="tel" placeholder="+49 123 456 789" value={form.telefon} onChange={handleChange} className="rounded-xl" />
+                  <Input id="telefon" name="telefon" type="tel" placeholder="+49 711-96881540" value={form.telefon} onChange={handleChange} className="rounded-xl" />
                 </div>
               </div>
 

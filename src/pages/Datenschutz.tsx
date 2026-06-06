@@ -28,7 +28,7 @@ const Datenschutz = () => {
             <br />
             Telefon:{' '}
             <a href="tel:+4971196881540" className="text-primary hover:underline">
-              +49 711 96881540
+              +49 711-96881540
             </a>
           </p>
 

@@ -1,24 +1,34 @@
-## Ziel
+## Update phone number everywhere to +49 711-96881540
 
-`src/pages/Bewerbung.tsx` ruft eine neue Supabase Edge Function auf einem anderen Projekt auf. Endpoint, Authorization-Header und `branding_id` werden ausgetauscht. UI und Formularverhalten bleiben unverändert.
+Replace the old/for-telefon number across all source files and project memory.
 
-## Änderungen in `src/pages/Bewerbung.tsx`
+### Files to change
 
-Konstanten oben in der Datei austauschen:
+1. **src/components/landing/Navbar.tsx** (2 occurrences)
+   - Top bar: `tel:+4971124086840` → `tel:+4971196881540`
+   - Top bar display: `+49 711 24086840` → `+49 711-96881540`
+   - Mobile menu: same href + display update
 
-- `API_URL` → `https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-application`
-- `BRANDING_ID` → `a49c0302-65a5-4e87-b873-5a5757f41057`
-- Neue Konstante `ANON_KEY` mit dem bereitgestellten anon-JWT (publishable, darf im Frontend stehen):
-  `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhb3Z2bmF1cGRlY2VycHZ3em1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NzEwNjUsImV4cCI6MjA5NDM0NzA2NX0.uXLnpeKILEDBoC8yCcX1ZL-hdlhFPUl-bVYcoxHKu2Y`
+2. **src/components/landing-v2/FinalCTA.tsx** (1 occurrence)
+   - Display text: `+49 711 24086840` → `+49 711-96881540`
 
-Im `fetch`-Call den `Authorization: Bearer ${ANON_KEY}` Header ergänzen (FormData-Body und alle bestehenden Felder bleiben gleich: `first_name`, `last_name`, `email`, `phone`, `employment_type`, `branding_id`, `resume`).
+3. **src/pages/Impressum.tsx** (1 occurrence)
+   - Display text: `+49 711 96881540` → `+49 711-96881540`
 
-## Was unverändert bleibt
+4. **src/pages/Datenschutz.tsx** (1 occurrence)
+   - Display text: `+49 711 96881540` → `+49 711-96881540`
 
-- Komplettes UI/Layout des Formulars (Select-Felder, Adressfelder, Datei-Upload, Pflichtfeld-Validierung, Toasts, Submit-Button).
-- Aktualisierung von `mem://features/career-section/application-form` mit der neuen URL und Branding-ID, damit zukünftige Sessions Bescheid wissen.
+5. **src/pages/Kontakt.tsx** (2 occurrences)
+   - Contact info value: `+49 711 96881540` → `+49 711-96881540`
+   - Form placeholder: `+49 123 456 789` → `+49 711-96881540`
 
-## Hinweise
+6. **src/components/landing/Footer.tsx** (1 occurrence)
+   - Display text: `+49 711 96881540` → `+49 711-96881540`
 
-- Der anon-JWT ist ein publishable Key — kein Secret, kein Edge-Function-Deploy nötig.
-- Adressfelder (`strasse`, `plz`, `stadt`) werden weiterhin clientseitig validiert, aber nicht an die neue Edge Function gesendet (war auch bisher schon so im bestehenden Code).
+7. **src/pages/Bewerbung.tsx** (1 occurrence)
+   - Form placeholder: `+49 123 456 789` → `+49 711-96881540`
+
+8. **mem://projekt/identitaet**
+   - Phone field: `0211-87971940` → `+49 711-96881540`
+
+No other logic or layout changes.
