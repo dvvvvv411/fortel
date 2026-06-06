@@ -60,9 +60,9 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4 text-foreground">Kontakt</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:info@for-tel.de" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <a href="mailto:info@for-tel.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Mail className="h-4 w-4 text-primary/70 shrink-0" />
-                  info@for-tel.de
+                  info@for-tel.com
                 </a>
               </li>
               <li>
