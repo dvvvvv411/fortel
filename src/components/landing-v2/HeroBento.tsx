@@ -85,7 +85,7 @@ const HeroBento = () => {
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Seit 2006 begleiten wir komplexe Infrastrukturprojekte mit
-                inhabergeführter Präzision und tiefem technischen Verständnis.
+                unabhängiger Präzision und tiefem technischen Verständnis.
               </p>
             </div>
 
