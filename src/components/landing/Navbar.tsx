@@ -129,7 +129,7 @@ const Navbar = () => {
         >
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
             <Link to="/" onClick={() => setMobileOpen(false)}>
-              <img src={logo} alt="for.tel Solutions" className="h-10" />
+              <img src={logo} alt="for.tel Solutions" className="h-7" />
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
