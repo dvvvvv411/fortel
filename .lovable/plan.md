@@ -1,14 +1,19 @@
-## Plan: Logo Rechtsklick ermöglichen
+## Plan: Favicon austauschen
 
-### Problem
-Das for.tel Logo im Header (Navbar) lässt sich nicht per Rechtsklick speichern, weil `onContextMenu={e => e.preventDefault()}` und `draggable={false}` aktiv sind.
+### Schritte
+1. Altes `public/favicon.png` löschen.
+2. Hochgeladenes `faviconfortel.png` (violetter Kreis) in mehreren Größen als Favicon einbinden:
+   - `public/favicon.png` (512×512 Master)
+   - `public/favicon-32.png`, `public/favicon-16.png`
+   - `public/apple-touch-icon.png` (180×180)
+   - `public/favicon.ico` (für Google/Legacy-Crawler – Google bevorzugt `/favicon.ico`)
+3. `index.html` aktualisieren mit korrekten `<link rel="icon">` Einträgen inkl. `.ico`, PNG-Größen und `apple-touch-icon`.
+4. Cache-Buster (`?v=2`) an die Favicon-URLs hängen, damit Browser den Wechsel sofort sehen.
 
-### Änderung
-In `src/components/landing/Navbar.tsx` an beiden Logo-`<img>`-Tags (Desktop-Header + Mobile Sidebar):
-1. `onContextMenu={(e) => e.preventDefault()}` entfernen
-2. `draggable={false}` entfernen
-
-Das erlaubt Nutzern den nativen Browser-Rechtsklick (Bild speichern unter / Kopieren etc.).
+### Hinweis SEO/Google
+Google indexiert Favicons über mehrere Quellen — `/favicon.ico` an der Root + `<link rel="icon">` im `<head>` mit absoluter, erreichbarer URL. Mindestgröße: 48×48 (Google-Anforderung). Wir liefern 512×512 als PNG-Master, das deckt alle Anforderungen.
 
 ### Dateien
-- `src/components/landing/Navbar.tsx`
+- löschen: `public/favicon.png` (alt)
+- neu: `public/favicon.ico`, `public/favicon.png`, `public/favicon-32.png`, `public/favicon-16.png`, `public/apple-touch-icon.png`
+- editieren: `index.html`
