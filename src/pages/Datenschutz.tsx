@@ -22,8 +22,8 @@ const Datenschutz = () => {
             Hornbergstr. 35<br />
             70794 Filderstadt<br />
             E-Mail:{' '}
-            <a href="mailto:info@for-tel.com" className="text-primary hover:underline">
-              info@for-tel.com
+            <a href="mailto:kontakt@for-tel.com" className="text-primary hover:underline">
+              kontakt@for-tel.com
             </a>
             <br />
             Telefon:{' '}
