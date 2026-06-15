@@ -50,8 +50,8 @@ const Impressum = () => {
           <h3 className="text-lg font-bold mt-8 mb-3">Kontakt</h3>
           <p>
             E-Mail:{' '}
-            <a href="mailto:info@for-tel.com" className="text-primary hover:underline">
-              info@for-tel.com
+            <a href="mailto:kontakt@for-tel.com" className="text-primary hover:underline">
+              kontakt@for-tel.com
             </a>
             <br />
             Telefon:{' '}
