@@ -60,8 +60,8 @@ const Impressum = () => {
             </a>
             <br />
             Website:{' '}
-            <a href="https://for-tel.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-              for-tel.com
+            <a href="https://for-tel.solutions" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+              for-tel.solutions
             </a>
           </p>
 
